@@ -1,0 +1,60 @@
+
+.divPrinc {
+  padding-bottom: 40px;
+}  
+.matchData {
+  padding: 0px !important;;
+}
+.matchData p {
+  text-align: center;
+  font-size: 11px;
+  padding: 2px;
+  background: darkslategray;
+  color: white;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+}
+.group {
+  padding-left: 8px;
+  padding-right: 8px;
+} 
+.teamsVs {
+  margin-top: -11px !important;;
+  border-top-left-radius: 0px !important;;
+  border-top-right-radius: 0px !important;;
+}
+.teamsVs table {
+  width: 100%;
+}
+.teamsVs table p {
+  width: 100% !important;
+}
+
+.teamsVs table .team1, .teamsVs table .team2{
+  width: 40%;
+}
+.teamsVs table .team1Res, .teamsVs table .team2Res {
+  width: 10%;
+}
+.teamsVs table .team1Res p, .teamsVs table .team2Res p {
+  width: 10%;
+  background: gainsboro;
+  border-radius: 7px;
+}
+.teamsVs table .team2Res p {
+  margin-left: 1px !important;
+}
+.teamsVs table .teamName  {
+  font-size: 13px !important;
+  margin-top: -4px !important;
+}
+
+.wOutMatchData .matchData {
+  display: none;
+}
+.wOutMatchData .groupTeams {
+  margin-top: 18px;
+}
+.wOutMatchData .teamsVs {
+  border-radius: 5px !important;
+}

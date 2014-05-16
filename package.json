@@ -1,0 +1,16 @@
+{
+  "name": "BdF-Express",
+  "version": "0.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.2.0",
+    "mongodb": "^1.4.4",
+    "request": "^2.34.0"
+  }
+}

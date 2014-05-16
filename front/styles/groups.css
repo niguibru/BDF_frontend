@@ -1,0 +1,166 @@
+ 
+/* Groups style */
+.teamsGroups .group {
+  margin-top: 25px;
+}
+.teamsGroups .groupLetter {
+  text-align: center;
+  background-color: cornflowerblue;
+  padding: 7px;
+  border-radius: 7px;
+  font-size: 20px;
+  color: white;
+  font-weight: bold;
+  opacity: 0.9
+}
+.groupLetter.grpA{
+  background-color: #2d9122;
+}
+.groupLetter.grpB{
+  background-color: #e69500;
+}
+.groupLetter.grpC{
+  background-color: #0053a0;
+}
+.groupLetter.grpD{
+  background-color: #ff748c;
+}
+.groupLetter.grpE{
+  background-color: #ff4d4d;
+}
+.groupLetter.grpF{
+  background-color: #389ed8;
+}
+.groupLetter.grpG{
+  background-color: #cece31;
+}
+.groupLetter.grpH{
+  background-color: #a62f70;
+}
+.teamsGroups .groupTeams {
+  padding: 0;
+  list-style-type: none;
+}
+.teamsGroups .groupTeams li {
+  background: whitesmoke;
+  padding: 6px;
+  border-radius: 5px;
+  opacity: 0.85;
+  margin: 11px;
+  padding-top: 5px;
+  padding-bottom: 1px;
+}
+.teamsGroups .groupTeams li .teamFlag {
+  height: 35px;
+  width: 35px;
+  margin-left: -17px;
+  margin-top: -7px;
+  background: whitesmoke;
+  position: absolute;
+  border-radius: 20px;
+  background-size: cover;
+}
+.teamsGroups .groupTeams li .teamFlag.Brazil{
+  background-image: url('http://tiie.com.mx/wp-content/uploads/bandera-brasil.png');
+}
+.teamsGroups .groupTeams li .teamFlag.Camerun{
+  background-image: url('http://www.gifss.es/banderas/camerun/Cameroon.png');
+}
+.teamsGroups .groupTeams li .teamFlag.Mexico{
+  background-image: url('http://www.sinecentral.org/media/ICONOS/Mexico.png');
+}
+.teamsGroups .groupTeams li .teamFlag.Croacia{
+  background-image: url('http://2.bp.blogspot.com/-eDZtYsXTwLU/Uqnlx0sb0JI/AAAAAAAAEQ4/-EZ9u6Y8W0Q/s1600/Croacia.png');
+}
+.teamsGroups .groupTeams li .teamFlag.España{
+  background-image: url('https://jatore.files.wordpress.com/2012/05/spain.png');
+}
+.teamsGroups .groupTeams li .teamFlag.Holanda{
+  background-image: url('http://www.gifss.es/banderas/holanda/HOLANDA.png');
+}
+.teamsGroups .groupTeams li .teamFlag.Chile{
+  background-image: url('http://painternacional.com/img/logos/chile-bandera.png');
+}
+.teamsGroups .groupTeams li .teamFlag.Australia{
+  background-image: url('http://3.bp.blogspot.com/-tI4pyV0Wo94/TnuwiijhabI/AAAAAAAAAn4/np0a_1KfJBM/s1600/0Australia+Flag.png');
+}
+.teamsGroups .groupTeams li .teamFlag.Colombia{
+  background-image: url('http://eportal2.etrade-sp.com/DesktopModules/Arcotecho/ArcotechoInternacional/images/Colombia.png');
+}
+.teamsGroups .groupTeams li .teamFlag.Grecia{
+  background-image: url('http://estaticos.marca.com/iconos/v1.x/v1.0/fotos-apps/futbol/escudos/00651.png');
+}
+.teamsGroups .groupTeams li .teamFlag.Marfil{
+  background-image: url('https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcTtSU6RK80pfJOY9L6JBa2AivS0vunCz9QerHQmcdYEpnOfPdcRfA');
+}
+.teamsGroups .groupTeams li .teamFlag.Japon{
+  background-image: url('http://2.bp.blogspot.com/-5PC9OttF0iM/Uqnl7Qf8SbI/AAAAAAAAESk/8sKlESA7U18/s1600/Japon.png');
+}
+.teamsGroups .groupTeams li .teamFlag.Uruguay{
+  background-image: url('http://race.sistracking.com.uy/images/banderas/URU_large.jpg');
+}
+.teamsGroups .groupTeams li .teamFlag.Rica{
+  background-image: url('http://www.costarricense.cr/pagina/ronnyrfm/Costa_Rica_flag.png');
+}
+.teamsGroups .groupTeams li .teamFlag.Inglaterra{
+  background-image: url('https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcRRAbTctkKxhyQQsroGt-TL7spQzhQ8NIUHrUGrX6GdcNdTmo7W');
+}
+.teamsGroups .groupTeams li .teamFlag.Italia{
+  background-image: url('http://ceiplosvalles.centros.educa.jcyl.es/sitio/upload/img/bandera_Italia.jpg');
+}
+.teamsGroups .groupTeams li .teamFlag.Suiza{
+  background-image: url('http://us.cdn2.123rf.com/168nwm/jameschipper/jameschipper1108/jameschipper110800055/10335848-bandera-de-suiza-en-un-boton.jpg');
+}
+.teamsGroups .groupTeams li .teamFlag.Ecuador{
+  background-image: url('http://ec.l.thumbs.canstockphoto.com/canstock0270077.jpg');
+}
+.teamsGroups .groupTeams li .teamFlag.Honduras{
+  background-image: url('http://files.softicons.com/download/internet-cons/world-flags-orbs-icons-by-vathanx/png/256/Flag%20of%20Honduras.png');
+}
+.teamsGroups .groupTeams li .teamFlag.Francia{
+  background-image: url('https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcRvn5pvyYdyFBAD1PQML9JmwAwq0dAOVMZONHFjXmGNKMPfERq1');
+}
+.teamsGroups .groupTeams li .teamFlag.Argentina{
+  background-image: url('http://www.gifss.com/banderas/argentina/bandera-icono.png');
+}
+.teamsGroups .groupTeams li .teamFlag.Bosnia{
+  background-image: url('http://3.bp.blogspot.com/-XFl-nB_IGYI/Tpn2xnPkepI/AAAAAAAAAAc/PrPEBMnY8o8/s1600/4451620999_7ea1edf9d7_o.png');
+}
+.teamsGroups .groupTeams li .teamFlag.Iran{
+  background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRZfOayS8tvpHl-xX8IoFDMpxwXOTXsIBZNfhzvFdwL-ty8mRLGEA');
+}
+.teamsGroups .groupTeams li .teamFlag.Nigeria{
+  background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT3IkOQsbF-eg3-rNJd8n27bB7c8gu80NDalKqta9EVPrqeNVss');
+}
+.teamsGroups .groupTeams li .teamFlag.Alemania{
+  background-image: url('http://3.bp.blogspot.com/-PqNItbnoONE/Uqnlo4XmH6I/AAAAAAAAEPg/yD2-mYAjJbQ/s1600/Alemania.png');
+}
+.teamsGroups .groupTeams li .teamFlag.Portugal{
+  background-image: url('https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcTVisJePyI167qtpV12Sgv1fv7jTjIO1As6rm03ttbB1SYYPgcc');
+}
+.teamsGroups .groupTeams li .teamFlag.Ghana{
+  background-image: url('https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcQ41y6nOR34CHDY3rpoUjlgBhYDvm6epWu0Esr0KB7ho72p72e0');
+}
+.teamsGroups .groupTeams li .teamFlag.EEUU{
+  background-image: url('http://www.accountantscircle.co.uk/Portals/US/img/US-Flag(w180).jpg');
+}
+.teamsGroups .groupTeams li .teamFlag.Belgica{
+  background-image: url('http://3.bp.blogspot.com/-s-pWohl2_O8/UqnlsdqlU1I/AAAAAAAAEQA/NnhX3haFLYQ/s1600/Belgica.png');
+}
+.teamsGroups .groupTeams li .teamFlag.Argelia{
+  background-image: url('https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcTWOFXOPvSRxhzT2bXe3Hvdzdrz6rRmalC4QXf-qf8AQEsdSOcQ');
+}
+.teamsGroups .groupTeams li .teamFlag.Rusia{
+  background-image: url('http://www.muaythaiargentina.com/Banderas/Argentina%20y%20rusia/Russia.png');
+}
+.teamsGroups .groupTeams li .teamFlag.Corea.sur{
+  background-image: url('http://i730.photobucket.com/albums/ww308/yellewardzkhael/south_korea_korean_flag.png');
+}
+.teamsGroups .groupTeams li .teamName {
+  margin: 0px;
+  text-align: center;
+  font-size: 18px;
+  color: darkslategray;
+  text-transform: uppercase;
+  /*font-weight: bold;*/
+}
