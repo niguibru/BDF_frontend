@@ -13,7 +13,7 @@ app.get('/matchesComplete', matchesServicesRoute.matchesComplete);
 app.get('/matches', matchesServicesRoute.matches);
 
 
-app.listen(3000, function(){
+app.listen(process.env.PORT || 3000, function(){
   console.log('Server started on port 3000')
   console.log('http://localhost:3000/')
 });
