@@ -1,6 +1,7 @@
 var dbUtils = require('./dbUtils');
 
-dbUtils.connectToDb( function(err, db) {  if (err) throw err;
+dbUtils.connectToDb( function(err, db) {  
+  if (err) throw err;
   var teams = db.collection('teams');
   
   exports.findAll = function(cb) {
