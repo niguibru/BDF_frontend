@@ -1,3 +1,5 @@
+var teamsModel = require('../../models/teamsModel');
+
 var apiUrl = "http://www.resultados-futbol.com/scripts/api/api.php";
 var apiKey = '?key=316c3695459c00f218b7a8d39382e5cf';
 var format = '&format=json';
@@ -17,6 +19,28 @@ exports.getRounds = function() {
   return rounds;
 }
 
+var normalize = (function() {
+  var from = "ÃÀÁÄÂÈÉËÊÌÍÏÎÒÓÖÔÙÚÜÛãàáäâèéëêìíïîòóöôùúüûÑñÇç",
+      to   = "AAAAAEEEEIIIIOOOOUUUUaaaaaeeeeiiiioooouuuunncc",
+      mapping = {};
+ 
+  for(var i = 0, j = from.length; i < j; i++ )
+      mapping[ from.charAt( i ) ] = to.charAt( i );
+ 
+  return function( str ) {
+      var ret = [];
+      for( var i = 0, j = str.length; i < j; i++ ) {
+          var c = str.charAt( i );
+          if( mapping.hasOwnProperty( str.charAt( i ) ) )
+              ret.push( mapping[ c ] );
+          else
+              ret.push( c );
+      }
+      return ret.join( '' );
+  }
+ 
+})();
+
 // TEAMS
 exports.teams_getApiUrl = function() {
   var completeUrl = apiUrl + apiKey + format + league + table + group;
@@ -24,14 +48,16 @@ exports.teams_getApiUrl = function() {
 }
 
 exports.teams_builJsonTeam = function(actualTeam, teamIndex) {
-  var nameId = actualTeam.team.replace(/\s/g,'').toUpperCase();
+  var nameId = actualTeam.team.replace(/\s/g,'').toLowerCase();
+  nameId = normalize(nameId);
   var name = actualTeam.team;
   var group = groupLetters[actualTeam.group];
   var groupNumber = actualTeam.group;
   var teamToAdd = {
                     'nameId': nameId, 
                     'teamIndex': teamIndex, 
-                    'name': name, 
+                    'name': name,
+                    'abr': name,
                     'group': {
                                 'letter': group, 
                                 'groupNumber': groupNumber
@@ -41,8 +67,8 @@ exports.teams_builJsonTeam = function(actualTeam, teamIndex) {
 }
 
 // MATCHES
-exports.matches_getApiUrl = function() {
-  var completeUrl = apiUrl + apiKey + format + league + table + matchs;
+exports.matches_getApiUrl = function(round) {
+  var completeUrl = apiUrl + apiKey + format + league + table + matchs + '&round=' + round;
   return completeUrl;
 }
 
@@ -55,10 +81,12 @@ exports.matches_builJsonMatch = function(actualMatch) {
   var hour = actualMatch.hour;
   var minute = actualMatch.minute;
   var local_name = actualMatch.local;
-  var local_nameId = actualMatch.local.replace(/\s/g,'').toUpperCase();
+  var local_nameId = actualMatch.local.replace(/\s/g,'').toLowerCase();
+  local_nameId = normalize(local_nameId);
   var local_goals = actualMatch.local_goals;
   var visitor_name = actualMatch.visitor;
-  var visitor_nameId = actualMatch.visitor.replace(/\s/g,'').toUpperCase();
+  var visitor_nameId = actualMatch.visitor.replace(/\s/g,'').toLowerCase();
+  visitor_nameId = normalize(visitor_nameId);
   var visitor_goals = actualMatch.visitor_goals;
   var status = actualMatch.status; // (-1 to play), (0 playing), (1 played)
   var result = actualMatch.result;
@@ -75,11 +103,13 @@ exports.matches_builJsonMatch = function(actualMatch) {
                       }, 
                       'local': {
                         'name': local_name, 
+                        'abr': local_name, 
                         'nameId': local_nameId,
                         'goals': local_goals,
                       },
                       'visitor': {
                         'name': visitor_name, 
+                        'abr': visitor_name, 
                         'nameId': visitor_nameId,
                         'goals': visitor_goals,
                       },
@@ -88,3 +118,4 @@ exports.matches_builJsonMatch = function(actualMatch) {
                    };
   return matchToAdd;
 }
+

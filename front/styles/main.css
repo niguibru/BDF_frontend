@@ -2,11 +2,31 @@
 body {
   padding-top: 20px;
   padding-bottom: 20px;
-  background-image: url('http://www.newgrass.com.ar/templates/images/background/2.jpg');
-  background-size: cover;
+/*  background-image: url('http://www.newgrass.com.ar/templates/images/background/2.jpg');*/
+  background-image: url('http://us.cdn2.123rf.com/168nwm/blankartist/blankartist0910/blankartist091000015/5769100-azulejos-y-baldosas-transparente-de-fondos-verdes.jpg');
+  /*background-size: cover;*/
   font-family: Verdana;
 }
 
+.navbar {
+  background-color: rgba(56,56,56, 0.6);
+  border-color: #004e00;
+  border: none;
+  border-radius: 10px;
+}
+
+.navbar-brand {
+  color: #00c400 !important;
+}
+
+
+.container.ng-scope {
+  background-color: rgba(56,56,56, 0.45);
+  padding-top: 6px;
+  border-radius: 7px;
+}
+
+/*
 .header {
   border-bottom: 1px solid #e5e5e5;
 }
@@ -20,13 +40,15 @@ body {
   color: #5aad5a;
   font-size: 33px;
 }
+*/
 
 .sectionTitle {
   text-align: center;
   color: white;
-  font-size: 45px;
+  font-size: 30px;
   opacity: 0.8;
 }
+
 li a {
   color: white !important; 
 }
@@ -44,6 +66,7 @@ li.active a {
   text-align: center;
   border-bottom: 1px solid #e5e5e5;
   margin: 25px;
+  opacity: 0.6;
 }
 .jumbotron .btn {
   font-size: 21px;

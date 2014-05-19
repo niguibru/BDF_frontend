@@ -1,4 +1,5 @@
 var express = require('express');
+var connection = require('./models/connection');
 var app = express();
 
 app.use(express.static(__dirname + '/front'));
@@ -8,6 +9,8 @@ app.get('/', frontController.index);
 var teamServicesRoute = require('./controllers/teamsServicesRoute');
 app.get('/teamsComplete', teamServicesRoute.teamsComplete);
 app.get('/teams', teamServicesRoute.teams);
+app.get('/teams_abrs', teamServicesRoute.teams_abrs);
+app.get('/teams_abrsComplete', teamServicesRoute.teams_abrsComplete);
 var matchesServicesRoute = require('./controllers/matchesServicesRoute');
 app.get('/matchesComplete', matchesServicesRoute.matchesComplete);
 app.get('/matches', matchesServicesRoute.matches);
