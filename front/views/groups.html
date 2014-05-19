@@ -38,6 +38,7 @@
 
 <script>
   $('.navbar-right li').removeClass('active');
-  $('#groupsButton').addClass('active').delay(800).addClass('active');
+  $('#groupsButton').addClass('active');
+  setTimeout( "$('#groupsButton').addClass('active'); alert('hola')", 4000);
 </script>
 
