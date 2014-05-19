@@ -49,6 +49,7 @@
 .teamsVs table .teamName  {
   font-size: 13px !important;
   margin-top: -4px !important;
+  margin-left: 0px !important;
 }
 
 .wOutMatchData .matchData {

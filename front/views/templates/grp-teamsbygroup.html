@@ -1,7 +1,7 @@
 <p class="groupLetter grp{{groupL}}"> Grupo {{groupL}} </p>
 <ul class="groupTeams">
   <li ng-repeat="team in teamsData | filter:{group: groupL}">
-    <div class="teamFlag {{team.name}}"> </div>
+    <div class="teamFlag {{team.nameId}}"> </div>
     <p class="teamName"> {{team.name}} </p>
   </li>
 </ul>

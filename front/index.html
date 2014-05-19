@@ -23,6 +23,10 @@
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
 
+    <!-- Header -->
+    <div data-the-header data-active="matches"></div>
+    <!-- /Header -->
+
     <!-- Add your site or application content here -->
     <div class="container" ng-view=""></div>
 
@@ -68,5 +72,12 @@
     <script src="scripts/services/matches.js"></script>
     <script src="scripts/directives/mtclistbygroup.js"></script>
     <!-- endbuild -->
+    
+    <script>
+      function changeSel(sel){
+        $('.navbar-right li').removeClass('active');
+        $('#' + sel).addClass('active');
+      }
+    </script>
   </body>
 </html>

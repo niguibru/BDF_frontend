@@ -26,11 +26,12 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav navbar-right">
-        <li id="mainButton">    <a ng-href="#">Hoy</a></li>
-        <li id="matchesButton"> <a ng-href="#/matches">Partidos</a></li>
-        <li id="groupsButton">  <a ng-href="#/groups">Equipos</a></li>
-        <li id="groupsButton">  <a ng-href="#/groups">Canchas</a></li>
+        <li id="mainButton" class="active">    <a ng-href="#" onclick="changeSel('mainButton')">Hoy</a></li>
+        <li id="matchesButton"> <a ng-href="#/matches" onclick="changeSel('matchesButton')">Partidos</a></li>
+        <li id="groupsButton">  <a ng-href="#/groups" onclick="changeSel('groupsButton')">Equipos</a></li>
+        <li id="groupsButton">  <a ng-href="#/groups" onclick="changeSel('groupsButton')">Canchas</a></li>
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>
+

@@ -6,7 +6,7 @@ angular.module('bochaDeFutbolApp')
       templateUrl: 'views/templates/the-header.html',
       scope: {},
       link: function postLink(scope, element, attrs) {
-        $('#'+attrs.active+'Button').addClass('active');
+        //$('#'+attrs.active+'Button').addClass('active');
       }
     };
   });
