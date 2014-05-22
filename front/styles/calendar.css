@@ -55,4 +55,9 @@ and (max-device-width : 480px) {
   .calendar th, .calendar td {
     padding: 2px;
   }
+  .calendar [otherMonth=false] span {
+    padding: 4px;
+    padding-left: 10px;
+    padding-right: 10px;  
+  }
 }
