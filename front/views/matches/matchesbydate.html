@@ -1,0 +1,128 @@
+<!-- Styles-->
+<link rel="stylesheet" href="styles/calendar.css">
+<link rel="stylesheet" href="styles/groups.css">
+<link rel="stylesheet" href="styles/matches.css">
+<!--/ Styles-->
+
+<!-- Nav list by-->
+<div data-mtc-navlistby data-active="date"></div>
+  
+
+<script>
+    function padDigits(number, digits) {
+      return Array(Math.max(digits - String(number).length + 1, 0)).join(0) + number;
+    }
+    
+    function drawTitleAndTable(date) {
+      monthAndYear = date.format('MMMM / YYYY');
+      $('.calendar').append('<div class="title"><span>' + monthAndYear + '</span></div>')
+      $('.calendar').append('<table class="days"></table>');
+      $('.calendar table').append('<thead><tr></tr></thead>');
+      $('.calendar table').append('<tbody><tr></tr></tbody>');
+    }
+  
+    function getWeekDayNames(date) {
+      var startDay = date.startOf('month').startOf('isoWeek');
+      var weekDayNames = [];
+      var cantDays = 7;
+      while (cantDays--) {
+        weekDayNames.push(startDay.format('ddd'));
+        startDay.add('days',1);
+      }
+      return weekDayNames;
+    }
+    function drawDayNames(date) {
+      var weekDayNames = getWeekDayNames(date);
+      weekDayNames.forEach(function(day) {
+        $('.days thead tr').append('<th><span>' + day + '</span></th>');
+      });
+    }
+
+    function weeksinMonth(date){
+      var d = date.endOf('month').format('DD');
+      return Math.floor(( d - 1 ) / 7 )+ 1;     
+    }
+    function getWeekDayNumbers(date) {
+      var startDay = date;
+      var weekDayNumbers = [];
+      var cantDays = 7;
+      while (cantDays--) {
+        weekDayNumbers.push(startDay.format('D'));
+        startDay.add('days',1);
+      }
+      return weekDayNumbers;
+    }
+    function getDayNumbers(date) {
+      var startDay = date.startOf('month').startOf('isoWeek');
+      var dayNumbers = [];
+      // no se reinicia
+      var cantWeeks = 6; //weeksinMonth(date);
+      while (cantWeeks--) {
+        weekDayNumbers = getWeekDayNumbers(startDay)
+        dayNumbers.push(weekDayNumbers);
+        //startDay.add('days',7);
+      }
+      return dayNumbers;
+    }
+    function drawDayNumbers(date) {
+      var weeksDayNumber = getDayNumbers(date);
+      // no se reinicia
+      var month = date.format('MM') - 1;
+      var yearMont = date.format('YYYY') + '/' + padDigits(month, 2);
+      var otherMonth = true;
+      var dayAnt = 99;
+      weeksDayNumber.forEach(function(weekDayNumber) {
+        var newRow = '<tr>';
+        weekDayNumber.forEach(function(dayNumber) {
+          if (otherMonth == false && parseInt(dayAnt) > parseInt(dayNumber)) {
+            otherMonth = true;
+          } else if (otherMonth == true && dayNumber == 1) {
+            otherMonth = false;
+          }
+          var dayPadded = padDigits(dayNumber, 2);
+          var yearMontDay = yearMont + '/' + dayPadded;
+          newRow = newRow + '<td otherMonth="' + otherMonth + '"><span ng-click="getMatchesByDate(\'' + yearMontDay + '\')">' + dayNumber + '</span></td>';
+          dayAnt = dayNumber;
+        });
+        newRow = newRow + '</tr>';
+        $('.days tbody').append(newRow);
+      });
+    }
+
+    function addClickListeners(date) {
+      $('.calendar [otherMonth=false] span').click(function(){
+        $('.calendar [otherMonth=false]').removeClass('selected');
+        $(this).closest('td').addClass('selected');
+      }); 
+    }
+  
+    function drawCal(date){
+      $('.calendar').html('');
+      drawTitleAndTable(date);
+      drawDayNames(date);
+      drawDayNumbers(date);
+      addClickListeners();
+    }
+    
+    moment.lang('es');
+    var date = moment([2014, 5]);
+    drawCal(date);
+  
+</script>
+
+<div class="row byDate">
+  <div class="col-md-8">
+    <div class="calendar">
+    </div>
+  </div>
+  <div class="col-md-4">
+    <div data-mtc-teamsbydate></div>
+  </div>
+</div>
+
+
+<script>
+  $('.navbar-right li').removeClass('active');
+  $('#matchesButton').addClass('active');
+  setTimeout( "$('#matchesButton').addClass('active');", 200);
+</script>

@@ -18,7 +18,11 @@ angular
         controller: 'GroupsCtrl'
       })
       .when('/matches', {
-        templateUrl: 'views/matches.html',
+        templateUrl: 'views/matches/matches.html',
+        controller: 'MatchesCtrl'
+      })
+      .when('/matchesbydate', {
+        templateUrl: 'views/matches/matchesbydate.html',
         controller: 'MatchesCtrl'
       })
       .otherwise({

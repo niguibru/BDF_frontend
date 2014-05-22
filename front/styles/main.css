@@ -38,6 +38,10 @@ body {
   opacity: 0.8;
 }
 
+.mtcListBy {
+  opacity: 0.9;
+}
+
 li a {
   color: white !important; 
 }

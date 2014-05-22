@@ -1,9 +1,9 @@
  
 /* Groups style */
-.teamsGroups .group {
+.group {
   margin-top: 25px;
 }
-.teamsGroups .groupLetter {
+.groupLetter {
   text-align: center;
   background-color: cornflowerblue;
   padding: 7px;
@@ -37,11 +37,11 @@
 .groupLetter.grpH{
   background-color: #a62f70;
 }
-.teamsGroups .groupTeams {
+.groupTeams {
   padding: 0;
   list-style-type: none;
 }
-.teamsGroups .groupTeams li {
+.groupTeams li {
   background: whitesmoke;
   padding: 6px;
   border-radius: 5px;
@@ -50,7 +50,7 @@
   padding-top: 5px;
   padding-bottom: 1px;
 }
-.teamsGroups .groupTeams li .teamFlag {
+.groupTeams li .teamFlag {
   height: 35px;
   width: 35px;
   margin-left: -17px;
@@ -60,7 +60,7 @@
   border-radius: 20px;
   background-size: cover;
 }
-.teamsGroups .groupTeams li .teamName {
+.groupTeams li .teamName {
   margin: 0px;
   text-align: center;
   font-size: 16px;
