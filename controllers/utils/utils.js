@@ -1,3 +1,4 @@
+var moment = require('moment');
 var teamsModel = require('../../models/teamsModel');
 
 var apiUrl = "http://www.resultados-futbol.com/scripts/api/api.php";
@@ -73,13 +74,19 @@ exports.matches_getApiUrl = function(round) {
 }
 
 exports.matches_builJsonMatch = function(actualMatch) {
+  moment.lang('es');
+  
   var numId = actualMatch.id;
   var type = 'G'; // Group type
   var group_letter = groupLetters[actualMatch.group_code];
   var group_number = actualMatch.group_code;
-  var date = actualMatch.date;
-  var hour = actualMatch.hour;
-  var minute = actualMatch.minute;
+  var datetime = moment(actualMatch.date, "YYYY-MM-DD")
+                .hour(actualMatch.hour - 5)
+                .minute(actualMatch.minute)
+                .second(00);
+  var date =datetime.format('YYYY/MM/DD');
+  var time = datetime.format('HH:mm');
+  var txtDateTime = datetime.format('DD [de] MMMM, HH:mm [hs]');
   var local_name = actualMatch.local;
   var local_nameId = actualMatch.local.replace(/\s/g,'').toLowerCase();
   local_nameId = normalize(local_nameId);
@@ -95,8 +102,8 @@ exports.matches_builJsonMatch = function(actualMatch) {
                       'numId': numId, 
                       'type': type,
                       'date': date, 
-                      'hour': hour, 
-                      'minutes': minute,
+                      'time': time, 
+                      'txtDateTime': txtDateTime, 
                       'group': {
                         'letter': group_letter,
                         'number': group_number,

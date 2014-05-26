@@ -54,6 +54,16 @@ li.active a {
   background-color: rgba(0, 255, 0, 0.15);
 }
 
+.twitterMsgs {
+  background: cadetblue;
+  opacity: 0.6;
+  font-size: 11px;
+}
+
+.twitterMsgs p {
+  font-size: 12px !important;
+}
+
 /* Main marketing message and sign up button */
 .jumbotron {
   text-align: center;
@@ -65,5 +75,8 @@ li.active a {
   font-size: 21px;
   padding: 14px 24px;
 }
+
+
+
 
 

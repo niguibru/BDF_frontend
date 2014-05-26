@@ -1,13 +1,52 @@
+<link rel="stylesheet" href="vendors/timeCircles/timeCircles.css">
+<style>
+  .time_circles h4 {
+    font-size: 18px !important;
+    padding-bottom: 8px !important;  
+  }
+</style>
 
-<div class="jumbotron">
-  <h1>Ayer / Hoy / Mañana</h1>
-  <p>x Horario, Cancha, Equipos, Resultados, Estado </p>
-</div>
-<div class="jumbotron">
-  <h1>Noticias</h1>
-  <p>notas </p>
+<div class="row">
+  <div class="col-md-6">
+    <div class="jumbotron">
+    <h3> Faltan ... </h3>
+    <div id="DateCountdown_dh" data-date="2014-06-12 17:00:00" 
+         style="width: 180px; 
+                height: 100px; 
+                padding: 0px;
+                margin-left: auto;
+                margin-right: auto;">
+    </div>
+    <div id="DateCountdown_ms" data-date="2014-06-12 17:00:00" 
+         style="width: 180px; 
+                height: 100px; 
+                padding: 0px;
+                margin-left: auto;
+                margin-right: auto;">
+    </div>
+  </div></div>
+  <div class="col-md-6" style="padding-top: 27px;">
+    <blockquote class="twitterMsgs" ng-repeat="twt in twts">
+      <p>{{twt.twt}}</p>
+      <footer>{{twt.name}} in <cite title="Source Title">Twitter</cite></footer>
+    </blockquote>
+  </div>
 </div>
 
+<script src="vendors/timeCircles/timeCircles.js"></script>
+
+<script type="text/javascript">
+  $("#DateCountdown_dh").TimeCircles({ time: { Minutes: { show: false },
+                                               Seconds: { show: false } 
+                                             }});
+  $("#DateCountdown_ms").TimeCircles({ time: { Days: { show: false },
+                                               Hours: { show: false } 
+                                             }});
+  $('.textDiv_Days h4').html('D');
+  $('.textDiv_Hours h4').html('H');
+  $('.textDiv_Minutes h4').html('M');
+  $('.textDiv_Seconds h4').html('S');
+</script>
 <script>
   $('.navbar-right li').removeClass('active');
   $('#mainButton').addClass('active');

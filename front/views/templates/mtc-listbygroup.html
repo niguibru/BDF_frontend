@@ -1,22 +1,24 @@
 <p class="groupLetter grp{{groupL}}"> Grupo {{groupL}} </p>
 <ul class="groupTeams" ng-repeat="match in allMatches | filter:{group: groupL}">
   <li class="matchData">
-    <p class="dateTime"> {{match.date}} - {{match.hour}}:{{match.minutes}} </p>
+    <p class="dateTime"> {{match.txtDateTime}} </p>
   </li>
   <li class="teamsVs">
     <table>
       <tr>
         <td class="team1">
+          <div class="teamRoundFlag {{match.local.nameId}}"> </div>
           <p class="teamName"> {{match.local.abr}} </p>
         </td>
         <td class="team1Res">
           <p class="teamName team1Res"> {{match.local.goals}} </p>
         </td>
         <td class="team2Res">
-          <p class="teamName team2Res"> {{match.local.goals}} </p>
+          <p class="teamName team2Res"> {{match.visitor.goals}} </p>
         </td>
         <td class="team2">
           <p class="teamName team2"> {{match.visitor.abr}} </p>
+          <div class="teamRoundFlag right {{match.visitor.nameId}}"> </div>
         </td>
       </tr>
     </table>

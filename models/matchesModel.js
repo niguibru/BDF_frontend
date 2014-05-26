@@ -7,8 +7,8 @@ matches_scheema = new schema(
     'numId': String, 
     'type': String,
     'date': String, 
-    'hour': String, 
-    'minutes': String,
+    'time': String, 
+    'txtDateTime': String, 
     'group': {
       'letter': String,
       'number': String,
@@ -32,7 +32,7 @@ matches = mongoose.model('matches', matches_scheema);
 
 
 exports.findAll = function(cb) {
-  matches.find({}).sort('date').exec(function(err, results){
+  matches.find({}).sort('date').sort('time').exec(function(err, results){
     cb(results);
   })
 }

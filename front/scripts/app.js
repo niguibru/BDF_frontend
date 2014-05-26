@@ -5,7 +5,7 @@ angular
     'ngCookies',
     'ngResource',
     'ngSanitize',
-    'ngRoute'
+    'ngRoute',
   ])
   .config(function ($routeProvider) {
     $routeProvider
@@ -28,4 +28,4 @@ angular
       .otherwise({
         redirectTo: '/'
       });
-  });
+  })

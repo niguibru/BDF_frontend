@@ -1,96 +1,99 @@
-.teamsGroups .groupTeams li .teamFlag.brasil{
-  background-image: url('images/flags/brasil.png');
+li .teamRoundFlag.brasil{
+  background-image: url('images/roundFlags/brasil.png');
 }
-.teamsGroups .groupTeams li .teamFlag.camerun{
-  background-image: url('images/flags/camerun.png');
+li .teamSquareFlag.brasil{
+  background-image: url('images/squareFlags/brasil.png');
 }
-.teamsGroups .groupTeams li .teamFlag.mexico{
-  background-image: url('images/flags/mexico.png');
+li .teamRoundFlag.camerun{
+  background-image: url('images/roundFlags/camerun.png');
 }
-.teamsGroups .groupTeams li .teamFlag.croacia{
-  background-image: url('images/flags/croacia.png');
+li .teamRoundFlag.mexico{
+  background-image: url('images/roundFlags/mexico.png');
 }
-.teamsGroups .groupTeams li .teamFlag.espana{
-  background-image: url('images/flags/espana.png');
+li .teamRoundFlag.croacia{
+  background-image: url('images/roundFlags/croacia.png');
 }
-.teamsGroups .groupTeams li .teamFlag.holanda{
-  background-image: url('images/flags/holanda.png');
+li .teamRoundFlag.espana{
+  background-image: url('images/roundFlags/espana.png');
 }
-.teamsGroups .groupTeams li .teamFlag.chile{
-  background-image: url('images/flags/chile.png');
+li .teamRoundFlag.holanda{
+  background-image: url('images/roundFlags/holanda.png');
 }
-.teamsGroups .groupTeams li .teamFlag.australia{
-  background-image: url('images/flags/australia.png');
+li .teamRoundFlag.chile{
+  background-image: url('images/roundFlags/chile.png');
 }
-.teamsGroups .groupTeams li .teamFlag.colombia{
-  background-image: url('images/flags/colombia.png');
+li .teamRoundFlag.australia{
+  background-image: url('images/roundFlags/australia.png');
 }
-.teamsGroups .groupTeams li .teamFlag.grecia{
-  background-image: url('images/flags/grecia.png');
+li .teamRoundFlag.colombia{
+  background-image: url('images/roundFlags/colombia.png');
 }
-.teamsGroups .groupTeams li .teamFlag.costademarfil{
-  background-image: url('images/flags/costademarfil.png');
+li .teamRoundFlag.grecia{
+  background-image: url('images/roundFlags/grecia.png');
 }
-.teamsGroups .groupTeams li .teamFlag.japon{
-  background-image: url('images/flags/japon.png');
+li .teamRoundFlag.costademarfil{
+  background-image: url('images/roundFlags/costademarfil.png');
 }
-.teamsGroups .groupTeams li .teamFlag.uruguay{
-  background-image: url('images/flags/uruguay.png');
+li .teamRoundFlag.japon{
+  background-image: url('images/roundFlags/japon.png');
 }
-.teamsGroups .groupTeams li .teamFlag.costarica{
-  background-image: url('images/flags/costarica.png');
+li .teamRoundFlag.uruguay{
+  background-image: url('images/roundFlags/uruguay.png');
 }
-.teamsGroups .groupTeams li .teamFlag.inglaterra{
-  background-image: url('images/flags/inglaterra.png');
+li .teamRoundFlag.costarica{
+  background-image: url('images/roundFlags/costarica.png');
 }
-.teamsGroups .groupTeams li .teamFlag.italia{
-  background-image: url('images/flags/italia.png');
+li .teamRoundFlag.inglaterra{
+  background-image: url('images/roundFlags/inglaterra.png');
 }
-.teamsGroups .groupTeams li .teamFlag.suiza{
-  background-image: url('images/flags/suiza.png');
+li .teamRoundFlag.italia{
+  background-image: url('images/roundFlags/italia.png');
 }
-.teamsGroups .groupTeams li .teamFlag.ecuador{
-  background-image: url('images/flags/ecuador.png');
+li .teamRoundFlag.suiza{
+  background-image: url('images/roundFlags/suiza.png');
 }
-.teamsGroups .groupTeams li .teamFlag.francia{
-  background-image: url('images/flags/francia.png');
+li .teamRoundFlag.ecuador{
+  background-image: url('images/roundFlags/ecuador.png');
 }
-.teamsGroups .groupTeams li .teamFlag.honduras{
-  background-image: url('images/flags/honduras.png');
+li .teamRoundFlag.francia{
+  background-image: url('images/roundFlags/francia.png');
 }
-.teamsGroups .groupTeams li .teamFlag.argentina{
-  background-image: url('images/flags/argentina.png');
+li .teamRoundFlag.honduras{
+  background-image: url('images/roundFlags/honduras.png');
 }
-.teamsGroups .groupTeams li .teamFlag.bosnia{
-  background-image: url('images/flags/bosnia.png');
+li .teamRoundFlag.argentina{
+  background-image: url('images/roundFlags/argentina.png');
 }
-.teamsGroups .groupTeams li .teamFlag.iran{
-  background-image: url('images/flags/iran.png');
+li .teamRoundFlag.bosnia{
+  background-image: url('images/roundFlags/bosnia.png');
 }
-.teamsGroups .groupTeams li .teamFlag.nigeria{
-  background-image: url('images/flags/nigeria.png');
+li .teamRoundFlag.iran{
+  background-image: url('images/roundFlags/iran.png');
 }
-.teamsGroups .groupTeams li .teamFlag.alemania{
-  background-image: url('images/flags/alemania.png');
+li .teamRoundFlag.nigeria{
+  background-image: url('images/roundFlags/nigeria.png');
 }
-.teamsGroups .groupTeams li .teamFlag.portugal{
-  background-image: url('images/flags/portugal.png');
+li .teamRoundFlag.alemania{
+  background-image: url('images/roundFlags/alemania.png');
 }
-.teamsGroups .groupTeams li .teamFlag.ghana{
-  background-image: url('images/flags/ghana.png');
+li .teamRoundFlag.portugal{
+  background-image: url('images/roundFlags/portugal.png');
 }
-.teamsGroups .groupTeams li .teamFlag.estadosunidos{
-  background-image: url('images/flags/estadosunidos.png');
+li .teamRoundFlag.ghana{
+  background-image: url('images/roundFlags/ghana.png');
 }
-.teamsGroups .groupTeams li .teamFlag.belgica{
-  background-image: url('images/flags/belgica.png');
+li .teamRoundFlag.estadosunidos{
+  background-image: url('images/roundFlags/estadosunidos.png');
 }
-.teamsGroups .groupTeams li .teamFlag.argelia{
-  background-image: url('images/flags/argelia.png');
+li .teamRoundFlag.belgica{
+  background-image: url('images/roundFlags/belgica.png');
 }
-.teamsGroups .groupTeams li .teamFlag.rusia{
-  background-image: url('images/flags/rusia.png');
+li .teamRoundFlag.argelia{
+  background-image: url('images/roundFlags/argelia.png');
 }
-.teamsGroups .groupTeams li .teamFlag.coreadelsur{
-  background-image: url('images/flags/coreadelsur.png');
+li .teamRoundFlag.rusia{
+  background-image: url('images/roundFlags/rusia.png');
+}
+li .teamRoundFlag.coreadelsur{
+  background-image: url('images/roundFlags/coreadelsur.png');
 }
