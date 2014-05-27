@@ -21,6 +21,10 @@ angular
         templateUrl: 'views/matches/matches.html',
         controller: 'MatchesCtrl'
       })
+      .when('/matcheselimin', {
+        templateUrl: 'views/matches/matcheselimin.html',
+        controller: 'MatchesCtrl'
+      })
       .when('/matchesbydate', {
         templateUrl: 'views/matches/matchesbydate.html',
         controller: 'MatchesCtrl'
