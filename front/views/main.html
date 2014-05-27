@@ -7,8 +7,8 @@
 </style>
 
 
-<div style="width: 100%;
-            background: url('http://3.bp.blogspot.com/-9g6gKyhREp4/Uo4IVNEOM0I/AAAAAAAAGJA/NvPt47xInAs/s1600/BRASIL+2014.png');
+<div class="pcOnly" style="width: 100%;
+            background: url('-http://3.bp.blogspot.com/-9g6gKyhREp4/Uo4IVNEOM0I/AAAAAAAAGJA/NvPt47xInAs/s1600/BRASIL+2014.png');
             border-radius: 9px;
             background-size: 100% 100px;
             margin-top: 10px;">
@@ -20,6 +20,15 @@
               margin-right: auto;
               color: blanchedalmond;">
   </div>
+</div>
+
+<div id="DateCountdown_dhMobile" class="mobileOnly" data-date="2014-06-12 17:00:00" 
+     style="width: 290px; 
+            height: 100px; 
+            padding: 0px;
+            margin-left: auto;
+            margin-right: auto;
+            color: blanchedalmond;">
 </div>
 
 <div class="row" style="padding-bottom: 22px;">
@@ -77,7 +86,35 @@
             "show": true
         }
     }
-});
+  });
+  $("#DateCountdown_dhMobile").TimeCircles({
+    "animation": "smooth",
+    "bg_width": 0.6,
+    "fg_width": 0.043333333333333335,
+    "circle_bg_color": "#d4dce2",
+    "time": {
+        "Days": {
+            "text": "Days",
+            "color": "#63f835",
+            "show": true
+        },
+        "Hours": {
+            "text": "Hours",
+            "color": "#fcf222",
+            "show": true
+        },
+        "Minutes": {
+            "text": "Minutes",
+            "color": "#d12e36",
+            "show": true
+        },
+        "Seconds": {
+            "text": "Seconds",
+            "color": "#190aff",
+            "show": true
+        }
+    }
+  });
   $('.textDiv_Days h4').html('D');
   $('.textDiv_Hours h4').html('H');
   $('.textDiv_Minutes h4').html('M');
