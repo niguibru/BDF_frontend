@@ -32,37 +32,50 @@
 </div>
 
 <div class="row" style="padding-bottom: 22px;">
-  <div class="col-md-6">
-    <h3 style="color:white; text-align:center;margin-bottom: 14px;"> Quien es tu favorito? </h3>
+  <div class="col-sm-6 col-md-8">
+    <h3 class="sectionTitle"> Notas </h3>
+    <hr style="opacity: 0.8;">
+    <div class="row">
+      <div class="col-md-6">
+        <div class="nota"> 
+          <img src="http://bucket1.clanacion.com.ar/anexos/fotos/89/eliminatorias-1766289w620.jpg" />
+          <div class="title"> La selección </div>
+          <div class="pre"> 
+            Enterate de las últimas noticias de la Seleccion Argentina.
+          </div>
+        </div>
+      </div>    
+      <div class="col-md-6">
+          <div class="nota"> 
+          <img src="http://www.ole.com.ar/fuera-de-juego/Estadios-Mundial-Maracana_OLEIMA20130909_0151_24.jpg" />
+          <div class="title"> Estadios </div>
+          <div class="pre"> 
+            Mira los estadios en donde se jugará la copa del mundo.
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
-  <div class="col-md-6">
-    <h3 style="color:white; text-align:center;margin-bottom: 14px;"> @bochadefutbol en Twitter </h3>
-    <div ng-repeat="twt in twts" class="alert alert-success" style="background-color: #A5C299;border-color: #B4C5A5;"> 
-      <div class="row">
+  <div class="col-sm-6 col-md-4">
+    <h3 class="sectionTitle twitter"> 
+       <img src="https://g.twimg.com/Twitter_logo_blue.png" style="height: 20px;">
+      @bochadefutbol 
+    </h3>
+    <hr style="opacity: 0.8; width: 90%;">
+    <div ng-repeat="twt in twts" class="twits"> 
+      <div class="row twtRow">
         <div class="col-xs-2">
           <img src="{{twt.avatar}}" />
         </div>
         <div class="col-xs-10">
-          <p>{{twt.twt}}</p>
+          <p class="twittero">@{{twt.name}}</p>
+          <p class="twitMsg">{{twt.twt}}</p>
         </div>
       </div>
-<!--
-      <img src="{{twt.avatar}}" />
-      <p>{{twt.twt}}</p>
--->
-      <footer style="font-size: 10px;">{{twt.name}} in <cite title="Source Title">Twitter</cite></footer>
+      <hr style="opacity: 0.3;width: 50%;">
     </div>
   </div>
 </div>
-
-<!--
-  <div class="col-md-6" style="padding-top: 27px;">
-    <blockquote class="twitterMsgs" ng-repeat="twt in twts">
-      <p>{{twt.twt}}</p>
-      <footer>{{twt.name}} in <cite title="Source Title">Twitter</cite></footer>
-    </blockquote>
-  </div>
--->
 
 
 <script src="vendors/timeCircles/timeCircles.js"></script>
