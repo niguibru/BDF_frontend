@@ -78,10 +78,10 @@ io.sockets.on('connection', function (socket) {
         });
     }
   })
-//  // Stream when @bochadefutbol twit
-//  streamBdf.on('tweet', function (tweet) {
-////    console.log(tweet.user.screen_name);
-//    socket.emit('news', { name: tweet.user.screen_name, twt: tweet.text });
-//  })  
+  // Stream when @bochadefutbol twit
+  streamBdf.on('tweet', function (tweet) {
+//    console.log(tweet.user.screen_name);
+    socket.emit('news', { name: tweet.user.screen_name, twt: tweet.text });
+  })  
 });
 // << SOCKET & TWITTER
