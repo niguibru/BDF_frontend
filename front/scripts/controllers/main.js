@@ -1,13 +1,11 @@
 'use strict';
 
 angular.module('bochaDeFutbolApp')
-  .controller('MainCtrl', function ($scope, socket) {
-    $scope.twts = [];
-    
+  .controller('MainCtrl', function ($scope, $rootScope, socket) {
     socket.on('news', function (data) {
-      if ($scope.twts.length >= 4) $scope.twts.splice(0, 1);
-      $scope.twts.push(data);
-      $scope.$digest();
+      if ($rootScope.twts.length >= 4) $rootScope.twts.splice(0, 1);
+      $rootScope.twts.push(data);
+      $rootScope.$digest();
     });
     
   });

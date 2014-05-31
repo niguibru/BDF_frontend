@@ -33,3 +33,6 @@ angular
         redirectTo: '/'
       });
   })
+  .run(function ($rootScope) {
+    $rootScope.twts = [];
+  });

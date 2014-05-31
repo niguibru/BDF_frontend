@@ -31,26 +31,57 @@ var server = require('http').createServer(app).listen(port, function(){
 // << START SERVER
 
 // SOCKET & TWITTER >>
+// Get Socket IO variable
 var io = require('socket.io').listen(server);
+// Get Twitter IO variable
 var Twit = require('twit')
+// Fill the Twitter Keys
 var T = new Twit({
     consumer_key:         'cQTwqywDuhQsHrOjbWdiYGar2',
     consumer_secret:      'JsxuV1lFB6HD6ksBbmyZPKGpWB90VfOwA42V8qNXv8b8JIdzcw',
     access_token:         '2523990062-azO2SqkEPUz0FgO5AwZ14L7pwENZWqvcdBgKVJg',
     access_token_secret:  'y7cW1M14jMK0gAgvaRaafrAx0nRaAkXj0295U2gLKGlGz'
 })
+
+// Make stream watches
 var stream = T.stream('statuses/filter', { track: 'bochadefutbol' });
 var streamBdf = T.stream('user', { track : 'bochadefutbol' });
+
+  
+// Wait for connection
 io.sockets.on('connection', function (socket) {
-  stream.on('tweet', function (tweet) {
-    if (tweet.user.screen_name != 'bochadefutbol') {
-      console.log(tweet.user.screen_name);
-      socket.emit('news', { name: tweet.user.screen_name, twt: tweet.text });
+  // Reading in the last 5 tweets when bochadefutbol is mentioned
+  T.get('search/tweets', { q: 'bochadefutbol', count: 5 }, function(err, reply) {
+    if (err) {
+      console.dir(err);
+    } else {
+      for (var i = 0; i < reply.statuses.length; i++) {
+        var status = reply.statuses[i];
+        console.log(status.user.screen_name);
+        socket.emit('news', { 
+          name: status.user.screen_name, 
+          twt: status.text,
+          avatar: status.user.profile_image_url_https
+        });
+      }
     }
   })
-  streamBdf.on('tweet', function (tweet) {
-    console.log(tweet.user.screen_name);
-    socket.emit('news', { name: tweet.user.screen_name, twt: tweet.text });
+  
+  // Stream when bochadefutbol is mentioned
+  stream.on('tweet', function (tweet) {
+    if (tweet.user.screen_name != 'bochadefutbol') {
+//      console.log(tweet.user.screen_name);
+      socket.emit('news', { 
+          name: tweet.user.screen_name, 
+          twt: tweet.text,
+          avatar: status.user.profile_image_url_https
+        });
+    }
   })
+//  // Stream when @bochadefutbol twit
+//  streamBdf.on('tweet', function (tweet) {
+////    console.log(tweet.user.screen_name);
+//    socket.emit('news', { name: tweet.user.screen_name, twt: tweet.text });
+//  })  
 });
 // << SOCKET & TWITTER

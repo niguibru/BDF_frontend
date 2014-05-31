@@ -4,7 +4,7 @@
   margin-bottom: 20px !important;
 }
 
-.calendar {
+.nibCalendar {
   width: 100%;
   background-color: rgba(56,56,56, 0.75);
   color: white;
@@ -12,28 +12,37 @@
   padding-bottom: 10px;
 }
 
-.calendar .title {
+.nibCalendar .title {
   width: 100%;
   text-align: center;
   padding: 10px;
+  color: darkkhaki;
+  text-transform: uppercase;
+  cursor: default;
 }
 
-.calendar .days {
+.nibCalendar .days {
   width: 100%;
+  cursor: default;
 }
 
-.calendar th, .calendar td {
+.nibCalendar thead tr {
+  border-bottom: 1px solid;
+  color: cadetblue;
+}
+
+.nibCalendar th, .nibCalendar td {
   text-align: center;
   width: 13%;
   padding: 5px;
 }
 
-.calendar [otherMonth=true] {
+.nibCalendar [otherMonth=true] {
   color: gray;
   cursor: default
 }
 
-.calendar [otherMonth=false] span {
+.nibCalendar [otherMonth=false] span {
   color: white;
   cursor: pointer;
   padding: 8px;
@@ -41,21 +50,25 @@
   padding-right: 10px;  
 }
 
-.calendar [otherMonth=false].selected span{
-  background-color: rgba(0,118,0,0.4);
+.nibCalendar [otherMonth=false].selected span{
+  background-color: rgba(0,118,0,0.3);
   border-radius: 8px;
+}
+
+.nibCalendar [haveEvent=true] span {
+  color: darkkhaki;
 }
 
 @media only screen 
 and (min-device-width : 320px) 
 and (max-device-width : 480px) {
-  .calendar {
+  .nibCalendar {
     font-size: 12px;
   }
-  .calendar th, .calendar td {
+  .nibCalendar th, .nibCalendar td {
     padding: 2px;
   }
-  .calendar [otherMonth=false] span {
+  .nibCalendar [otherMonth=false] span {
     padding: 4px;
     padding-left: 10px;
     padding-right: 10px;  
