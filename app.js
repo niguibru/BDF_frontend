@@ -58,6 +58,8 @@ io.sockets.on('connection', function (socket) {
       for (var i = 0; i < reply.statuses.length; i++) {
         var status = reply.statuses[i];
         socket.emit('prevTwits', { 
+          tweet_id: status.id_str,
+          created_at: status.created_at,
           name: status.user.screen_name, 
           twt: status.text,
           avatar: status.user.profile_image_url_https
@@ -71,6 +73,8 @@ io.sockets.on('connection', function (socket) {
     //console.log(tweet.user.screen_name);
     if ((tweet.user.screen_name != 'bochadefutbol') && (tweet.text.indexOf('@bochadefutbol') > -1)) {
       socket.emit('newTwits', { 
+          tweet_id: tweet.id_str,
+          created_at: tweet.created_at,
           name: tweet.user.screen_name, 
           twt: tweet.text,
           avatar: tweet.user.profile_image_url_https
@@ -81,6 +85,8 @@ io.sockets.on('connection', function (socket) {
   streamBdf.on('tweet', function (tweet) {
     //console.log(tweet.user.screen_name);
     socket.emit('newTwits',  { 
+          tweet_id: tweet.id_str,
+          created_at: tweet.created_at,
           name: tweet.user.screen_name, 
           twt: tweet.text,
           avatar: tweet.user.profile_image_url_https
