@@ -1,18 +1,16 @@
-/* Space out content a bit */
+
 body {
   padding-top: 20px;
   padding-bottom: 20px;
-/*  background-image: url('http://www.newgrass.com.ar/templates/images/background/2.jpg');*/
   background-image: url('images/grass.jpg');
-  /*background-size: cover;*/
   font-family: Verdana;
 }
 
+/*Top Navbar Menu>>*/
 .navbar {
   background-color: rgba(56,56,56, 0.6);
   border-color: #004e00;
   border: none;
-/*  border-radius: 10px;*/
 }
 
 .navbar-brand {
@@ -24,54 +22,27 @@ body {
 .navbar-nav.navbar-right:last-child {
   margin-right: 0px;
 }
+/*Top Navbar Menu>>*/
 
+/*Nav Menu>>*/
+.nav li a {
+  color: white !important; 
+}
+.nav li.active a {
+  background-color: green !important;
+}
+.nav > li > a:hover, .nav > li > a:focus {
+  background-color: rgba(0, 255, 0, 0.12) !important;
+}
+/*<<Nav Menu>>*/
+
+/*Container style>>*/
 .container.ng-scope {
   background-color: rgba(56,56,56, 0.45);
   padding-top: 6px;
   border-radius: 10px;
 }
-
-.mtcListBy {
-  opacity: 0.9;
-}
-
-li a {
-  color: white !important; 
-}
-
-li.active a {
-  background-color: green !important;
-}
-
-.nav > li > a:hover, .nav > li > a:focus {
-  background-color: rgba(0, 255, 0, 0.15);
-}
-
-.twitterMsgs {
-  background: cadetblue;
-  opacity: 0.6;
-  font-size: 11px;
-}
-
-.twitterMsgs p {
-  font-size: 12px !important;
-}
-
-/* Main marketing message and sign up button */
-.jumbotron {
-  text-align: center;
-  border-bottom: 1px solid #e5e5e5;
-  margin: 25px;
-  opacity: 0.6;
-}
-.jumbotron .btn {
-  font-size: 21px;
-  padding: 14px 24px;
-}
-
-.mobileOnly {
-  display: none;
-}
+/*<<Container style>>*/
 
 /*Twits>>*/
 .twits {
@@ -145,6 +116,10 @@ li.active a {
 }
 /*<<Nota*/
 
+/*For mobile views>>*/
+.mobileOnly {
+  display: none;
+}
 
 @media only screen 
 and (min-device-width : 320px) 
@@ -155,8 +130,14 @@ and (max-device-width : 480px) {
   .pcOnly {
     display: none;
   }
+  
+  /*Top Navbar Menu>>*/
+  .navbar-brand {
+    font-size: 21px;
+  }
+  /*<<Top Navbar Menu*/
 }
-
+/*<<For mobile views*/
 
 
 

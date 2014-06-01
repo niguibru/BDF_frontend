@@ -57,8 +57,7 @@ io.sockets.on('connection', function (socket) {
     } else {
       for (var i = 0; i < reply.statuses.length; i++) {
         var status = reply.statuses[i];
-        console.log(status.user.screen_name);
-        socket.emit('news', { 
+        socket.emit('prevTwits', { 
           name: status.user.screen_name, 
           twt: status.text,
           avatar: status.user.profile_image_url_https
@@ -68,20 +67,24 @@ io.sockets.on('connection', function (socket) {
   })
   
   // Stream when bochadefutbol is mentioned
-  stream.on('tweet', function (tweet) {
+  stream.on('newTwits', function (tweet) {
+    console.log(tweet.user.screen_name);
     if (tweet.user.screen_name != 'bochadefutbol') {
-//      console.log(tweet.user.screen_name);
       socket.emit('news', { 
           name: tweet.user.screen_name, 
           twt: tweet.text,
-          avatar: status.user.profile_image_url_https
+          avatar: tweet.user.profile_image_url_https
         });
     }
   })
   // Stream when @bochadefutbol twit
-  streamBdf.on('tweet', function (tweet) {
-//    console.log(tweet.user.screen_name);
-    socket.emit('news', { name: tweet.user.screen_name, twt: tweet.text });
+  streamBdf.on('newTwits', function (tweet) {
+    console.log(tweet.user.screen_name);
+    socket.emit('news',  { 
+          name: tweet.user.screen_name, 
+          twt: tweet.text,
+          avatar: tweet.user.profile_image_url_https
+        });
   })  
 });
 // << SOCKET & TWITTER
