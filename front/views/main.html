@@ -62,17 +62,19 @@
       @bochadefutbol 
     </h3>
     <hr style="opacity: 0.8; width: 90%;">
-    <div ng-repeat="twt in twts" class="twits"> 
-      <div class="row twtRow">
-        <div class="col-xs-2">
-          <img src="{{twt.avatar}}" />
+    <div class="twitsContainer">
+      <div ng-repeat="twt in twts" class="twits"> 
+        <div class="row twtRow">
+          <div class="col-xs-2">
+            <img src="{{twt.avatar}}" />
+          </div>
+          <div class="col-xs-10">
+            <p class="twittero">@{{twt.name}}</p>
+            <p class="twitMsg">{{twt.twt}}</p>
+          </div>
         </div>
-        <div class="col-xs-10">
-          <p class="twittero">@{{twt.name}}</p>
-          <p class="twitMsg">{{twt.twt}}</p>
-        </div>
+        <hr style="opacity: 0.3;width: 50%;">
       </div>
-      <hr style="opacity: 0.3;width: 50%;">
     </div>
   </div>
 </div>

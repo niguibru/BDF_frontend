@@ -69,7 +69,7 @@ io.sockets.on('connection', function (socket) {
   // Stream when bochadefutbol is mentioned
   stream.on('tweet', function (tweet) {
     //console.log(tweet.user.screen_name);
-    if (tweet.user.screen_name != 'bochadefutbol') {
+    if ((tweet.user.screen_name != 'bochadefutbol') && (tweet.text.indexOf('@bochadefutbol') > -1)) {
       socket.emit('newTwits', { 
           name: tweet.user.screen_name, 
           twt: tweet.text,
