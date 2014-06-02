@@ -1,6 +1,6 @@
 <!-- Styles-->
 <link rel="stylesheet" href="../../vendors/nibCalendar/nibCalendar.css">
-<link rel="stylesheet" href="styles/groups.css">
+<link rel="stylesheet" href="styles/teams.css">
 <link rel="stylesheet" href="styles/matches.css">
 <link rel="stylesheet" href="styles/flags.css">
 <!--/ Styles-->
@@ -8,13 +8,35 @@
 <!-- Nav list by-->
 <div data-mtc-navlistby data-active="date"></div>
   
+<style>
+  .nibCalendar {
+    max-width: 500px;
+    border: 1px solid;
+    border-color: darkcyan;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 20px;
+  }
+  .matchesList {
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .matchesList h3 {
+    text-align: center;
+    color: white;
+    margin-top: 6px;
+  }
+</style>
+
 <div class="row byDate">
   <div class="col-md-8">
     <div class="nibCalendar">
     </div>
   </div>
-  <div class="col-md-4">
-    <div data-mtc-teamsbydate></div>
+  <div class="col-md-4 matchesList">
+    <h3 class="sectionTitle"> Partidos del dia </h3>
+    <div data-mtc-listbydate></div>
   </div>
 </div>
 

@@ -1,0 +1,62 @@
+<!-- Styles-->
+<link rel="stylesheet" href="styles/teams.css">
+<link rel="stylesheet" href="styles/flags.css">
+<!--/ Styles-->
+
+<!-- Nav list by-->
+<div data-mtc-navlistby data-active="championship"></div>
+
+<style>
+  .groupTeams li {
+    padding-right: 0px;
+    margin-right: 6px;
+  }
+  table {
+    width: 98%;
+    text-align: center !important;
+  }
+  .groupLetter {
+    font-size: 14px;
+  }
+  .teamName {
+    width: 56px;
+  }
+  .num {
+    width: 20px;
+  }
+</style>
+
+<div class="teamsGroups">
+  <div class="row">
+    <div class="group col-xs-12 col-sm-6 col-md-4">
+      <div data-mtc-championship data-group="A"> </div>
+    </div>
+    <div class="group col-xs-12 col-sm-6 col-md-4">
+      <div data-mtc-championship data-group="B"> </div>
+    </div>
+    <div class="group col-xs-12 col-sm-6 col-md-4">
+      <div data-mtc-championship data-group="C"> </div>
+    </div>
+    <div class="group col-xs-12 col-sm-6 col-md-4">
+      <div data-mtc-championship data-group="D"> </div>
+    </div>
+    <div class="group col-xs-12 col-sm-6 col-md-4">
+      <div data-mtc-championship data-group="E"> </div>
+    </div>
+    <div class="group col-xs-12 col-sm-6 col-md-4">
+      <div data-mtc-championship data-group="F"> </div>
+    </div>
+    <div class="group col-xs-12 col-sm-6 col-md-4">
+      <div data-mtc-championship data-group="G"> </div>
+    </div>
+    <div class="group col-xs-12 col-sm-6 col-md-4">
+      <div data-mtc-championship data-group="H"> </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  $('.navbar-right li').removeClass('active');
+  $('#matchesButton').addClass('active');
+  setTimeout( "$('#matchesButton').addClass('active');", 200);
+</script>

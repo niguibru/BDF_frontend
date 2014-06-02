@@ -69,3 +69,6 @@
   margin-left: 19px;
   /*font-weight: bold;*/
 }
+.teamDataList {
+  cursor: pointer;
+}

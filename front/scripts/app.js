@@ -13,17 +13,21 @@ angular
         templateUrl: 'views/main.html',
         controller: 'MainCtrl'
       })
-      .when('/groups', {
-        templateUrl: 'views/groups.html',
+      .when('/teamsbygroup', {
+        templateUrl: 'views/teams/teamsbygroup.html',
         controller: 'GroupsCtrl'
       })
-      .when('/matches', {
-        templateUrl: 'views/matches/matches.html',
+      .when('/teamdetails', {
+        templateUrl: 'views/teams/teamdetails.html',
+        controller: 'GroupsCtrl'
+      })
+      .when('/matchesbygroup', {
+        templateUrl: 'views/matches/matchesbygroup.html',
         controller: 'MatchesCtrl'
       })
-      .when('/matcheselimin', {
-        templateUrl: 'views/matches/matcheselimin.html',
-        controller: 'MatchesCtrl'
+      .when('/matcheschampionship', {
+        templateUrl: 'views/matches/matcheschampionship.html',
+        controller: 'GroupsCtrl'
       })
       .when('/matchesbydate', {
         templateUrl: 'views/matches/matchesbydate.html',

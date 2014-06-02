@@ -41,7 +41,7 @@
           <img src="http://bucket1.clanacion.com.ar/anexos/fotos/89/eliminatorias-1766289w620.jpg" />
           <div class="title"> La selección </div>
           <div class="pre"> 
-            Enterate de las últimas noticias de la Seleccion Argentina.
+            <p> Enterate de las últimas noticias de la Seleccion Argentina. </p>
           </div>
         </div>
       </div>    
@@ -50,7 +50,7 @@
           <img src="http://www.ole.com.ar/fuera-de-juego/Estadios-Mundial-Maracana_OLEIMA20130909_0151_24.jpg" />
           <div class="title"> Estadios </div>
           <div class="pre"> 
-            Mira los estadios en donde se jugará la copa del mundo.
+            <p> Mira los estadios en donde se jugará la copa del mundo. </p>
           </div>
         </div>
       </div>
@@ -58,8 +58,10 @@
   </div>
   <div class="col-sm-6 col-md-4">
     <h3 class="sectionTitle twitter"> 
-      <i class="fa fa-twitter"></i>
-      @bochadefutbol 
+      <i class="fa fa-twitter"></i> 
+      <a href="https://twitter.com/intent/user?screen_name=bochadefutbol" target="_blank">
+        @bochadefutbol
+      </a>
     </h3>
     <hr style="opacity: 0.8; width: 90%;">
     <div class="twitsContainer">
@@ -69,12 +71,16 @@
             <img src="{{twt.avatar}}" />
           </div>
           <div class="col-xs-10 twtText">
-            <p class="twittero">@{{twt.name}}</p>
+            <p class="twittero">
+              <a href="https://twitter.com/intent/user?screen_name={{twt.name}}" target="_blank">
+                @{{twt.name}}
+              </a>
+            </p>
 <!--            {{twt.created_at}}-->
             <p class="twitMsg">{{twt.twt}}</p>
           </div>
         </div>
-        <div class="col-12" style="text-align: right;padding-right: 35px;">
+        <div class="col-12 actionBtns">
           <script type="text/javascript" src="//platform.twitter.com/widgets.js"></script>
           <a href="https://twitter.com/intent/tweet?in_reply_to={{twt.tweet_id}}"><i class="fa fa-reply"></i></a>
           <a href="https://twitter.com/intent/retweet?tweet_id={{twt.tweet_id}}"><i class="fa fa-retweet"></i></a>
