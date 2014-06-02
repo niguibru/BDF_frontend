@@ -2,10 +2,10 @@
 
 angular
   .module('bochaDeFutbolApp', [
-    'ngCookies',
-    'ngResource',
-    'ngSanitize',
-    'ngRoute',
+//    'ngCookies',
+//    'ngResource',
+//    'ngSanitize',
+    'ngRoute'
   ])
   .config(function ($routeProvider) {
     $routeProvider
@@ -17,9 +17,9 @@ angular
         templateUrl: 'views/teams/teamsbygroup.html',
         controller: 'GroupsCtrl'
       })
-      .when('/teamdetails', {
+      .when('/teamdetails/:nameid', {
         templateUrl: 'views/teams/teamdetails.html',
-        controller: 'GroupsCtrl'
+        controller: 'TeamdetailsCtrl'
       })
       .when('/matchesbygroup', {
         templateUrl: 'views/matches/matchesbygroup.html',

@@ -155,7 +155,7 @@ and (max-device-width : 480px) {
   
   /*Top Navbar Menu>>*/
   .navbar-brand {
-    font-size: 20px;
+    font-size: 19px;
   }
   .navbar-nav.navbar-right:last-child {
     font-size: 16px;

@@ -49,7 +49,33 @@ var streamBdf = T.stream('user', { track : 'bochadefutbol' });
 
   
 // Wait for connection
+var logModel = require('./models/logModel');
+io.set('log level', 1)
 io.sockets.on('connection', function (socket) {
+
+  logModel.insert({
+    'soId': socket.id, 
+    'datetime': nowInArgentina(), 
+    'page': 'CONNECT'
+  });
+
+  socket.on('disconnect', function(){
+    logModel.insert({
+      'soId': socket.id, 
+      'datetime': nowInArgentina(), 
+      'page': 'DISCONECT'
+    });
+  })
+  
+  socket.on('sendLog', function (data) {
+    //console.log(data);
+    logModel.insert({
+      'soId': socket.id, 
+      'datetime': nowInArgentina(),
+      'page': data.page
+    });
+  });
+  
   // Reading in the last 5 tweets when bochadefutbol is mentioned
   T.get('search/tweets', { q: 'bochadefutbol', count: 5 }, function(err, reply) {
     if (err) {
@@ -93,4 +119,10 @@ io.sockets.on('connection', function (socket) {
         });
   })  
 });
+
+var moment = require('moment-timezone');
+function nowInArgentina() {
+  var format = 'YYYY/MM/DD HH:mm:ss ZZ';
+  return moment().tz("America/Argentina/Buenos_Aires").format();
+}
 // << SOCKET & TWITTER

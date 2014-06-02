@@ -1,7 +1,11 @@
 'use strict';
 
 angular.module('bochaDeFutbolApp')
-  .controller('GroupsCtrl', function ($scope, teams) {
+  .controller('GroupsCtrl', function ($scope, $location, socket, teams) {
+    socket.emit('sendLog', {
+      page: 'teamsByGroup'
+    });
+    
     getAllTeams();
 
     function getAllTeams () {
@@ -9,4 +13,9 @@ angular.module('bochaDeFutbolApp')
         $scope.teamsData = data;
       })
     }
+    
+    $scope.go = function ( path ) {
+      $location.path( path );
+    };
+    
   });

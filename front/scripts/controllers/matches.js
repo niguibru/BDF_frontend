@@ -1,7 +1,11 @@
 'use strict';
 
 angular.module('bochaDeFutbolApp')
-  .controller('MatchesCtrl', function ($scope, matches) {
+  .controller('MatchesCtrl', function ($scope, socket, matches) {
+    socket.emit('sendLog', {
+      page: 'matches'
+    });
+    
     getAllMatches();
     
     function getAllMatches() {

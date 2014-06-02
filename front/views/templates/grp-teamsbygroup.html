@@ -1,8 +1,10 @@
 <p class="groupLetter grp{{groupL}}"> Grupo {{groupL}} </p>
 <ul class="groupTeams">
-<!--  <li class="teamDataList" ng-repeat="team in teamsData | filter:{group: groupL}" onclick="window.location = '#/teamdetails';">-->
   <li class="teamDataList" ng-repeat="team in teamsData | filter:{group: groupL}">
-    <div class="teamRoundFlag {{team.nameId}}"> </div>
-    <p class="teamName"> {{team.name}} </p>
+<!--    <div ng-click="go('teamdetails/' + team.nameId)">-->
+    <div>
+      <div class="teamRoundFlag {{team.nameId}}"> </div>
+      <p class="teamName"> {{team.name}} </p>
+    </div>
   </li>
 </ul>

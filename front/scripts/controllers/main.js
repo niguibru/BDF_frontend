@@ -2,6 +2,10 @@
 
 angular.module('bochaDeFutbolApp')
   .controller('MainCtrl', function ($scope, $rootScope, socket) {
+    socket.emit('sendLog', {
+      page: 'home'
+    });
+    
     socket.on('newTwits', function (data) {
       $rootScope.twts.unshift(data);
       $rootScope.$digest();
@@ -11,5 +15,5 @@ angular.module('bochaDeFutbolApp')
       $rootScope.twts.push(data);
       $rootScope.$digest();
     });
-    
+        
   });
