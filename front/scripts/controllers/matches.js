@@ -3,7 +3,7 @@
 angular.module('bochaDeFutbolApp')
   .controller('MatchesCtrl', function ($scope, socket, matches) {
     socket.emit('sendLog', {
-      page: 'matches'
+      page: 'Fixture'
     });
     
     getAllMatches();

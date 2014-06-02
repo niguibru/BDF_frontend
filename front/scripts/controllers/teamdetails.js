@@ -3,7 +3,7 @@
 angular.module('bochaDeFutbolApp')
   .controller('TeamdetailsCtrl', function ($scope, $routeParams, socket, teams) {
     socket.emit('sendLog', {
-      page: 'teamDetails'
+      page: 'Detalle Equipos'
     });
     
     $scope.test = 'holaaaaassssss';

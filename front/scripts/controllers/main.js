@@ -3,7 +3,7 @@
 angular.module('bochaDeFutbolApp')
   .controller('MainCtrl', function ($scope, $rootScope, socket) {
     socket.emit('sendLog', {
-      page: 'home'
+      page: 'Home'
     });
     
     socket.on('newTwits', function (data) {

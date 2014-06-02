@@ -3,7 +3,7 @@
 angular.module('bochaDeFutbolApp')
   .controller('GroupsCtrl', function ($scope, $location, socket, teams) {
     socket.emit('sendLog', {
-      page: 'teamsByGroup'
+      page: 'Equipos'
     });
     
     getAllTeams();
