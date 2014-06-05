@@ -1,11 +1,14 @@
 'use strict';
 
 angular.module('bochaDeFutbolApp')
-  .controller('TeamdetailsCtrl', function ($scope, $routeParams, socket, teams) {
-    socket.emit('sendLog', {
-      page: 'Detalle Equipos'
+  .controller('TeamdetailsCtrl', function ($scope, $routeParams, teams, tweets) {
+    
+    teams.getByNameId($routeParams.nameid, function(teamData){
+      $scope.team = teamData;
     });
     
-    $scope.test = 'holaaaaassssss';
-    $scope.testParam = $routeParams.nameid;
+    $scope.teamTwts = [];
+    tweets.getTweets('"bdf_'+$routeParams.nameid + '"', 5, function(twtsData){
+      $scope.teamTwts = twtsData;
+    });
   });

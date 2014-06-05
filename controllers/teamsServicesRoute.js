@@ -28,7 +28,13 @@ module.exports = exports = {
       res.json(data);
     })
   },
-
+  teamsByNameId: function(req, res) {
+    teamsModel.findByNameId(req.query.nameId, function(data){
+      res.json(data);
+    })
+  },
+  
+  
   // teams_abbrs
   teams_abrs: function(req, res) {
     teamsAbrModel.findAll(function(data){

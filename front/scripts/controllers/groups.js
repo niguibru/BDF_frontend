@@ -1,11 +1,8 @@
 'use strict';
 
 angular.module('bochaDeFutbolApp')
-  .controller('GroupsCtrl', function ($scope, $location, socket, teams) {
-    socket.emit('sendLog', {
-      page: 'Equipos'
-    });
-    
+  .controller('GroupsCtrl', function ($scope, $location, teams) {
+
     getAllTeams();
 
     function getAllTeams () {

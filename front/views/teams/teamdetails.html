@@ -1,11 +1,90 @@
 <!-- Styles-->
-<link rel="stylesheet" href="styles/teams.css">
-<link rel="stylesheet" href="styles/flags.css">
+<link rel="stylesheet" href="styles/teamDetails.css">
+<link rel="stylesheet" href="styles/teamsEnsigns.css">
 <!--/ Styles-->
 
-<h1>
-{{testParam}}
+<a class="back" ng-href="#/teamsbygroup"> 
+  <i class="fa fa-chevron-left"></i> 
+  Back
+</a>
+
+<h1 class="sectionTitle teamName {{team.nameId}} colorteamtext">
+  <img class="teamLogo {{team.nameId}}">
+  <p>{{team.name}}</p>
 </h1>
+<div class="teamDetails row">
+  <div class="col-sm-6 col-md-8">
+    <h3 class="sectionTitle"> Jugadores </h3>
+    <hr style="opacity: 0.8; width: 90%;margin-top: 22px;">
+    <div class="row byPosition">
+      <div class="col-md-3 gk"> 
+        <p> Arqueros </p>
+        <ul>
+          <li class="{{team.nameId}} colorteamlist" ng-repeat="gks in team.players.GK"> 
+            {{gks.name}}
+          </li>
+        </ul>
+      </div>
+      <div class="col-md-3 df"> 
+        <p> Defensores </p>
+        <ul>
+          <li class="{{team.nameId}} colorteamlist" ng-repeat="gks in team.players.DE"> 
+            {{gks.name}}
+          </li>
+        </ul>
+      </div>
+      <div class="col-md-3 md"> 
+        <p> Volantes </p>
+        <ul>
+          <li class="{{team.nameId}} colorteamlist" ng-repeat="gks in team.players.MI"> 
+            {{gks.name}}
+          </li>
+        </ul>
+      </div>
+      <div class="col-md-3 dl"> 
+        <p> Delanteros </p>
+        <ul>
+          <li class="{{team.nameId}} colorteamlist" ng-repeat="gks in team.players.ST"> 
+            {{gks.name}}
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-6 col-md-4">
+    <h3 class="sectionTitle twitter"> 
+      <i class="fa fa-twitter"></i> 
+      <a href="https://twitter.com/intent/user?screen_name=bochadefutbol" target="_blank">
+        #bdf_{{team.nameId}}
+      </a>
+    </h3>
+    <hr style="opacity: 0.8; width: 90%;">
+    <div class="twitsContainer">
+      <div ng-repeat="twt in teamTwts" class="twits"> 
+        <div class="row twtRow">
+          <div class="col-xs-2">
+            <img src="{{twt.avatar}}" />
+          </div>
+          <div class="col-xs-10 twtText">
+            <p class="twittero">
+              <a href="https://twitter.com/intent/user?screen_name={{twt.name}}" target="_blank">
+                @{{twt.name}}
+              </a>
+            </p>
+            <p class="twitMsg">{{twt.twt}}</p>
+          </div>
+        </div>
+        <div class="col-12 actionBtns">
+          <script type="text/javascript" src="//platform.twitter.com/widgets.js"></script>
+          <a href="https://twitter.com/intent/tweet?in_reply_to={{twt.tweet_id}}"><i class="fa fa-reply"></i></a>
+          <a href="https://twitter.com/intent/retweet?tweet_id={{twt.tweet_id}}"><i class="fa fa-retweet"></i></a>
+          <a href="https://twitter.com/intent/favorite?tweet_id={{twt.tweet_id}}"><i class="fa fa-star"></i></a>
+        </div>
+        <hr style="opacity: 0.3;width: 50%;">
+      </div>
+    </div>
+  </div>
+</div>
 
 <script>
   $('.navbar-right li').removeClass('active');

@@ -1,0 +1,99 @@
+.container {
+  padding-bottom: 25px;
+}
+.back {
+  position: absolute;
+  color: whitesmoke;
+  margin-top: 3px;
+  cursor: pointer;
+  text-decoration: none;
+}
+.back:hover {
+  color: white;
+  text-decoration: none;
+  zoom: 1.1;
+}
+.teamName {
+  font-size: 56px;
+  color: white;
+  text-align: left;
+  margin-left: 18px;
+  margin-top: 32px;
+}
+.teamName p{
+  display: inline-block;
+}
+.teamLogo {
+  height: 110px;
+/*  width: 74px;*/
+}
+
+.teamDetails.row {
+  color:white;
+}
+
+.playersTitle {
+  text-align: center;
+  color: whitesmoke;
+  font-size: 28px;
+  margin-bottom: 20px;
+}
+
+.byPosition p {
+  font-size: 18px;
+  margin-left: 20px;
+  text-align: center;
+}
+
+.byPosition ul {
+  padding-left: 19px;
+  font-size: 13px;
+}
+
+.byPosition ul li {
+  list-style-type: none;
+  padding-bottom: 4px;
+  border-radius: 7px;
+  padding: 3px;
+  text-align: center;
+  margin-bottom: 10px;
+  opacity: 0.7;
+}
+
+.star {
+  text-align: center;
+}
+
+.starTitle {
+  text-align: center;
+  color: whitesmoke;
+  font-size: 28px;
+}
+
+.teamImage {
+  content: url("http://2.bp.blogspot.com/-MeIkvbwIals/T-bdQlR3vMI/AAAAAAAAByo/Wjvctwc9tho/s1600/Italia+vs+Croacia.jpg");
+  margin: 21px;
+  width: 83%;
+  border-radius: 7px;
+}
+
+
+/*For mobile views>>*/
+@media only screen 
+and (min-device-width : 320px) 
+and (max-device-width : 480px) {
+
+  .teamName {
+    text-align: center;
+  }
+  .teamName p {
+    font-size: 33px;
+    display: block;
+    margin-top: 25px;
+    text-align: center;
+  }
+
+}
+/*<<For mobile views*/
+
+

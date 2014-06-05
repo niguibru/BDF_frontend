@@ -1,0 +1,553 @@
+
+
+
+/* BRASIL*/
+.brasil.colorteamtext, .brasil .colorteamtext{
+  color: #e6e600;
+}
+.brasil.colorteamlist, .brasil .colorteamlist{
+  color: #18671f;
+  background: rgba(255,255,0,0.9)
+}
+li .teamRoundFlag.brasil{
+  background-image: url('images/roundFlags/brasil.png');
+}
+.teamLogo.brasil{
+  content:url("images/escudos/brasil.png");
+}
+
+
+
+/* CAMERUN*/
+.camerun.colorteamtext, .camerun .colorteamtext{
+  color: black;
+}
+.camerun.colorteamlist, .camerun .colorteamlist{
+  color: yellow;
+  background: rgba(220,0,0,0.7);
+}
+li .teamRoundFlag.camerun{
+  background-image: url('images/roundFlags/camerun.png');
+}
+.teamLogo.camerun{
+  content:url("images/escudos/camerun.png");
+}
+
+
+
+/* MEXICO*/
+.mexico.colorteamtext, .mexico .colorteamtext{
+  color: #48af84;
+}
+.mexico.colorteamlist, .mexico .colorteamlist{
+  color: white;
+  background: rgba(72,175,130,0.7);
+}
+li .teamRoundFlag.mexico{
+  background-image: url('images/roundFlags/mexico.png');
+}
+.teamLogo.mexico{
+  content:url("images/escudos/mexico.png");
+}
+
+
+
+/* CROACIA*/
+.croacia.colorteamtext, .croacia .colorteamtext{
+  color: white;
+}
+.croacia.colorteamlist, .croacia .colorteamlist{
+  color: white;
+  background: rgba(255,0,0,0.7);
+}
+li .teamRoundFlag.croacia{
+  background-image: url('images/roundFlags/croacia.png');
+}
+.teamLogo.croacia{
+  content:url("images/escudos/croacia.png");
+}
+
+
+
+/* AUSTRALIA*/
+.australia.colorteamtext, .australia .colorteamtext{
+  color: #e6e600;
+}
+.australia.colorteamlist, .australia .colorteamlist{
+  color: #0158b0;
+  background: rgba(255,255,0,0.9);
+}
+li .teamRoundFlag.australia{
+  background-image: url('images/roundFlags/australia.png');
+}
+.teamLogo.australia{
+  content:url("images/escudos/australia.png");
+}
+
+
+
+/* CHILE*/
+.chile.colorteamtext, .chile .colorteamtext{
+  color: white;
+}
+.chile.colorteamlist, .chile .colorteamlist{
+  color: white;
+  background: rgba(222,14,7,0.7);
+}
+li .teamRoundFlag.chile{
+  background-image: url('images/roundFlags/chile.png');
+}
+.teamLogo.chile{
+  content:url("images/escudos/chile.png");
+}
+
+
+
+/* ESPANA*/
+.espana.colorteamtext, .espana .colorteamtext{
+  color: white;
+}
+.espana.colorteamlist, .espana .colorteamlist{
+  color: yellow;
+  background: rgba(222,14,7,0.7);
+}
+li .teamRoundFlag.espana{
+  background-image: url('images/roundFlags/espana.png');
+}
+.teamLogo.espana{
+  content:url("images/escudos/espana.png");
+}
+
+
+
+/* HOLANDA*/
+.holanda.colorteamtext, .holanda .colorteamtext{
+  color: white;
+}
+.holanda.colorteamlist, .holanda .colorteamlist{
+  color: white;
+  background: rgba(228,134,47,0.8);
+}
+li .teamRoundFlag.holanda{
+  background-image: url('images/roundFlags/holanda.png');
+}
+.teamLogo.holanda{
+  content:url("images/escudos/holanda.png");
+}
+
+
+
+/* COLOMBIA*/
+.colombia.colorteamtext, .colombia .colorteamtext{
+  color: yellow;
+}
+.colombia.colorteamlist, .colombia .colorteamlist{
+  color: blue;
+  background: rgba(255,255,0,0.9);
+}
+li .teamRoundFlag.colombia{
+  background-image: url('images/roundFlags/colombia.png');
+}
+.teamLogo.colombia{
+  content:url("images/escudos/colombia.png");
+}
+
+
+
+/* COSTADEMARFIL*/
+.costademarfil.colorteamtext, .costademarfil .colorteamtext{
+  color: #f26d28;
+}
+.costademarfil.colorteamlist, .costademarfil .colorteamlist{
+  color: white;
+  background: rgba(242,109,40,0.8);
+}
+li .teamRoundFlag.costademarfil{
+  background-image: url('images/roundFlags/costademarfil.png');
+}
+.teamLogo.costademarfil{
+  content:url("images/escudos/costademarfil.png");
+}
+
+
+
+/* GRECIA*/
+.grecia.colorteamtext, .grecia .colorteamtext{
+  color: white;
+}
+.grecia.colorteamlist, .grecia .colorteamlist{
+  color: #011b79;
+  background: rgba(255,255,255,0.9);
+}
+li .teamRoundFlag.grecia{
+  background-image: url('images/roundFlags/grecia.png');
+}
+.teamLogo.grecia{
+  content:url("images/escudos/grecia.png");
+}
+
+
+
+/* JAPON*/
+.japon.colorteamtext, .japon .colorteamtext{
+  color: white;
+}
+.japon.colorteamlist, .japon .colorteamlist{
+  color: red;
+  background: rgba(255,255,255,0.9);
+}
+li .teamRoundFlag.japon{
+  background-image: url('images/roundFlags/japon.png');
+}
+.teamLogo.japon{
+  content:url("images/escudos/japon.png");
+}
+
+
+
+/* COSTARICA*/
+.costarica.colorteamtext, .costarica .colorteamtext{
+  color: white;
+}
+.costarica.colorteamlist, .costarica .colorteamlist{
+  color: #005bd9;
+  background: rgba(185,21,24,0.8);
+}
+li .teamRoundFlag.costarica{
+  background-image: url('images/roundFlags/costarica.png');
+}
+.teamLogo.costarica{
+  content:url("images/escudos/costarrica.png");
+}
+
+
+
+/* INGLATERRA*/
+.inglaterra.colorteamtext, .inglaterra .colorteamtext{
+  color: white;
+}
+.inglaterra.colorteamlist, .inglaterra .colorteamlist{
+  color: #050340;
+  background: rgba(255,255,255,0.9);
+}
+li .teamRoundFlag.inglaterra{
+  background-image: url('images/roundFlags/inglaterra.png');
+}
+.teamLogo.inglaterra{
+  content:url("images/escudos/inglaterra.png");
+}
+
+
+
+/* ITALIA*/
+.italia.colorteamtext, .italia .colorteamtext{
+  color: white;
+}
+.italia.colorteamlist, .italia .colorteamlist{
+  color: white;
+  background: rgba(0,66,158,0.9);
+}
+li .teamRoundFlag.italia{
+  background-image: url('images/roundFlags/italia.png');
+}
+.teamLogo.italia{
+  content:url("images/escudos/italia.png");
+}
+
+
+
+/* URUGUAY*/
+.uruguay.colorteamtext, .uruguay .colorteamtext{
+  color: #459ece;
+}
+.uruguay.colorteamlist, .uruguay .colorteamlist{
+  color: white;
+  background: rgba(69,158,206,0.8);
+}
+li .teamRoundFlag.uruguay{
+  background-image: url('images/roundFlags/uruguay.png');
+}
+.teamLogo.uruguay{
+  content:url("images/escudos/uruguay.png");
+}
+
+
+
+
+/* ECUADOR*/
+.ecuador.colorteamtext, .ecuador .colorteamtext{
+  color: #e6e600;
+}
+.ecuador.colorteamlist, .ecuador .colorteamlist{
+  color: blue;
+  background: rgba(255,255,0,0.9)
+}
+li .teamRoundFlag.ecuador{
+  background-image: url('images/roundFlags/ecuador.png');
+}
+.teamLogo.ecuador{
+  content:url("images/escudos/ecuador.png");
+}
+
+
+
+/* FRANCIA*/
+.francia.colorteamtext, .francia .colorteamtext{
+  color: white;
+}
+.francia.colorteamlist, .francia .colorteamlist{
+  color: white;
+  background: rgba(1,0,82,0.8);
+}
+li .teamRoundFlag.francia{
+  background-image: url('images/roundFlags/francia.png');
+}
+.teamLogo.francia{
+  content:url("images/escudos/francia.png");
+}
+
+
+
+/* HONDURAS*/
+.honduras.colorteamtext, .honduras .colorteamtext{
+  color: white;
+}
+.honduras.colorteamlist, .honduras .colorteamlist{
+  color: #2751ac;
+  background: rgba(255,255,255,0.9);
+}
+li .teamRoundFlag.honduras{
+  background-image: url('images/roundFlags/honduras.png');
+}
+.teamLogo.honduras{
+  content:url("images/escudos/honduras.png");
+}
+
+
+
+/* SUIZA*/
+.suiza.colorteamtext, .suiza .colorteamtext{
+  color: white;
+}
+.suiza.colorteamlist, .suiza .colorteamlist{
+  color: white;
+  background: rgba(255,0,0,0.9);
+}
+li .teamRoundFlag.suiza{
+  background-image: url('images/roundFlags/suiza.png');
+}
+.teamLogo.suiza{
+  content:url("images/escudos/suiza.png");
+  background: white;
+  border-radius: 8px;
+}
+
+
+
+/* ARGENTINA*/
+.argentina.colorteamtext, .argentina .colorteamtext{
+  color: #d2aa3f;
+}
+.argentina.colorteamlist, .argentina .colorteamlist{
+  color: #1895d9;
+  background: rgba(255,255,255,1);
+}
+li .teamRoundFlag.argentina{
+  background-image: url('images/roundFlags/argentina.png');
+}
+.teamLogo.argentina{
+  content:url("images/escudos/argentina.png");
+}
+
+
+
+/* BOSNIA*/
+.bosnia.colorteamtext, .bosnia .colorteamtext{
+  color: white;
+}
+.bosnia.colorteamlist, .bosnia .colorteamlist{
+  color: white;
+  background: rgba(40,63,134,0.9);
+}
+li .teamRoundFlag.bosnia{
+  background-image: url('images/roundFlags/bosnia.png');
+}
+.teamLogo.bosnia{
+  content:url("images/escudos/bosnia.png");
+}
+
+
+
+/* IRAN*/
+.iran.colorteamtext, .iran .colorteamtext{
+  color: white;
+}
+.iran.colorteamlist, .iran .colorteamlist{
+  color: green;
+  background: rgba(255,255,255,0.9);
+}
+li .teamRoundFlag.iran{
+  background-image: url('images/roundFlags/bosnia.png');
+}
+.teamLogo.iran{
+  content:url("images/escudos/iran.png");
+}
+
+
+
+/* NIGERIA*/
+.nigeria.colorteamtext, .nigeria .colorteamtext{
+  color: white;
+}
+.nigeria.colorteamlist, .nigeria .colorteamlist{
+  color: white;
+  background: rgba(0,60,0,0.8);
+}
+li .teamRoundFlag.nigeria{
+  background-image: url('images/roundFlags/nigeria.png');
+}
+.teamLogo.nigeria{
+  content:url("images/escudos/nigeria.png");
+}
+
+
+
+/* ALEMANIA*/
+.alemania.colorteamtext, .alemania .colorteamtext{
+  color: white;
+}
+.alemania.colorteamlist, .alemania .colorteamlist{
+  color: black;
+  background: rgba(255,255,255,1);
+}
+li .teamRoundFlag.alemania{
+  background-image: url('images/roundFlags/alemania.png');
+}
+.teamLogo.alemania{
+  content:url("images/escudos/alemania.png");
+}
+
+
+
+/* ESTADOSUNIDOS*/
+.estadosunidos.colorteamtext, .estadosunidos .colorteamtext{
+  color: #1a2d43;
+}
+.estadosunidos.colorteamlist, .estadosunidos .colorteamlist{
+  color: white;
+  background: rgba(255,0,0,0.9);
+}
+li .teamRoundFlag.estadosunidos{
+  background-image: url('images/roundFlags/estadosunidos.png');
+}
+.teamLogo.estadosunidos{
+  content:url("images/escudos/estadosunidos.png");
+}
+
+
+
+/* GHANA*/
+.ghana.colorteamtext, .ghana .colorteamtext{
+  color: green;
+}
+.ghana.colorteamlist, .ghana .colorteamlist{
+  color: yellow;
+  background: rgba(255,0,0,0.7);
+}
+li .teamRoundFlag.ghana{
+  background-image: url('images/roundFlags/ghana.png');
+}
+.teamLogo.ghana{
+  content:url("images/escudos/ghana.png");
+}
+
+
+
+/* PORTUGAL*/
+.portugal.colorteamtext, .portugal .colorteamtext{
+  color: #00b300;
+}
+.portugal.colorteamlist, .portugal .colorteamlist{
+  color: #00b300;
+  background: rgba(255,0,0,0.7);
+}
+li .teamRoundFlag.portugal{
+  background-image: url('images/roundFlags/portugal.png');
+}
+.teamLogo.portugal{
+  content:url("images/escudos/portugal.png");
+}
+
+
+
+/* ARGELIA*/
+.argelia.colorteamtext, .argelia .colorteamtext{
+  color: #00b049;
+}
+.argelia.colorteamlist, .argelia .colorteamlist{
+  color: #00b049;
+  background: rgba(255,255,255,1);
+}
+li .teamRoundFlag.argelia{
+  background-image: url('images/roundFlags/argelia.png');
+}
+.teamLogo.argelia{
+  content:url("images/escudos/argelia.png");
+}
+
+
+
+/* BELGICA*/
+.belgica.colorteamtext, .belgica .colorteamtext{
+  color: black;
+}
+.belgica.colorteamlist, .belgica .colorteamlist{
+  color: #fff200;
+  background: rgba(238,20,46,0.7);
+}
+li .teamRoundFlag.belgica{
+  background-image: url('images/roundFlags/belgica.png');
+}
+.teamLogo.belgica{
+  content:url("images/escudos/belgica.png");
+}
+
+
+
+/* COREADELSUR*/
+.coreadelsur.colorteamtext, .coreadelsur .colorteamtext{
+  color: #1269cf;
+}
+.coreadelsur.colorteamlist, .coreadelsur .colorteamlist{
+  color: #1269cf;
+  background: rgba(255,0,0,0.5);
+}
+li .teamRoundFlag.coreadelsur{
+  background-image: url('images/roundFlags/coreadelsur.png');
+}
+.teamLogo.coreadelsur{
+  content:url("images/escudos/coreadelsur.png");
+}
+
+
+
+/* COREADELSUR*/
+.rusia.colorteamtext, .rusia .colorteamtext{
+  color: white;
+}
+.rusia.colorteamlist, .rusia .colorteamlist{
+  color: #1269cf;
+  background: rgba(255,255,255,0.9);
+}
+li .teamRoundFlag.rusia{
+  background-image: url('images/roundFlags/rusia.png');
+}
+.teamLogo.rusia{
+  content:url("images/escudos/rusia.png");
+}
+
+
+
+
+
+

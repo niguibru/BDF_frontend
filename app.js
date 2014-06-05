@@ -7,10 +7,14 @@ app.use(express.static(__dirname + '/front'));
 // Front
 var frontController = require('./controllers/frontRoute');
 app.get('/', frontController.index);
+// Tweeter Service
+var twitterServicesRoute = require('./controllers/twitterServicesRoute');
+app.get('/getTweets', twitterServicesRoute.getTweetsWeb);
 // Team Service
 var teamServicesRoute = require('./controllers/teamsServicesRoute');
 app.get('/teamsComplete', teamServicesRoute.teamsComplete);
 app.get('/teams', teamServicesRoute.teams);
+app.get('/teamsByNameId', teamServicesRoute.teamsByNameId);
 app.get('/teams_abrs', teamServicesRoute.teams_abrs);
 app.get('/teams_abrsComplete', teamServicesRoute.teams_abrsComplete);
 // Matches Service
@@ -30,99 +34,8 @@ var server = require('http').createServer(app).listen(port, function(){
 });
 // << START SERVER
 
-// SOCKET & TWITTER >>
-// Get Socket IO variable
-var io = require('socket.io').listen(server);
-// Get Twitter IO variable
-var Twit = require('twit')
-// Fill the Twitter Keys
-var T = new Twit({
-    consumer_key:         'cQTwqywDuhQsHrOjbWdiYGar2',
-    consumer_secret:      'JsxuV1lFB6HD6ksBbmyZPKGpWB90VfOwA42V8qNXv8b8JIdzcw',
-    access_token:         '2523990062-azO2SqkEPUz0FgO5AwZ14L7pwENZWqvcdBgKVJg',
-    access_token_secret:  'y7cW1M14jMK0gAgvaRaafrAx0nRaAkXj0295U2gLKGlGz'
-})
+// SOCKET.IO AND TWITTER >>
+var socketService = require('./controllers/socketService');
+socketService.start(server);
+// << SOCKET.IO AND TWITTER
 
-// Make stream watches
-var stream = T.stream('statuses/filter', { track: 'bochadefutbol' });
-var streamBdf = T.stream('user', { track : 'bochadefutbol' });
-
-  
-// Wait for connection
-var logModel = require('./models/logModel');
-io.set('log level', 1)
-io.sockets.on('connection', function (socket) {
-
-  logModel.insert({
-    'soId': socket.id, 
-    'datetime': nowInArgentina(), 
-    'page': 'CONNECT'
-  });
-
-  socket.on('disconnect', function(){
-    logModel.insert({
-      'soId': socket.id, 
-      'datetime': nowInArgentina(), 
-      'page': 'DISCONECT'
-    });
-  })
-  
-  socket.on('sendLog', function (data) {
-    //console.log(data);
-    logModel.insert({
-      'soId': socket.id, 
-      'datetime': nowInArgentina(),
-      'page': data.page
-    });
-  });
-  
-  // Reading in the last 5 tweets when bochadefutbol is mentioned
-  T.get('search/tweets', { q: 'bochadefutbol', count: 5 }, function(err, reply) {
-    if (err) {
-      console.dir(err);
-    } else {
-      for (var i = 0; i < reply.statuses.length; i++) {
-        var status = reply.statuses[i];
-        socket.emit('prevTwits', { 
-          tweet_id: status.id_str,
-          created_at: status.created_at,
-          name: status.user.screen_name, 
-          twt: status.text,
-          avatar: status.user.profile_image_url_https
-        });
-      }
-    }
-  })
-  
-  // Stream when bochadefutbol is mentioned
-  stream.on('tweet', function (tweet) {
-    //console.log(tweet.user.screen_name);
-    if ((tweet.user.screen_name != 'bochadefutbol') && (tweet.text.indexOf('@bochadefutbol') > -1)) {
-      socket.emit('newTwits', { 
-          tweet_id: tweet.id_str,
-          created_at: tweet.created_at,
-          name: tweet.user.screen_name, 
-          twt: tweet.text,
-          avatar: tweet.user.profile_image_url_https
-        });
-    }
-  })
-  // Stream when @bochadefutbol twit
-  streamBdf.on('tweet', function (tweet) {
-    //console.log(tweet.user.screen_name);
-    socket.emit('newTwits',  { 
-          tweet_id: tweet.id_str,
-          created_at: tweet.created_at,
-          name: tweet.user.screen_name, 
-          twt: tweet.text,
-          avatar: tweet.user.profile_image_url_https
-        });
-  })  
-});
-
-var moment = require('moment-timezone');
-function nowInArgentina() {
-  var format = 'YYYY/MM/DD HH:mm:ss ZZ';
-  return moment().tz("America/Argentina/Buenos_Aires").format();
-}
-// << SOCKET & TWITTER

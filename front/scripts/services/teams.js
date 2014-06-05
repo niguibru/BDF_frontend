@@ -7,6 +7,13 @@ angular.module('bochaDeFutbolApp')
         $http.get('/teams').success(function(data){
           callback(data);
         });
-      },       
+      },   
+      getByNameId: function(nameId, callback) {
+        $http.get('/teamsByNameId', {
+          params: { nameId: nameId }
+        }).success(function(data){
+          callback(data);
+        });
+      },        
     };
   });

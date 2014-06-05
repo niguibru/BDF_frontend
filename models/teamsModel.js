@@ -11,12 +11,32 @@ teams_scheema = new schema(
     'group': {
                 'letter': String, 
                 'groupNumber': String
-             }
+             },
+    'players': {
+                  'GK': [{
+                    'name': String
+                  }],
+                  'DE': [{
+                    'name': String
+                  }],
+                  'MI': [{
+                    'name': String
+                  }],
+                  'ST': [{
+                    name: String
+                  }]
+               }
   });
 teams = mongoose.model('teams', teams_scheema);
 
 exports.findAll = function(cb) {
-  teams.find({},function(err, results){
+  teams.find({}).sort('name').exec(function(err, results){
+    cb(results);
+  })
+};
+
+exports.findByNameId = function(nameId, cb) {
+  teams.findOne({nameId: nameId},function(err, results){
     cb(results);
   })
 };

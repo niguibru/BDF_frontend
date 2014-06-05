@@ -2,9 +2,9 @@
 
 angular
   .module('bochaDeFutbolApp', [
-//    'ngCookies',
-//    'ngResource',
-//    'ngSanitize',
+    'ngCookies',
+    'ngResource',
+    'ngSanitize',
     'ngRoute'
   ])
   .config(function ($routeProvider) {
