@@ -64,7 +64,7 @@ body {
   text-decoration: none;
 }
 .twitsContainer {
-  height: 400px;
+  height: 350px;
   overflow-y: scroll;
 }
 .twits {
