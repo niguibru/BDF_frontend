@@ -47,14 +47,14 @@
 
 .byPosition ul {
   padding-left: 19px;
-  font-size: 13px;
+  font-size: 14px;
 }
 
 .byPosition ul li {
   list-style-type: none;
   padding-bottom: 4px;
   border-radius: 7px;
-  padding: 3px;
+  padding: 4px;
   text-align: center;
   margin-bottom: 10px;
   opacity: 0.7;
@@ -80,6 +80,22 @@
 
 /*For mobile views>>*/
 @media only screen 
+and (min-device-width : 480px) 
+and (max-device-width : 992px) {
+
+  .twitsContainer.inTms {
+    height: 910px !important;
+  }
+  
+  
+  .byPosition ul {
+    padding-left: 0px;
+    font-size: 17px;
+  }
+  
+}
+
+@media only screen 
 and (min-device-width : 320px) 
 and (max-device-width : 480px) {
 
@@ -93,6 +109,10 @@ and (max-device-width : 480px) {
     text-align: center;
   }
 
+  .byPosition ul {
+    padding-left: 0px;
+    font-size: 17px;
+  }
 }
 /*<<For mobile views*/
 
