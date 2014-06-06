@@ -1,13 +1,13 @@
 'use strict';
 
 angular.module('bochaDeFutbolApp')
-  .controller('GroupsCtrl', function ($scope, $location, teams) {
+  .controller('TeamsCtrl', function ($scope, $rootScope, $location, teams) {
 
-    getAllTeams();
+    if ($rootScope.teamsData.length == 0) getAllTeams();
 
     function getAllTeams () {
       teams.get(function(data){
-        $scope.teamsData = data;
+        $rootScope.teamsData = data;
       })
     }
     

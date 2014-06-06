@@ -1,9 +1,9 @@
 'use strict';
 
 angular.module('bochaDeFutbolApp')
-  .directive('grpTeamsbygroup', function () {
+  .directive('tmsTeamsbygroup', function () {
     return {
-      templateUrl: 'views/templates/grp-teamsbygroup.html',
+      templateUrl: 'views/templates/tms-teamsbygroup.html',
       scope: true, 
       link: {
         pre: function preLink(scope, iElement, iAttrs, controller) { 

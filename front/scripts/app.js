@@ -16,7 +16,7 @@ angular
       })
       .when('/teamsbygroup', {
         templateUrl: 'views/teams/teamsbygroup.html',
-        controller: 'GroupsCtrl'
+        controller: 'TeamsCtrl'
       })
       .when('/teamdetails/:nameid', {
         templateUrl: 'views/teams/teamdetails.html',
@@ -28,7 +28,7 @@ angular
       })
       .when('/matcheschampionship', {
         templateUrl: 'views/matches/matcheschampionship.html',
-        controller: 'GroupsCtrl'
+        controller: 'TeamsCtrl'
       })
       .when('/matchesbydate', {
         templateUrl: 'views/matches/matchesbydate.html',
@@ -40,4 +40,6 @@ angular
   })
   .run(function ($rootScope) {
     $rootScope.twts = [];
+    $rootScope.teamsData = [];
+    $rootScope.allMatches = [];
   });
