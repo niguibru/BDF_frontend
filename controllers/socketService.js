@@ -10,17 +10,6 @@ exports.start = function(server) {
   //io.set('log level', 1)
   io.sockets.on('connection', function (socket) {
 
-    // TO LOG USER ACTIVITY >>
-    logModel.insert({
-      'soId': socket.id, 
-      'datetime': nowInArgentina(), 
-      'page': 'CONNECT'
-    });
-    socket.on('disconnect', function(){
-      console.log('disconected')
-    })
-    //<< TO LOG USER ACTIVITY
-    
     // @bochadefutbol TWITS >>
     // get the last 5 tweets when bochadefutbol is mentioned
     twitter.getTweets('bochadefutbol', 5, function(reply) {
@@ -60,12 +49,5 @@ exports.start = function(server) {
     // << @bochadefutbol TWITS 
     
   });
-
-  // Get current time at Argentina
-  var moment = require('moment-timezone');
-  function nowInArgentina() {
-    var format = 'YYYY/MM/DD HH:mm:ss ZZ';
-    return moment().tz("America/Argentina/Buenos_Aires").format();
-  }
   
 }

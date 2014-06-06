@@ -12,14 +12,15 @@ var group = '&group=all';
 var groupLetters = ['all','A','B','C','D','E','F','G','H'];
 var rounds = 3;
 
+// public var
 exports.getGroupLetters = function() {
   return groupLetters;
 }
-
 exports.getRounds = function() {
   return rounds;
 }
 
+// To lowercase and not rare 
 var normalize = (function() {
   var from = "ÃÀÁÄÂÈÉËÊÌÍÏÎÒÓÖÔÙÚÜÛãàáäâèéëêìíïîòóöôùúüûÑñÇç",
       to   = "AAAAAEEEEIIIIOOOOUUUUaaaaaeeeeiiiioooouuuunncc",
@@ -40,6 +41,13 @@ var normalize = (function() {
       return ret.join( '' );
   }
  
+})();
+
+// Get current time at Argentina
+var moment = require('moment-timezone');
+exports.nowInArgentina = (function () {
+  var format = 'YYYY/MM/DD HH:mm:ss ZZ';
+  return moment().tz("America/Argentina/Buenos_Aires").format();
 })();
 
 // TEAMS

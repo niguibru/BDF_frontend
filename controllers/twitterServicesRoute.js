@@ -1,5 +1,6 @@
 // Get Twitter IO variable
 var Twit = require('twit')
+
 // Fill the Twitter Keys
 var T = new Twit({
     consumer_key:         'cQTwqywDuhQsHrOjbWdiYGar2',
