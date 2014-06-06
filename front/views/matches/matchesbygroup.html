@@ -1,8 +1,4 @@
-<!-- Styles-->
-<link rel="stylesheet" href="styles/teams.css">
-<link rel="stylesheet" href="styles/matches.css">
-<link rel="stylesheet" href="styles/teamsEnsigns.css">
-<!--/ Styles-->
+
 
 <!-- Nav list by-->
 <div data-mtc-navlistby data-active="group"></div>
@@ -43,4 +39,8 @@
   $('.navbar-right li').removeClass('active');
   $('#matchesButton').addClass('active');
   setTimeout( "$('#matchesButton').addClass('active');", 200);
+  
+  $('.nav.mtcListBy li').removeClass('active');
+  $('#group').addClass('active');
+  setTimeout( "$('#group').addClass('active');", 200);
 </script>

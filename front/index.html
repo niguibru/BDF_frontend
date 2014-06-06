@@ -10,15 +10,37 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="viewport" content="width=device-width">
     <link rel="shortcut icon" href="styles/images/logos/BdF_BrowserIcon.png">
+
     <!-- build:css styles/vendor.css -->
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
     <link rel="stylesheet" href="vendors/font-awesome/css/font-awesome.min.css" />
+     <!-- endbuild -->
     
+    <!-- My Fonts -->
     <link href='http://fonts.googleapis.com/css?family=Indie+Flower' rel='stylesheet' type='text/css'>
-
+    <!--/ My Fonts-->
+    
+    <!-- My Styles -->
     <link rel="stylesheet" href="styles/main.css">
-    <!-- endbuild -->
-
+    <link rel="stylesheet" href="../../vendors/nibCalendar/nibCalendar.css">
+    <link rel="stylesheet" href="styles/teams.css">
+    <link rel="stylesheet" href="styles/teamDetails.css">
+    <link rel="stylesheet" href="styles/matches.css">
+    <link rel="stylesheet" href="styles/teamsEnsigns.css">
+    <!--/ My Styles-->
+  
+    <!-- My Effects -->
+    <style>
+      .ng-enter{
+        transition: 0.75s;
+        opacity: 0;
+      }
+      .ng-enter-active{
+        opacity: 1;
+      }
+    </style>
+    <!--/ My Effects -->
+    
   </head>
   <body ng-app="bochaDeFutbolApp">
     <!--[if lt IE 7]>
@@ -30,7 +52,7 @@
     <!-- /Header -->
 
     <!-- Add your site or application content here -->
-    <div class="container" ng-view=""></div>
+    <div class="page1 container" ng-view=""></div>
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
      <script>
@@ -67,19 +89,19 @@
 
     <!-- build:js({.tmp,app}) scripts/scripts.js -->    
     <script src="scripts/app.js"></script>
-        <script src="scripts/services/tweets.js"></script>
-    <script src="scripts/services/socket.js"></script>
-    <script src="scripts/controllers/main.js"></script>
+    <script src="scripts/services/tweets.js" defer></script>
+    <script src="scripts/services/socket.js" defer></script>
+    <script src="scripts/controllers/main.js" defer></script>
     
     <script src="scripts/directives/theheader.js"></script>
     
     <script src="scripts/controllers/groups.js"></script>
     <script src="scripts/controllers/teamdetails.js"></script>
-    <script src="scripts/services/teams.js"></script>
+    <script src="scripts/services/teams.js" defer></script>
     <script src="scripts/directives/grpteamsbygroup.js"></script>
     
     <script src="scripts/controllers/matches.js"></script>
-    <script src="scripts/services/matches.js"></script>
+    <script src="scripts/services/matches.js" defer></script>
     <script src="scripts/directives/mtcnavlistby.js"></script>
     <script src="scripts/directives/mtclistbygroup.js"></script>
     <script src="scripts/directives/mtcchampionship.js"></script>
