@@ -37,6 +37,18 @@ body {
 }
 /*<<Nav Menu>>*/
 
+/*Ayer, hoy y mañana>>*/
+  .homeDayMatches {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+  .homeDayMatches .groupTeams li .teamRoundFlag.right {
+    right: 39px;
+    margin-top: -20px;
+  }
+
+/*<<Ayer, hoy y mañana*/
+
 /*Titles>>*/
 .sectionTitle {
   text-align: center;
@@ -57,6 +69,34 @@ body {
   border-radius: 10px;
 }
 /*<<Container style>>*/
+
+/*Social icons Header>>*/
+.shareSocial a {
+  width: 31px;
+  height: 31px;
+  float: left;
+  margin-right: 5px;
+  margin-top: 10px;
+  margin-left: 7px;
+  margin-bottom: 9px;
+  border-radius: 30px;
+  background: url(../../styles/images/social/social-sprite2.png) no-repeat;
+  opacity: 0.8;
+}
+
+.shareSocial a.fb {
+  background-position: -36px -71px;
+}
+.shareSocial a.fb:hover {
+  background-position: -36px -37px;
+}
+.shareSocial a.tw {
+  background-position: -2px -72px;
+}
+.shareSocial a.tw:hover {
+  background-position: -2px -37px;
+}
+/*<<Social icons Header>>*/
 
 /*Twits>>*/
 .twitsContainer a, .twitter a {
@@ -99,6 +139,15 @@ body {
   margin-left: 15px;
 }
 /*<<Twits*/
+
+/*Facebook>>*/
+.fbLikes {
+  background: rgba(255,255,255,0.2);
+  padding: 10px;
+  border-radius: 8px;
+  padding-bottom: 4px;
+}
+/*<<Facebook*/
 
 /*Nota>>*/
 .nota {
@@ -165,6 +214,11 @@ and (max-device-width : 480px) {
     font-size: 12px;
   }
   /*<<Top Navbar Menu*/
+  
+  .homeDayMatches {
+    padding-left: 35px;
+    padding-right: 35px;
+  }   
 }
 /*<<For mobile views*/
 

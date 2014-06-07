@@ -3,7 +3,7 @@
 angular.module('bochaDeFutbolApp')
   .directive('mtcListbydate', function () {
     return {
-      templateUrl: 'views/templates/mtc-listbydate.html',
+      templateUrl: 'views/templates/matches/mtc-listbydate.html',
       scope: true,
       link: {
         pre: function preLink(scope, iElement, iAttrs, controller) { 
