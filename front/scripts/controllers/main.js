@@ -5,8 +5,14 @@ angular.module('bochaDeFutbolApp')
     $scope.pageClass = 'page-home';
     
 //    socket.disconnect():
-    var socket = io.connect('http://10.0.1.5:3000');
-//    var socket = io.connect('http://www.bochadefutbol.com.ar/');
+//    var socket = io.connect('http://10.0.1.5:3000');
+    var socket = io.connect('http://www.bochadefutbol.com.ar/');
+    
+//    $scope.insta = [];
+//    instagram.getExample('fifa2014', function(instaData){
+//      $scope.insta = instaData;
+//    });
+//    
     
     socket.on('newTwits', function (data) {
       $rootScope.twts.unshift(data);

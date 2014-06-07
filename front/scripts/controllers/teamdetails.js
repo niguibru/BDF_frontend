@@ -27,4 +27,5 @@ angular.module('bochaDeFutbolApp')
     tweets.getTweets('"bdf_'+$routeParams.nameid + '"', 5, function(twtsData){
       $scope.teamTwts = twtsData;
     });
+    
   });

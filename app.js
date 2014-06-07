@@ -10,6 +10,9 @@ app.get('/', frontController.index);
 // Tweeter Service
 var twitterServicesRoute = require('./controllers/twitterServicesRoute');
 app.get('/getTweets', twitterServicesRoute.getTweetsWeb);
+// Instagram Service
+var instagramServicesRoute = require('./controllers/instagramServiceRoute');
+app.get('/getExample', instagramServicesRoute.getExample);
 // Team Service
 var teamServicesRoute = require('./controllers/teamsServicesRoute');
 app.get('/teamsComplete', teamServicesRoute.teamsComplete);
@@ -38,4 +41,13 @@ var server = require('http').createServer(app).listen(port, function(){
 var socketService = require('./controllers/socketService');
 socketService.start(server);
 // << SOCKET.IO AND TWITTER
+
+
+
+
+
+
+
+
+
 

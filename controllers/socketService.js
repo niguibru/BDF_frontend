@@ -7,7 +7,7 @@ exports.start = function(server) {
   var io = require('socket.io').listen(server);
 
   // Wait for connection
-  //io.set('log level', 1)
+  io.set('log level', 1)
   io.sockets.on('connection', function (socket) {
 
     // @bochadefutbol TWITS >>
