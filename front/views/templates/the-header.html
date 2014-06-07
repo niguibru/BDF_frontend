@@ -20,7 +20,64 @@
         </span>
       </a>
     </div>
+  
+<style>
+  .shareSocial a {
+    width: 31px;
+    height: 31px;
+    float: left;
+    margin-right: 5px;
+    margin-top: 10px;
+    margin-left: 7px;
+    margin-bottom: 9px;
+    border-radius: 30px;
+    background: url(../../styles/images/social/social-sprite2.png) no-repeat;
+  }
+  
+  .shareSocial a.fb {
+    background-position: -36px -71px;
+  }
+  .shareSocial a.fb:hover {
+    background-position: -36px -37px;
+  }
+  .shareSocial a.tw {
+    background-position: -2px -72px;
+  }
+  .shareSocial a.tw:hover {
+    background-position: -2px -37px;
+  }
 
+/*
+  For mobile views>>
+  @media only screen 
+  and (min-device-width : 480px) 
+  and (max-device-width : 992px) {
+
+    .shareSocial.mobile {
+      margin-left: auto;
+      margin-right: auto;
+      height: 53px;
+      margin-top: -19px;
+      width: 150px;
+    }
+    .shareSocial.mobile a {
+      margin-left: 26px;
+      margin-right: 10px;
+    }
+
+  }
+*/
+  
+</style>
+<!--
+  <form class="navbar-left socialNet" role="search">
+    <div class="shareSocial">
+      <a class="fb" href="https://twitter.com/bochadefutbol" target="_blank"></a>
+      <a class="tw" href="https://www.facebook.com/bochadefutbol?ref=hl" target="_blank"></a>
+    </div>
+  </form>
+-->
+    
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav navbar-right">
         <li id="mainButton">    <a ng-href="#/main">Inicio</a></li>
@@ -28,7 +85,16 @@
         <li id="matchesButton"> <a ng-href="#/matchesbygroup">Fixture</a></li>
 <!--        <li id="groupsButton">  <a ng-href="#/groups">Canchas</a></li>-->
       </ul>
+      <div class="shareSocial mobile">
+  <a class="fb" href="https://twitter.com/bochadefutbol" target="_blank"></a>
+  <a class="tw" href="https://www.facebook.com/bochadefutbol?ref=hl" target="_blank"></a>
+</div>
     </div>
   </div>
 </nav>
+
+  
+
+
+
 
