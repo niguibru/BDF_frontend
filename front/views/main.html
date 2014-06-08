@@ -1,27 +1,6 @@
 
-<div class="pcOnly" style="width: 100%;
-            background: url('-http://3.bp.blogspot.com/-9g6gKyhREp4/Uo4IVNEOM0I/AAAAAAAAGJA/NvPt47xInAs/s1600/BRASIL+2014.png');
-            border-radius: 9px;
-            background-size: 100% 100px;
-            margin-top: 10px;">
-  <div id="DateCountdown_dh" data-date="2014-06-12 17:00:00" 
-       style="width: 300px; 
-              height: 75px; 
-              padding: 0px;
-              margin-left: auto;
-              margin-right: auto;
-              color: blanchedalmond;">
-  </div>
-</div>
 
-<div id="DateCountdown_dhMobile" class="mobileOnly" data-date="2014-06-12 17:00:00" 
-     style="width: 270px; 
-            height: 67px; 
-            padding: 0px;
-            margin-left: auto;
-            margin-right: auto;
-            color: blanchedalmond;">
-</div>
+<div data-hm-clock></div>
 
 <!--
 <div class="row">
@@ -40,139 +19,27 @@
 </div>
 -->
 
+
 <div class="row" style="padding-bottom: 22px;">
   <div class="col-sm-6 col-md-8">
     <h3 class="sectionTitle"> Notas </h3>
     <hr style="opacity: 0.8;margin-top: 22px;">
-    <div class="row">
-      <div class="col-md-6">
-        <div class="nota"> 
-          <img src="http://bucket1.clanacion.com.ar/anexos/fotos/89/eliminatorias-1766289w620.jpg" />
-          <div class="title"> La selección </div>
-          <div class="pre"> 
-            <p> Enterate de las últimas noticias de la Seleccion Argentina. -Proximamente- </p>
-          </div>
-        </div>
-      </div>    
-      <div class="col-md-6">
-          <div class="nota"> 
-          <img src="http://www.ole.com.ar/fuera-de-juego/Estadios-Mundial-Maracana_OLEIMA20130909_0151_24.jpg" />
-          <div class="title"> Estadios </div>
-          <div class="pre"> 
-            <p> Mira los estadios en donde se jugará la copa del mundo. -Proximamente- </p>
-          </div>
-        </div>
-      </div>
-    </div>
+    <div data-hm-news></div>
+<!--    Facebook like>>-->
     <div class="row" style="padding-left: 45px;padding-right: 45px;">
       <div class="col-md-12 fbLikes">
         <iframe src="http://www.facebook.com/plugins/like.php?href=https://www.facebook.com/bochadefutbol&amp;layout=standard&amp;show_faces=true&amp;width=450&amp;action=like&amp;font&amp;colorscheme=light&amp;height=80" 
               scrolling="no" frameborder="0" style="border:none; overflow:hidden;height: 58px;width: 100%;" 
               allowTransparency="true" id="theiframe"></iframe>
       </div>
+<!--<<Facebook like-->
     </div>
   </div>
   <div class="col-sm-6 col-md-4">
-    <h3 class="sectionTitle twitter"> 
-      <i class="fa fa-twitter"></i> 
-      <a href="https://twitter.com/intent/user?screen_name=bochadefutbol" target="_blank">
-        @bochadefutbol
-      </a>
-    </h3>
-    <hr style="opacity: 0.8; width: 90%;">
-    <div class="twitsContainer">
-      <div ng-repeat="twt in twts" class="twits"> 
-        <div class="row twtRow">
-          <div class="col-xs-2">
-            <img src="{{twt.avatar}}" />
-          </div>
-          <div class="col-xs-10 twtText">
-            <p class="twittero">
-              <a href="https://twitter.com/intent/user?screen_name={{twt.name}}" target="_blank">
-                @{{twt.name}}
-              </a>
-            </p>
-<!--            {{twt.created_at}}-->
-            <p class="twitMsg">{{twt.twt}}</p>
-          </div>
-        </div>
-        <div class="col-12 actionBtns">
-          <script type="text/javascript" src="//platform.twitter.com/widgets.js"></script>
-          <a href="https://twitter.com/intent/tweet?in_reply_to={{twt.tweet_id}}"><i class="fa fa-reply"></i></a>
-          <a href="https://twitter.com/intent/retweet?tweet_id={{twt.tweet_id}}"><i class="fa fa-retweet"></i></a>
-          <a href="https://twitter.com/intent/favorite?tweet_id={{twt.tweet_id}}"><i class="fa fa-star"></i></a>
-        </div>
-        <hr style="opacity: 0.3;width: 50%;">
-      </div>
-    </div>
+    <div data-hm-twitter></div>
   </div>
 </div>
 
-
-<script src="vendors/timeCircles/timeCircles.js"></script>
-
-<script type="text/javascript">
-  $("#DateCountdown_dh").TimeCircles({
-    "animation": "smooth",
-    "bg_width": 0.3,
-    "fg_width": 0.06,
-    "circle_bg_color": "#90989F",
-    "time": {
-        "Days": {
-            "text": "Days",
-            "color": "#ea4e49",
-            "show": true
-        },
-        "Hours": {
-            "text": "Hours",
-            "color": "#3695c6",
-            "show": true
-        },
-        "Minutes": {
-            "text": "Minutes",
-            "color": "#d28d04",
-            "show": true
-        },
-        "Seconds": {
-            "text": "Seconds",
-            "color": "#2c8a21",
-            "show": true
-        }
-    }
-  });
-  $("#DateCountdown_dhMobile").TimeCircles({
-    "animation": "smooth",
-    "bg_width": 0.3,
-    "fg_width": 0.06,
-    "circle_bg_color": "#90989F",
-    "time": {
-        "Days": {
-            "text": "Days",
-            "color": "#ea4e49",
-            "show": true
-        },
-        "Hours": {
-            "text": "Hours",
-            "color": "#3695c6",
-            "show": true
-        },
-        "Minutes": {
-            "text": "Minutes",
-            "color": "#d28d04",
-            "show": true
-        },
-        "Seconds": {
-            "text": "Seconds",
-            "color": "#2c8a21",
-            "show": true
-        }
-    }
-  });
-  $('.textDiv_Days h4').html('D');
-  $('.textDiv_Hours h4').html('H');
-  $('.textDiv_Minutes h4').html('M');
-  $('.textDiv_Seconds h4').html('S');
-</script>
 <script>
   $('.navbar-right li').removeClass('active');
   $('#mainButton').addClass('active');

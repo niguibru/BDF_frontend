@@ -1,9 +1,9 @@
 'use strict';
 
 angular.module('bochaDeFutbolApp')
-  .directive('hmNews', function () {
+  .directive('hmClock', function () {
     return {
-      templateUrl: 'views/templates/home/hm-news.html',
+      templateUrl: 'views/templates/home/hm-clock.html',
       scope: true, 
       link: {
         pre: function preLink(scope, iElement, iAttrs, controller) { 
