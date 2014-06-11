@@ -45,7 +45,7 @@ angular
     $rootScope.allMatches = [];
     $rootScope.alerts = [];
     $rootScope.alertsIndex = 0;
-    $('alertsMsg').removeClass(hidden);
+    $('alertsMsg').removeClass('hidden');
     
     if ($rootScope.allMatches.length == 0) getAllMatches();
     function getAllMatches() {
