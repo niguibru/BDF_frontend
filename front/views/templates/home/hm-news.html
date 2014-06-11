@@ -1,20 +1,36 @@
 <div class="row">
   <div class="col-md-6">
-    <div class="nota"> 
-      <img src="http://bucket1.clanacion.com.ar/anexos/fotos/89/eliminatorias-1766289w620.jpg" />
+    <div class="nota seleccion"> 
+      <img src="../styles/images/news/seleccion.jpg" />
       <div class="title"> La selección </div>
       <div class="pre"> 
-        <p> Enterate de las últimas noticias de la Seleccion Argentina. -Proximamente- </p>
+        <p> Mira el plantel y twitea por tu jugador favorito </p>
       </div>
+      <script>
+        $('.nota.seleccion img').click(function(){
+           window.location = '#/teamdetails/argentina';
+        })
+        $('.nota.seleccion .title').click(function(){
+           window.location = '#/teamdetails/argentina';
+        })
+      </script>
     </div>
   </div>    
   <div class="col-md-6">
-      <div class="nota"> 
-      <img src="http://www.ole.com.ar/fuera-de-juego/Estadios-Mundial-Maracana_OLEIMA20130909_0151_24.jpg" />
+    <div class="nota stadiums"> 
+      <img src="../styles/images/news/arenaDaAmazonia.jpg" />
       <div class="title"> Estadios </div>
       <div class="pre"> 
-        <p> Mira los estadios en donde se jugará la copa del mundo. -Proximamente- </p>
+        <p> Ya podés ver los estadios con Street View </p>
       </div>
+      <script>
+        $('.nota.stadiums img').click(function(){
+           window.location = '#/stadiums';
+        })
+        $('.nota.stadiums .title').click(function(){
+           window.location = '#/stadiums';
+        })
+      </script>
     </div>
   </div>
 </div>

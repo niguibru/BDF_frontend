@@ -1,0 +1,154 @@
+
+<style>
+  
+.panel-group {
+  margin-top: 19px;
+}
+  
+.panel-group .panel {
+  background: rgba(255,255,255,0.3);
+  border-color: gray;
+}
+  
+.panel-default > .panel-heading {
+  background: rgba(1,1,1,0.1);
+  color: white;
+}
+.verGmaps{
+  color: white;
+  font-size: 11px;
+}  
+</style>
+
+<accordion close-others="true">
+  <accordion-group onclick="loadStadium('Maracana')" id="Maracana" 
+                   heading="Maracanã" is-open="status.isFirstOpen">
+  </accordion-group>
+  <accordion-group onclick="loadStadium('SanPablo')" id="SanPablo" 
+                   heading="San Pablo">
+  </accordion-group>
+  <accordion-group onclick="loadStadium('Mineirao')" id="Mineirao" 
+                   heading="Mineirão">
+  </accordion-group>
+  <accordion-group onclick="loadStadium('BeiraRio')" id="BeiraRio" 
+                   heading="Beira-Rio">
+  </accordion-group>
+  <accordion-group onclick="loadStadium('ArenaDaBaixada')" id="ArenaDaBaixada" 
+                   heading="Arena da Baixada">
+  </accordion-group>
+  <accordion-group onclick="loadStadium('ArenaDaAmazonia')" id="ArenaDaAmazonia" 
+                   heading="Arena da Amazônia">
+  </accordion-group>
+  <accordion-group onclick="loadStadium('EstadioDasDunas')" id="EstadioDasDunas" 
+                   heading="Estadio das Dunas">
+  </accordion-group>
+  <accordion-group onclick="loadStadium('ArenaFonteNova')" id="ArenaFonteNova" 
+                   heading="Arena Fonte Nova">
+  </accordion-group>
+  <accordion-group onclick="loadStadium('EstadioNacionalDeBrasília')" id="EstadioNacionalDeBrasília" 
+                   heading="Estadio Nacional de Brasília">
+  </accordion-group>
+  <accordion-group onclick="loadStadium('ArenaCastelao')" id="ArenaCastelao" 
+                   heading="Arena Castelão">
+  </accordion-group>
+  <accordion-group onclick="loadStadium('ArenaPantanal')" id="ArenaPantanal" 
+                   heading="Arena Pantanal">
+  </accordion-group>
+  <accordion-group onclick="loadStadium('ArenaPernambuco')" id="ArenaPernambuco" 
+                   heading="Arena Pernambuco">
+  </accordion-group>
+</accordion>
+
+<script>
+  
+  function loadStadium(stadium){
+    var stadiumJq = $('#'+stadium +' .panel-body');
+    stadiumJq.html(getStadiumContent(stadium));
+  }
+  
+  function getStadiumContent(stadium){
+    var content = "";
+    switch(stadium) {
+      case 'Maracana':
+        content = "<iframe width='100%' height='350' frameborder='0' scrolling='no' marginheight='0' marginwidth='0' src='https://maps.google.com/maps/ms?ie=UTF8&amp;t=m&amp;oe=UTF8&amp;msa=0&amp;msid=214546548725716990538.0004c400438427a9fd3aa&amp;ll=-22.912073,-43.230171&amp;spn=0,0&amp;iwloc=0004c400484813840d049&amp;layer=c&amp;cbll=-22.912075,-43.230193&amp;panoid=P6S3-AOxSMBHUBioud7jPQ&amp;cbp=12,55.27,,0,21.01&amp;source=embed&amp;output=svembed'> </iframe> \
+                  <a class='verGmaps' target='_blank' href='https://www.google.com/maps/views/view/streetview/brazils-world-cup-stadiums/estadio-do-maracana-estadio-mario-filho/FswHxum2YNghwNhyqpFgSQ?gl=us&heading=31&pitch=94&fovy=75'> \
+                    Ver en google maps \
+                  </a>";
+        break;
+      case 'SanPablo':
+        content = "<iframe width='100%' height='350' frameborder='0' scrolling='no' marginheight='0' marginwidth='0' src='https://maps.google.com/maps?f=q&amp;source=embed&amp;hl=es&amp;geocode=&amp;q=Arena+de+S%C3%A3o+Paulo+&amp;aq=&amp;sll=37.837445,-122.285385&amp;sspn=0.318861,0.611801&amp;ie=UTF8&amp;hq=&amp;hnear=&amp;ll=-23.545292,-46.47423&amp;spn=0.006295,0.006295&amp;t=m&amp;layer=c&amp;cbll=-23.545302,-46.474225&amp;panoid=HktpT5DBlsU1ODSpwynpKA&amp;cbp=12,245.07,,0,8.48&amp;output=svembed'></iframe> \
+                  <a class='verGmaps' target='_blank' href='https://www.google.com/maps/views/view/streetview/brazils-world-cup-stadiums/arena-de-sao-paulo-arena-corinthians/JUyCJZzn1kQ6iX9ClR4HYg?gl=us&heading=179&pitch=77&fovy=75'> \
+                    Ver en google maps \
+                  </a>";
+        break;
+      case 'Mineirao':
+        content = "<iframe width='100%' height='350' frameborder='0' scrolling='no' marginheight='0' marginwidth='0' src='https://maps.google.com/maps?f=q&amp;source=embed&amp;hl=es&amp;geocode=&amp;q=Mineir%C3%A3o+(Estadio+Governador+Magalh%C3%A3es+Pinto)&amp;aq=&amp;sll=-23.545301,-46.474225&amp;sspn=0.001456,0.00239&amp;ie=UTF8&amp;hq=&amp;hnear=&amp;ll=-19.865867,-43.971132&amp;spn=0.006295,0.006295&amp;t=m&amp;layer=c&amp;cbll=-19.86603,-43.971015&amp;panoid=pHpgcD98Qw4TZfPBOFfzjA&amp;cbp=12,340.26,,0,-0.33&amp;output=svembed'></iframe> \
+                  <a class='verGmaps' target='_blank' href='https://www.google.com/maps/views/view/streetview/brazils-world-cup-stadiums/mineirao-estadio-governador-magalhaes-pinto/9vkFTnPolhv260scyKotjg?gl=us&heading=10&pitch=95&fovy=75'> \
+                    Ver en google maps \
+                  </a>";
+        break;
+      case 'BeiraRio':
+        content = "<iframe width='100%' height='350' frameborder='0' scrolling='no' marginheight='0' marginwidth='0' src='https://maps.google.com/maps?f=q&amp;source=embed&amp;hl=es&amp;geocode=&amp;q=Beira-Rio+(Estadio+Jos%C3%A9+Pinheiro+Borda)&amp;aq=&amp;sll=-19.86603,-43.971015&amp;sspn=0.011947,0.019119&amp;ie=UTF8&amp;hq=&amp;hnear=&amp;ll=-30.065384,-51.235822&amp;spn=0.006295,0.006295&amp;t=m&amp;layer=c&amp;cbll=-30.065507,-51.235744&amp;panoid=Q_dx4VFytRbEi81bXHImjA&amp;cbp=12,342.46,,0,0&amp;output=svembed'></iframe> \
+                   <a class='verGmaps' target='_blank' href='https://www.google.com/maps/views/view/streetview/brazils-world-cup-stadiums/beira-rio-estadio-jose-pinheiro-borda/01QWhry6pHR7WnAutlWWAA?gl=us&heading=38&pitch=98&fovy=75'> \
+                     Ver en google maps \
+                   </a>";
+        break;
+      case 'ArenaDaBaixada':
+        content = "<iframe width='100%' height='350' frameborder='0' scrolling='no' marginheight='0' marginwidth='0' src='https://maps.google.com/maps?f=q&amp;source=embed&amp;hl=es&amp;geocode=&amp;q=Arena+da+Baixada+(Estadio+Joaquim+Am%C3%A9rico+Guimar%C3%A3es)&amp;aq=&amp;sll=-30.06551,-51.23575&amp;sspn=0.010994,0.019119&amp;ie=UTF8&amp;hq=&amp;hnear=&amp;ll=-25.448212,-49.276987&amp;spn=0.006295,0.006295&amp;t=m&amp;layer=c&amp;cbll=-25.448179,-49.277018&amp;panoid=NeKUmtZOvAKevfxhxm7DLA&amp;cbp=12,247,,0,-2.12&amp;output=svembed'></iframe> \
+                   <a class='verGmaps' target='_blank' href='https://www.google.com/maps/views/view/streetview/brazils-world-cup-stadiums/arena-da-baixada-estadio-joaquim-americo-guimaraes/PI4YVE-_fEkwYYvc_LOe2A?gl=us&heading=54&pitch=95&fovy=75'> \
+                     Ver en google maps \
+                   </a>";
+        break;
+      case 'ArenaDaAmazonia':
+        content = "<iframe width='100%' height='350' frameborder='0' scrolling='no' marginheight='0' marginwidth='0' src='https://maps.google.com/maps?f=q&amp;source=embed&amp;hl=es&amp;geocode=&amp;q=Arena+da+Amaz%C3%B4nia+(antiguo+Estadio+Vivaldo+Lima)&amp;aq=&amp;sll=-25.448179,-49.277018&amp;sspn=0.011877,0.021136&amp;ie=UTF8&amp;hq=&amp;hnear=&amp;ll=-3.083142,-60.028108&amp;spn=0.006295,0.006295&amp;t=m&amp;layer=c&amp;cbll=-3.083222,-60.028135&amp;panoid=9riOfgN9XbzOn_dZoaa7wQ&amp;cbp=12,92.81,,0,0&amp;output=svembed'></iframe> \
+                   <a class='verGmaps' target='_blank' href='https://www.google.com/maps/views/view/streetview/brazils-world-cup-stadiums/arena-da-amazonia-former-estadio-vivaldo-lima/A3vGJ0tlc9soBc261Sj5oA?gl=us&heading=347&pitch=89&fovy=75'> \
+                     Ver en google maps \
+                   </a>";
+        break;
+      case 'EstadioDasDunas':
+        content = "<iframe width='100%' height='350' frameborder='0' scrolling='no' marginheight='0' marginwidth='0' src='https://maps.google.com/maps?f=q&amp;source=embed&amp;hl=es&amp;geocode=&amp;q=Estadio+das+Dunas+(Estadio+Jo%C3%A3o+Cl%C3%A1udio+de+Vasconcelos+Machado)&amp;aq=&amp;sll=-3.083222,-60.028135&amp;sspn=0.006567,0.010568&amp;ie=UTF8&amp;hq=&amp;hnear=&amp;ll=-5.826827,-35.21243&amp;spn=0.006295,0.006295&amp;t=m&amp;layer=c&amp;cbll=-5.826887,-35.212452&amp;panoid=p7aMuoom8ghAlo9COyWKIg&amp;cbp=12,92.64,,0,0&amp;output=svembed'></iframe> \
+                   <a class='verGmaps' target='_blank' href='https://www.google.com/maps/views/view/streetview/brazils-world-cup-stadiums/estadio-das-dunas-estadio-joao-claudio-de-vasconcelos-machado/pugiHn_p1Ko9iGiKoS_GoA?gl=us&heading=209&pitch=84&fovy=75'> \
+                     Ver en google maps \
+                   </a>";
+        break;
+      case 'ArenaFonteNova':
+        content = "<iframe width='100%' height='350' frameborder='0' scrolling='no' marginheight='0' marginwidth='0' src='https://maps.google.com/maps?f=q&amp;source=embed&amp;hl=es&amp;geocode=&amp;q=Arena+Fonte+Nova&amp;aq=&amp;sll=-5.826887,-35.212452&amp;sspn=0.006543,0.010568&amp;ie=UTF8&amp;hq=&amp;hnear=&amp;ll=-12.978834,-38.504339&amp;spn=0.006295,0.006295&amp;t=m&amp;layer=c&amp;cbll=-12.978803,-38.50459&amp;panoid=tVWIT06XMV-_dys_ihUEqA&amp;cbp=12,95.5,,0,0.04&amp;output=svembed'></iframe> \
+                   <a class='verGmaps' target='_blank' href='https://www.google.com/maps/views/view/streetview/brazils-world-cup-stadiums/arena-fonte-nova/0JZ-kFHc-NA5BX496U2FcQ?gl=us&heading=61&pitch=87&fovy=75'> \
+                      Ver en google maps \
+                   </a>";
+        break;
+      case 'EstadioNacionalDeBrasília':
+        content = "<iframe width='100%' height='350' frameborder='0' scrolling='no' marginheight='0' marginwidth='0' src='https://maps.google.com/maps?f=q&amp;source=embed&amp;hl=es&amp;geocode=&amp;q=Estadio+Nacional+de+Bras%C3%ADlia+Man%C3%A9+Garrincha&amp;aq=&amp;sll=-12.978799,-38.504591&amp;sspn=0.006409,0.010568&amp;ie=UTF8&amp;hq=&amp;hnear=&amp;ll=-15.783519,-47.899211&amp;spn=0.006295,0.006295&amp;t=m&amp;layer=c&amp;cbll=-15.783556,-47.89916&amp;panoid=OaI5_LxqDfiCXFKQOCDUjw&amp;cbp=12,13.06,,0,-1.37&amp;output=svembed'></iframe> \
+                   <a class='verGmaps' target='_blank' href='https://www.google.com/maps/views/view/streetview/brazils-world-cup-stadiums/estadio-nacional-de-brasilia-mane-garrincha/uKSb1jKonr491Xj_6V-PIQ?gl=us&heading=9&pitch=78&fovy=75'> \
+                     Ver en google maps \
+                   </a>";
+        break;
+      case 'ArenaCastelao':
+        content = "<iframe width='100%' height='350' frameborder='0' scrolling='no' marginheight='0' marginwidth='0' src='https://maps.google.com/maps?f=q&amp;source=embed&amp;hl=es&amp;geocode=&amp;q=Arena+Castel%C3%A3o+(Estadio+Governador+Pl%C3%A1cido+Castelo)&amp;aq=&amp;sll=-15.783561,-47.899157&amp;sspn=0.006329,0.010568&amp;ie=UTF8&amp;hq=&amp;hnear=&amp;ll=-3.807231,-38.522434&amp;spn=0.006295,0.006295&amp;t=m&amp;layer=c&amp;cbll=-3.807258,-38.522422&amp;panoid=ctemkvCilvzNPA6ByZM83w&amp;cbp=12,145.2,,0,0&amp;output=svembed'></iframe> \
+                   <a class='verGmaps' target='_blank' href='https://www.google.com/maps/views/view/streetview/brazils-world-cup-stadiums/arena-castelao-estadio-governador-placido-castelo/HPdOL9FalToLfseLvCJB9g?gl=us&heading=11&pitch=92&fovy=75'> \
+                     Ver en google maps \
+                   </a>";
+        break;
+      case 'ArenaPantanal':
+        content = "<iframe width='100%' height='350' frameborder='0' scrolling='no' marginheight='0' marginwidth='0' src='https://maps.google.com/maps?f=q&amp;source=embed&amp;hl=es&amp;geocode=&amp;q=Arena+Pantanal+(antiguo+Estadio+Jos%C3%A9+Fragelli)&amp;aq=&amp;sll=-15.603528,-56.179962&amp;sspn=0.100689,0.169086&amp;ie=UTF8&amp;hq=Arena+Pantanal&amp;ll=-15.603435,-56.121318&amp;spn=0.006779,0.007604&amp;t=m&amp;layer=c&amp;cbll=-15.604096,-56.121591&amp;panoid=jur-7yYBBU6_19cGUWfqKw&amp;cbp=12,61.46,,0,0&amp;output=svembed'></iframe> \
+                   <a class='verGmaps' target='_blank' href='https://www.google.com/maps/views/view/streetview/brazils-world-cup-stadiums/arena-pantanal-former-estadio-jose-fragelli/8idl2fGSaWjzDwi252HUQw?gl=us&heading=4&pitch=89&fovy=75'> \
+                     Ver en google maps \
+                   </a>";
+        break;
+      case 'ArenaPernambuco':
+        content = "<iframe width='100%' height='350' frameborder='0' scrolling='no' marginheight='0' marginwidth='0' src='https://maps.google.com/maps?f=q&amp;source=embed&amp;hl=es&amp;geocode=&amp;q=Arena+Pernambuco&amp;aq=&amp;sll=-15.604096,-56.121591&amp;sspn=0.012669,0.021136&amp;ie=UTF8&amp;hq=&amp;hnear=&amp;ll=-8.04065,-35.008205&amp;spn=0.006295,0.006295&amp;t=m&amp;layer=c&amp;cbll=-8.040854,-35.008251&amp;panoid=9kfqfsAnU0QAAAAGOte5Sw&amp;cbp=12,95.5,,0,0.18&amp;output=svembed'></iframe> \
+                   <a class='verGmaps' target='_blank' href='https://www.google.com/maps/views/view/streetview/brazils-world-cup-stadiums/arena-pernambuco/Ym0nQDvRfmos-KGhnFYFPw?gl=us&heading=354&pitch=97&fovy=75'> \
+                     Ver en google maps \
+                   </a>";
+        break;
+    }
+    return content;
+  }
+</script>
+
+<script>
+  $('.navbar-right li').removeClass('active');
+  $('#stadiumsButton').addClass('active');
+  setTimeout( "$('#stadiumsButton').addClass('active');", 200);
+</script>
+

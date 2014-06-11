@@ -1,8 +1,29 @@
 var express = require('express');
 var app = express();
 
-app.use(express.static(__dirname + '/front'));
+// DB CONNECTION >>
+var connection = require('./models/connection');
+// << DB CONNECTION
 
+// START SERVER >>
+var port = process.env.PORT || 3000;
+var server = require('http').createServer(app).listen(port, function(){
+  console.log('Express server listening on port 3000');
+});
+// << START SERVER
+
+// SOCKET.IO AND TWITTER >>
+var socketService = require('./controllers/socketService');
+var io = socketService.start(server);
+// << SOCKET.IO AND TWITTER
+
+// MATCHES CHECKER >>
+var matchesChecker = require('./controllers/matchesChecker');
+matchesChecker.start(io);
+// << MATCHES CHECKER
+
+
+app.use(express.static(__dirname + '/front'));
 // ROUTES >>
 // Front
 var frontController = require('./controllers/frontRoute');
@@ -25,26 +46,6 @@ var matchesServicesRoute = require('./controllers/matchesServicesRoute');
 app.get('/matchesComplete', matchesServicesRoute.matchesComplete);
 app.get('/matches', matchesServicesRoute.matches);
 // << ROUTES 
-
-// DB CONNECTION >>
-var connection = require('./models/connection');
-// << DB CONNECTION
-
-// START SERVER >>
-var port = process.env.PORT || 3000;
-var server = require('http').createServer(app).listen(port, function(){
-  console.log('Express server listening on port 3000');
-});
-// << START SERVER
-
-// SOCKET.IO AND TWITTER >>
-var socketService = require('./controllers/socketService');
-socketService.start(server);
-// << SOCKET.IO AND TWITTER
-
-
-
-
 
 
 

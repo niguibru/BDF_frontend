@@ -8,19 +8,19 @@ angular.module('bochaDeFutbolApp')
     else
       getTeamDetails();
     
+    function getAllTeams () {
+      teams.get(function(data){
+        $rootScope.teamsData = data;
+        getTeamDetails();
+      })
+    }
+    
     function getTeamDetails() {
       $rootScope.teamsData.forEach(function(teamData) {
         if (teamData.nameId == $routeParams.nameid) {
           $scope.team = teamData;
         }
       });
-    }
-    
-    function getAllTeams () {
-      teams.get(function(data){
-        $rootScope.teamsData = data;
-        getTeamDetails();
-      })
     }
     
     $scope.teamTwts = [];

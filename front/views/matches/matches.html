@@ -1,0 +1,99 @@
+
+<tabset>
+<!--  Matches by group-->
+  <tab heading="Partidos">
+    <div class="teamsGroups">
+      <div class="row">
+        <div class="group col-xs-12 col-sm-3 col-md-3">
+          <div class="groupMatches" data-mtc-listbygroup data-group="A"> </div>
+        </div>
+        <div class="group col-xs-12 col-sm-3 col-md-3">
+          <div class="groupMatches" data-mtc-listbygroup data-group="B"> </div>
+        </div>
+        <div class="group col-xs-12 col-sm-3 col-md-3">
+          <div class="groupMatches" data-mtc-listbygroup data-group="C"> </div>
+        </div>
+        <div class="group col-xs-12 col-sm-3 col-md-3">
+          <div class="groupMatches" data-mtc-listbygroup data-group="D"> </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="group col-xs-12 col-sm-3  col-md-3">
+          <div class="groupMatches" data-mtc-listbygroup data-group="E"> </div>
+        </div>
+        <div class="group col-xs-12 col-sm-3 col-md-3">
+          <div class="groupMatches" data-mtc-listbygroup data-group="F"> </div>
+        </div>
+        <div class="group col-xs-12 col-sm-3 col-md-3">
+          <div class="groupMatches" data-mtc-listbygroup data-group="G"> </div>
+        </div>
+        <div class="group col-xs-12 col-sm-3 col-md-3">
+          <div class="groupMatches" data-mtc-listbygroup data-group="H"> </div>
+        </div>
+      </div>
+    </div>
+  </tab>
+<!--  Matches by pos-->
+  <tab heading="Posiciones">
+    <div class="matchesGroups">
+      <div class="row">
+        <div class="group col-xs-12 col-sm-6 col-md-4">
+          <div data-mtc-championship data-group="A"> </div>
+        </div>
+        <div class="group col-xs-12 col-sm-6 col-md-4">
+          <div data-mtc-championship data-group="B"> </div>
+        </div>
+        <div class="group col-xs-12 col-sm-6 col-md-4">
+          <div data-mtc-championship data-group="C"> </div>
+        </div>
+        <div class="group col-xs-12 col-sm-6 col-md-4">
+          <div data-mtc-championship data-group="D"> </div>
+        </div>
+        <div class="group col-xs-12 col-sm-6 col-md-4">
+          <div data-mtc-championship data-group="E"> </div>
+        </div>
+        <div class="group col-xs-12 col-sm-6 col-md-4">
+          <div data-mtc-championship data-group="F"> </div>
+        </div>
+        <div class="group col-xs-12 col-sm-6 col-md-4">
+          <div data-mtc-championship data-group="G"> </div>
+        </div>
+        <div class="group col-xs-12 col-sm-6 col-md-4">
+          <div data-mtc-championship data-group="H"> </div>
+        </div>
+      </div>
+    </div>          
+  </tab>
+<!--  Matches key-->
+<!--
+  <tab heading="Llave">
+  </tab> 
+-->
+<!--  Matches by date-->
+  <tab heading="Fechas">
+    <div class="row byDate">
+      <div class="col-md-7">
+        <div class="nibCalendar">
+        </div>
+      </div>
+      <div class="col-md-5 matchesList">
+        <h3 class="sectionTitle"> Partidos del dia </h3>
+        <div data-mtc-listbydate></div>
+      </div>
+    </div>
+    <script>
+      nibCalendar.drawCal({
+        lang: 'es',
+        initDate: [2014, 5],
+        eventDates: [12,13,14,15,16,17,18,19,20,21,22,23,24,25,26]
+      });
+    </script>
+  </tab>
+</tabset>
+
+
+<script>
+  $('.navbar-right li').removeClass('active');
+  $('#matchesButton').addClass('active');
+  setTimeout( "$('#matchesButton').addClass('active');", 200);
+</script>

@@ -1,0 +1,138 @@
+
+<a class="back" onClick="goBack()"> 
+  <i class="fa fa-chevron-left"></i> 
+  Back
+</a>
+<script>
+  function goBack(){
+    history.back();
+    return false;
+  }
+</script>
+
+<br/>
+
+
+<div class="results">
+  <div class="row matchGroup">
+    <div class="col-md-12 detailsTeamName">
+      <p> Grupo {{match.group.letter}} - <span class="{{statusClass}}"> {{match.txtDateTime}}  - {{status}} </span> </p>
+    </div> 
+  </div>
+  <div class="row matchTeams">
+    <div class="col-md-5 col-xs-5 detailsTeamName local">
+      <table>
+        <tr>
+          <td class="flag"> 
+            <div class="teamRoundFlag inMatch {{match.local.nameId}}"> </div>
+          </td>
+          <td> 
+            <p>{{match.local.name}}</p>
+          </td>
+        </tr>
+      </table>
+    </div> 
+    <div class="col-md-1 col-xs-1 detailsResult">
+      <p>{{match.local.goals}}</p>
+    </div>
+    <div class="col-md-1 col-xs-1 detailsResult">
+      <p>{{match.visitor.goals}}</p>
+    </div>
+    <div class="col-md-5 col-xs-5 detailsTeamName visitor">
+      <table>
+        <tr>
+          <td> 
+            <p>{{match.visitor.name}}</p>
+          </td>
+          <td class="flag"> 
+            <div class="teamRoundFlag inMatch {{match.visitor.nameId}}"> </div>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+
+  <div class="{{live_minuteShow}}">
+    <progressbar animate="false" value="live_minute_percent" type="success"><b>{{live_minute}}'</b></progressbar>
+  </div>
+  
+<!--stadium-y estadisticas falta>-->
+  
+  <style>
+/*
+    .matchData td {
+      border-bottom: 1px solid #dddddd;
+      border-color: rgba(255,255,255,0.1) !important;
+    }
+    .matchData .min {
+      width: 100px;
+    } 
+    .matchData .goal {
+      margin-left: 5px;
+      margin-right: 5px;
+    }
+    .matchData .yellowCard {
+      background: yellow;
+      color: yellow;
+      margin-left: 5px;
+      margin-right: 5px;
+    }
+    .matchData .redCard {
+      background: red;
+      color: red;
+      margin-left: 5px;
+      margin-right: 5px;
+    }
+*/
+  </style>
+<!--
+  <div class="row matchData">
+    <table class="table">
+      <tr>
+        <td class="local">Pepe Pompin <span class="yellowCard">--</span></td>
+        <td class="min">10m</td>
+        <td class="visitor"></td>
+      </tr>
+      <tr>
+        <td class="local"></td>
+        <td class="min">30m</td>
+        <td class="visitor"><img class="goal" src="styles/images/logos/BdF_Logo.png" style="height: 18px;"> Pepe Pompin</td>
+      </tr>
+      <tr>
+        <td class="local">Pepe Pompin <span class="redCard">--</span></td>
+        <td class="min">60m</td>
+        <td class="visitor"></td>
+      </tr>
+    </table>
+  </div>
+-->
+  
+<!--
+  <div class="row matchData">
+    <div class="col-sm-8">
+      <h3 class="">  
+        Relatos
+      </h3>
+      <hr style="opacity: 0.8; width: 90%;">
+    </div>
+    <div class="col-sm-4">
+      <h3 class="sectionTitle twitter"> 
+      <i class="fa fa-twitter"></i> 
+        <a href="https://twitter.com/intent/user?screen_name=bochadefutbol" target="_blank">
+          #bdf #{{match.local.abr}}vs{{match.visitor.abr}}
+        </a>
+      </h3> 
+      <hr style="opacity: 0.8; width: 90%;">
+    </div>
+  </div>
+-->
+  
+</div>
+
+
+
+<script>
+  $('.navbar-right li').removeClass('active');
+  $('#matchesButton').addClass('active');
+  setTimeout( "$('#matchesButton').addClass('active');", 200);
+</script>

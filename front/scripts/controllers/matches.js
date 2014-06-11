@@ -1,13 +1,20 @@
 'use strict';
 
 angular.module('bochaDeFutbolApp')
-  .controller('MatchesCtrl', function ($scope, $rootScope, matches) {
+  .controller('MatchesCtrl', function ($scope, $rootScope, $location, matches, teams) {
 
     if ($rootScope.allMatches.length == 0) getAllMatches();
-
+    if ($rootScope.teamsData.length == 0) getAllTeams();
+    
     function getAllMatches() {
       matches.get(function(data){
         $rootScope.allMatches = data;
+      })
+    }
+    
+    function getAllTeams () {
+      teams.get(function(data){
+        $rootScope.teamsData = data;
       })
     }
     
@@ -16,4 +23,7 @@ angular.module('bochaDeFutbolApp')
       $scope.dayFilter = date;
     };
     
+    $scope.go = function ( path ) {
+      $location.path( path );
+    };
   });

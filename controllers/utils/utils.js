@@ -3,9 +3,11 @@ var teamsModel = require('../../models/teamsModel');
 
 var apiUrl = "http://www.resultados-futbol.com/scripts/api/api.php";
 var apiKey = '?key=316c3695459c00f218b7a8d39382e5cf';
+var apiKeyBocha = '?key=763440d17fc56443f173349dc91b9d57';
 var format = '&format=json';
 var league = '&league=136'; // 192 = World Cup 2014
 var table = '&req=tables';
+var match = '&req=match';
 var matchs = '&req=matchs';
 var group = '&group=all';
 
@@ -45,10 +47,10 @@ var normalize = (function() {
 
 // Get current time at Argentina
 var moment = require('moment-timezone');
-exports.nowInArgentina = (function () {
-  var format = 'YYYY/MM/DD HH:mm:ss ZZ';
-  return moment().tz("America/Argentina/Buenos_Aires").format();
-})();
+exports.nowInArgentina = (function (format) {
+//  var format = 'YYYY/MM/DD HH:mm:ss ZZ';
+  return moment().tz("America/Argentina/Buenos_Aires").format(format);
+});
 
 // TEAMS
 exports.teams_getApiUrl = function() {
@@ -78,6 +80,11 @@ exports.teams_builJsonTeam = function(actualTeam, teamIndex) {
 // MATCHES
 exports.matches_getApiUrl = function(round) {
   var completeUrl = apiUrl + apiKey + format + league + table + matchs + '&round=' + round;
+  return completeUrl;
+}
+
+exports.matches_getState = function(matchId) {
+  var completeUrl = apiUrl + apiKey + format + match + '&id=' + matchId;
   return completeUrl;
 }
 

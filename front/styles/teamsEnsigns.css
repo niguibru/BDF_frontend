@@ -9,7 +9,7 @@
   color: #18671f;
   background: rgba(255,255,0,0.9)
 }
-li .teamRoundFlag.brasil{
+.teamRoundFlag.brasil{
   background-image: url("images/roundFlags/brasil.png") !important;
 }
 .teamLogo.brasil{
@@ -26,7 +26,7 @@ li .teamRoundFlag.brasil{
   color: yellow;
   background: rgba(220,0,0,0.7);
 }
-li .teamRoundFlag.camerun{
+.teamRoundFlag.camerun{
   background-image: url("images/roundFlags/camerun.png") !important;
 }
 .teamLogo.camerun{
@@ -43,7 +43,7 @@ li .teamRoundFlag.camerun{
   color: white;
   background: rgba(72,175,130,0.7);
 }
-li .teamRoundFlag.mexico{
+.teamRoundFlag.mexico{
   background-image: url("images/roundFlags/mexico.png") !important;
 }
 .teamLogo.mexico{
@@ -60,7 +60,7 @@ li .teamRoundFlag.mexico{
   color: white;
   background: rgba(255,0,0,0.7);
 }
-li .teamRoundFlag.croacia{
+.teamRoundFlag.croacia{
   background-image: url("images/roundFlags/croacia.png") !important;
 }
 .teamLogo.croacia{
@@ -77,7 +77,7 @@ li .teamRoundFlag.croacia{
   color: #0158b0;
   background: rgba(255,255,0,0.9);
 }
-li .teamRoundFlag.australia{
+.teamRoundFlag.australia{
   background-image: url("images/roundFlags/australia.png") !important;
 }
 .teamLogo.australia{
@@ -94,7 +94,7 @@ li .teamRoundFlag.australia{
   color: white;
   background: rgba(222,14,7,0.7);
 }
-li .teamRoundFlag.chile{
+.teamRoundFlag.chile{
   background-image: url("images/roundFlags/chile.png") !important;
 }
 .teamLogo.chile{
@@ -111,7 +111,7 @@ li .teamRoundFlag.chile{
   color: yellow;
   background: rgba(222,14,7,0.7);
 }
-li .teamRoundFlag.espana{
+.teamRoundFlag.espana{
   background-image: url("images/roundFlags/espana.png") !important;
 }
 .teamLogo.espana{
@@ -128,7 +128,7 @@ li .teamRoundFlag.espana{
   color: white;
   background: rgba(228,134,47,0.8);
 }
-li .teamRoundFlag.holanda{
+.teamRoundFlag.holanda{
   background-image: url("images/roundFlags/holanda.png") !important;
 }
 .teamLogo.holanda{
@@ -145,7 +145,7 @@ li .teamRoundFlag.holanda{
   color: blue;
   background: rgba(255,255,0,0.9);
 }
-li .teamRoundFlag.colombia{
+.teamRoundFlag.colombia{
   background-image: url("images/roundFlags/colombia.png") !important;
 }
 .teamLogo.colombia{
@@ -162,7 +162,7 @@ li .teamRoundFlag.colombia{
   color: white;
   background: rgba(242,109,40,0.8);
 }
-li .teamRoundFlag.costademarfil{
+.teamRoundFlag.costademarfil{
   background-image: url("images/roundFlags/costademarfil.png") !important;
 }
 .teamLogo.costademarfil{
@@ -179,7 +179,7 @@ li .teamRoundFlag.costademarfil{
   color: #011b79;
   background: rgba(255,255,255,0.9);
 }
-li .teamRoundFlag.grecia{
+.teamRoundFlag.grecia{
   background-image: url("images/roundFlags/grecia.png") !important;
 }
 .teamLogo.grecia{
@@ -196,7 +196,7 @@ li .teamRoundFlag.grecia{
   color: red;
   background: rgba(255,255,255,0.9);
 }
-li .teamRoundFlag.japon{
+.teamRoundFlag.japon{
   background-image: url("images/roundFlags/japon.png") !important;
 }
 .teamLogo.japon{
@@ -213,7 +213,7 @@ li .teamRoundFlag.japon{
   color: #005bd9;
   background: rgba(185,21,24,0.8);
 }
-li .teamRoundFlag.costarica{
+.teamRoundFlag.costarica{
   background-image: url("images/roundFlags/costarica.png") !important;
 }
 .teamLogo.costarica{
@@ -230,7 +230,7 @@ li .teamRoundFlag.costarica{
   color: #050340;
   background: rgba(255,255,255,0.9);
 }
-li .teamRoundFlag.inglaterra{
+.teamRoundFlag.inglaterra{
   background-image: url("images/roundFlags/inglaterra.png") !important;
 }
 .teamLogo.inglaterra{
@@ -247,7 +247,7 @@ li .teamRoundFlag.inglaterra{
   color: white;
   background: rgba(0,66,158,0.9);
 }
-li .teamRoundFlag.italia{
+.teamRoundFlag.italia{
   background-image: url("images/roundFlags/italia.png") !important;
 }
 .teamLogo.italia{
@@ -264,7 +264,7 @@ li .teamRoundFlag.italia{
   color: white;
   background: rgba(69,158,206,0.8);
 }
-li .teamRoundFlag.uruguay{
+.teamRoundFlag.uruguay{
   background-image: url("images/roundFlags/uruguay.png") !important;
 }
 .teamLogo.uruguay{
@@ -282,7 +282,7 @@ li .teamRoundFlag.uruguay{
   color: blue;
   background: rgba(255,255,0,0.9)
 }
-li .teamRoundFlag.ecuador{
+.teamRoundFlag.ecuador{
   background-image: url("images/roundFlags/ecuador.png") !important;
 }
 .teamLogo.ecuador{
@@ -299,7 +299,7 @@ li .teamRoundFlag.ecuador{
   color: white;
   background: rgba(1,0,82,0.8);
 }
-li .teamRoundFlag.francia{
+.teamRoundFlag.francia{
   background-image: url("images/roundFlags/francia.png") !important;
 }
 .teamLogo.francia{
@@ -316,7 +316,7 @@ li .teamRoundFlag.francia{
   color: #2751ac;
   background: rgba(255,255,255,0.9);
 }
-li .teamRoundFlag.honduras{
+.teamRoundFlag.honduras{
   background-image: url("images/roundFlags/honduras.png") !important;
 }
 .teamLogo.honduras{
@@ -333,7 +333,7 @@ li .teamRoundFlag.honduras{
   color: white;
   background: rgba(255,0,0,0.9);
 }
-li .teamRoundFlag.suiza{
+.teamRoundFlag.suiza{
   background-image: url("images/roundFlags/suiza.png") !important;
 }
 .teamLogo.suiza{
@@ -352,7 +352,7 @@ li .teamRoundFlag.suiza{
   color: #1895d9;
   background: rgba(255,255,255,1);
 }
-li .teamRoundFlag.argentina{
+.teamRoundFlag.argentina{
   background-image: url("images/roundFlags/argentina.png") !important;
 }
 .teamLogo.argentina{
@@ -369,7 +369,7 @@ li .teamRoundFlag.argentina{
   color: white;
   background: rgba(40,63,134,0.9);
 }
-li .teamRoundFlag.bosnia{
+.teamRoundFlag.bosnia{
   background-image: url("images/roundFlags/bosnia.png") !important;
 }
 .teamLogo.bosnia{
@@ -386,7 +386,7 @@ li .teamRoundFlag.bosnia{
   color: green;
   background: rgba(255,255,255,0.9);
 }
-li .teamRoundFlag.iran{
+.teamRoundFlag.iran{
   background-image: url("images/roundFlags/iran.png") !important;
 }
 .teamLogo.iran{
@@ -403,7 +403,7 @@ li .teamRoundFlag.iran{
   color: white;
   background: rgba(0,60,0,0.8);
 }
-li .teamRoundFlag.nigeria{
+.teamRoundFlag.nigeria{
   background-image: url("images/roundFlags/nigeria.png") !important;
 }
 .teamLogo.nigeria{
@@ -420,7 +420,7 @@ li .teamRoundFlag.nigeria{
   color: black;
   background: rgba(255,255,255,1);
 }
-li .teamRoundFlag.alemania{
+.teamRoundFlag.alemania{
   background-image: url("images/roundFlags/alemania.png") !important;
 }
 .teamLogo.alemania{
@@ -437,7 +437,7 @@ li .teamRoundFlag.alemania{
   color: white;
   background: rgba(255,0,0,0.9);
 }
-li .teamRoundFlag.estadosunidos{
+.teamRoundFlag.estadosunidos{
   background-image: url("images/roundFlags/estadosunidos.png") !important;
 }
 .teamLogo.estadosunidos{
@@ -454,7 +454,7 @@ li .teamRoundFlag.estadosunidos{
   color: yellow;
   background: rgba(255,0,0,0.7);
 }
-li .teamRoundFlag.ghana{
+.teamRoundFlag.ghana{
   background-image: url("images/roundFlags/ghana.png") !important;
 }
 .teamLogo.ghana{
@@ -471,7 +471,7 @@ li .teamRoundFlag.ghana{
   color: #00b300;
   background: rgba(255,0,0,0.7);
 }
-li .teamRoundFlag.portugal{
+.teamRoundFlag.portugal{
   background-image: url("images/roundFlags/portugal.png") !important;
 }
 .teamLogo.portugal{
@@ -488,7 +488,7 @@ li .teamRoundFlag.portugal{
   color: #00b049;
   background: rgba(255,255,255,1);
 }
-li .teamRoundFlag.argelia{
+.teamRoundFlag.argelia{
   background-image: url("images/roundFlags/argelia.png") !important;
 }
 .teamLogo.argelia{
@@ -505,7 +505,7 @@ li .teamRoundFlag.argelia{
   color: #fff200;
   background: rgba(238,20,46,0.7);
 }
-li .teamRoundFlag.belgica{
+.teamRoundFlag.belgica{
   background-image: url("images/roundFlags/belgica.png") !important;
 }
 .teamLogo.belgica{
@@ -522,7 +522,7 @@ li .teamRoundFlag.belgica{
   color: #1269cf;
   background: rgba(255,0,0,0.5);
 }
-li .teamRoundFlag.coreadelsur{
+.teamRoundFlag.coreadelsur{
   background-image: url("images/roundFlags/coreadelsur.png") !important;
 }
 .teamLogo.coreadelsur{
@@ -539,7 +539,7 @@ li .teamRoundFlag.coreadelsur{
   color: #1269cf;
   background: rgba(255,255,255,0.9);
 }
-li .teamRoundFlag.rusia{
+.teamRoundFlag.rusia{
   background-image: url("images/roundFlags/rusia.png") !important;
 }
 .teamLogo.rusia{

@@ -1,0 +1,77 @@
+
+.matchGroup {
+  background: rgba(0,0,0,0.2);
+  color: white;
+  text-align: center;
+  font-size: 15px;
+  padding: 6px;
+  margin-bottom: 0px !important;
+}
+.matchGroup p {
+  margin-bottom: 0px;
+}
+.matchGroup p .toPlay {
+  color: burlywood;
+}
+.matchGroup p .playing {
+  color: gold;
+}
+.matchGroup p .played {
+  color: chocolate;
+}
+.matchTeams {
+  margin-top: 0px !important;
+  color: white;
+  text-align: center;
+  font-size: 30px;
+  padding: 15px;
+}
+.matchTeams table {
+  width: 100%;
+}
+.matchTeams table .flag{
+  width: 85px;
+}
+.matchTeams .teamRoundFlag.inMatch {
+  width: 50px;
+  height: 50px;
+  margin-top: -5px;
+  background-size: cover;
+  border-radius: 25px;
+}
+.matchTeams .local .teamRoundFlag.inMatch {
+  margin-right: 20px;
+}
+.matchTeams .visitor .teamRoundFlag.inMatch {
+  margin-left: 20px;
+}
+.detailsResult {
+  background: rgba(0,0,0,0.16);
+  border-radius: 28px;
+  width: 58px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+.matchData {
+  text-align: center;
+  color: white;
+}
+.matchData h3 {
+  font-family: 'Indie Flower', cursive;
+  font-size: 27px;
+}
+
+/*For mobile views>>*/
+@media only screen 
+and (min-device-width : 480px) 
+and (max-device-width : 992px) {
+
+  .matchTeams {
+    font-size: 24px;
+  }
+  .detailsResult {
+    width: 44px;
+    margin-left: 7px;
+    margin-right: 7px;
+  }
+}

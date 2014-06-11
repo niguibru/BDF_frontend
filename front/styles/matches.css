@@ -14,12 +14,7 @@
   border-top-left-radius: 3px;
   border-top-right-radius: 3px;
 }
-.group {
-/*
-  padding-left: 8px;
-  padding-right: 8px;
-*/
-} 
+
 .teamsVs {
   margin-top: -11px !important;;
   border-top-left-radius: 0px !important;;
@@ -79,4 +74,69 @@
   right: 14px;
   margin-top: -20px;
 }
+
+/*Matches Info>>*/
+.matchState {
+  padding: 0px !important;
+  margin-top: -13px !important;
+  background: transparent !important;
+  text-align: center;
+}
+.matchState .dateTime { 
+  font-size: 10px;
+  background: darkslategray;
+  color: white;
+  border-bottom-left-radius: 3px;
+  border-bottom-right-radius: 3px;
+  padding-left: 10px;
+  padding-right: 10px;
+  border: none;
+}
+/*<<Matches Info*/
+
+/*Matches championship>>*/
+.matchesGroups table {
+  width: 98%;
+  text-align: center !important;
+}
+.matchesGroups .groupLetter {
+  font-size: 14px;
+}
+.matchesGroups .groupTeams li {
+  padding-right: 0px;
+  margin-right: 6px;
+}
+.matchesGroups .teamName {
+  width: 56px;
+}
+.matchesGroups .num {
+  width: 20px;
+}
+/*<<Matches championship*/
+
+/*Matches calendar>>*/
+.byDate .nibCalendar {
+  max-width: 500px;
+  border: 1px solid;
+  border-color: darkcyan;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 20px;
+}
+.byDate .matchesList {
+  max-width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+  cursor: default;
+}
+.byDate .matchesList h3 {
+  text-align: center;
+  color: white;
+  margin-top: 6px;
+}
+/*<<Matches calendar*/
+
+
+
+
 

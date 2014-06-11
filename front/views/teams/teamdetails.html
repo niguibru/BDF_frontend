@@ -1,8 +1,14 @@
 
-<a class="back" ng-href="#/teamsbygroup"> 
+<a class="back" onClick="goBack()"> 
   <i class="fa fa-chevron-left"></i> 
   Back
 </a>
+<script>
+  function goBack(){
+    history.back();
+    return false;
+  }
+</script>
 
 <h1 class="sectionTitle teamName {{team.nameId}} colorteamtext">
   <img class="teamLogo {{team.nameId}}">

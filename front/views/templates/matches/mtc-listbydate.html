@@ -7,7 +7,9 @@
       <tr>
         <td class="team1">
           <div class="teamRoundFlag inMtc {{match.local.nameId}}"> </div>
-          <p class="teamName"> {{match.local.abr}} </p>
+          <p class="teamName" tooltip-placement="top" tooltip="{{match.local.name}}"> 
+            {{match.local.abr}} 
+          </p>
         </td>
         <td class="team1Res">
           <p class="teamName team1Res"> {{match.local.goals}} </p>
@@ -16,10 +18,17 @@
           <p class="teamName team2Res"> {{match.local.goals}} </p>
         </td>
         <td class="team2">
-          <p class="teamName team2"> {{match.visitor.abr}} </p>
+          <p class="teamName team2" tooltip-placement="top" tooltip="{{match.visitor.name}}"> 
+            {{match.visitor.abr}} 
+          </p>
           <div class="teamRoundFlag inMtc right {{match.visitor.nameId}}"> </div>
         </td>
       </tr>
     </table>
   </li>
+<!--
+  <li class="matchState">
+    <button class="dateTime" ng-click="go('matchdetails/' + match.numId)"> Mas </button>
+  </li>
+-->
 </ul>

@@ -1,3 +1,4 @@
+.nav, .pagination, .carousel, .panel-title a { cursor: pointer; }
 
 body {
   padding-top: 20px;
@@ -5,6 +6,31 @@ body {
   background-image: url('images/grass.jpg');
   font-family: Verdana;
 }
+
+.hidden {
+    display: none;
+}
+
+/*Alerts>>*/
+.alertDiv {
+  position: fixed;
+  width: 240px;
+  top: 0px;
+  left: 50%;
+  margin-left: -120px;
+  opacity: 0.83;
+  z-index: 1;
+}
+.alertDiv .alert-success {
+  color: black;
+  background-color: #dff0d8;
+  border-color: #d6e9c6;
+  padding: 5px;
+  margin-bottom: 8px;
+  opacity: 0.7;
+}
+/*<<Alerts*/
+
 
 /*Top Navbar Menu>>*/
 .navbar {
@@ -72,29 +98,29 @@ body {
 
 /*Social icons Header>>*/
 .shareSocial a {
-  width: 31px;
-  height: 31px;
+  width: 26px;
+  height: 26px;
   float: left;
   margin-right: 5px;
-  margin-top: 10px;
+  margin-top: 12px;
   margin-left: 7px;
   margin-bottom: 9px;
   border-radius: 30px;
-  background: url(../../styles/images/social/social-sprite2.png) no-repeat;
+  background: url(../../styles/images/social/social-sprite3.png) no-repeat;
   opacity: 0.8;
 }
 
 .shareSocial a.fb {
-  background-position: -36px -71px;
+  background-position: -29px -59px;
 }
 .shareSocial a.fb:hover {
-  background-position: -36px -37px;
+  background-position: -29px -31px;
 }
 .shareSocial a.tw {
-  background-position: -2px -72px;
+  background-position: -1px -59px;
 }
 .shareSocial a.tw:hover {
-  background-position: -2px -37px;
+  background-position: -1px -31px;
 }
 /*<<Social icons Header>>*/
 
@@ -142,7 +168,7 @@ body {
 
 /*Facebook>>*/
 .fbLikes {
-  background: rgba(255,255,255,0.2);
+  background: rgba(255,255,255,0.5);
   padding: 10px;
   border-radius: 8px;
   padding-bottom: 4px;
@@ -160,6 +186,7 @@ body {
   height: 160px;
   border-top-right-radius: 10px;
   border-top-left-radius: 10px;
+  cursor: pointer;
 }
 .nota .title {
   color: white;
@@ -170,6 +197,7 @@ body {
   top: -35px;
   height: 35px;
   padding-top: 3px;
+  cursor: pointer;
 }
 .nota .pre {
   font-size: 12px;

@@ -26,7 +26,33 @@ matches_scheema = new schema(
       'goals': String,
     },
     'status': String, 
-    'live_minute': String
+    'live_minute': String,
+    'events': {
+                  'cards': [{
+                    minute: String,
+                    action: String,
+                    action_type: String,
+                    player: String,
+                    player_id: String,
+                    team: String,
+                  }],
+                  'goals': [{
+                    minute: String,
+                    action: String,
+                    action_type: String,
+                    player: String,
+                    player_id: String,
+                    team: String,
+                  }],
+                  'changes': [{
+                    minute: String,
+                    action: String,
+                    action_type: String,
+                    player: String,
+                    player_id: String,
+                    team: String,
+                  }]
+               }
   });
 matches = mongoose.model('matches', matches_scheema);
 
@@ -34,6 +60,22 @@ matches = mongoose.model('matches', matches_scheema);
 exports.findAll = function(cb) {
   matches.find({}).sort('date').sort('time').exec(function(err, results){
     cb(results);
+  })
+}
+
+exports.findByDate = function(date, cb) {
+  matches.find({date: date}).sort('date').sort('time').exec(function(err, results){
+    cb(results);
+  })
+}
+
+exports.saveEventsInMatch = function(numId, events, cb) {
+  matches.findOne({numId: numId}, function(match){
+    match.events = events;
+    match.save(function (err) {
+      if (err) console.log(err);
+      cb();
+    });
   })
 }
 

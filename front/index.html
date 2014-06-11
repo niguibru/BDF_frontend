@@ -36,6 +36,7 @@
     <link rel="stylesheet" href="styles/teams.css">
     <link rel="stylesheet" href="styles/teamDetails.css">
     <link rel="stylesheet" href="styles/matches.css">
+    <link rel="stylesheet" href="styles/matchDetails.css">
     <link rel="stylesheet" href="styles/teamsEnsigns.css">
     <!--/ My Styles-->
   
@@ -57,6 +58,16 @@
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
 
+    <!-- Alerts -->
+    <div class="alertDiv">
+<!--
+      <alert type="success" close="closeAlert($index)">uno</alert>
+      <alert type="success">dos</alert>
+-->
+      <alert ng-repeat="alert in alerts" id="{{alert.alertId}}" type="{{alert.type}}">{{alert.msg}}</alert>
+    </div>
+    <!-- /Alerts -->
+    
     <!-- Header -->
     <div data-the-header data-active=""></div>
     <!-- /Header -->
@@ -86,7 +97,9 @@
     <script src="bower_components/jquery/dist/jquery.js"></script>
     <script src="vendors/socket.io/socket.io.js"></script>
     <script src="vendors/timeCircles/timeCircles.js"></script>
+    <script src="vendors/nibCalendar/nibCalendar.js"></script>
     <script src="bower_components/angular/angular.js"></script>
+    <script src="vendors/angular-bootstrap/ui-bootstrap-tpls-0.11.0.min.js"></script>
     <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
     <script src="bower_components/angular-resource/angular-resource.js"></script>
     <script src="bower_components/angular-cookies/angular-cookies.js"></script>
@@ -120,6 +133,7 @@
     <script src="scripts/directives/tmsteamsbygroup.js"></script>
     
     <script src="scripts/controllers/matches.js"></script>
+    <script src="scripts/controllers/matchdetails.js"></script>
     <script src="scripts/services/matches.js" defer></script>
     <script src="scripts/directives/mtcnavlistby.js"></script>
     <script src="scripts/directives/mtclistbygroup.js"></script>

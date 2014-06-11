@@ -2,6 +2,7 @@
 /* Groups style */
 .group {
   margin-top: 25px;
+  cursor: default;
 }
 .groupLetter {
   text-align: center;
