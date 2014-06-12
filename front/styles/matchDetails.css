@@ -61,6 +61,35 @@
   font-size: 27px;
 }
 
+/*Match actions>>*/
+.matchData td {
+  border-bottom: 1px solid #dddddd;
+  border-color: rgba(255,255,255,0.1) !important;
+}
+.matchData td.local, .matchData td.visitor  {
+  width: 45%;
+}
+.matchData .min {
+  width: 100px;
+} 
+.matchData .goal {
+  margin-left: 5px;
+  margin-right: 5px;
+}
+.matchData .yellowCard {
+  background: yellow;
+  color: yellow;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+.matchData .redCard {
+  background: red;
+  color: red;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+/*<<Match actions*/
+
 /*For mobile views>>*/
 @media only screen 
 and (min-device-width : 480px) 

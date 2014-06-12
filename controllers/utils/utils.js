@@ -2,8 +2,8 @@ var moment = require('moment');
 var teamsModel = require('../../models/teamsModel');
 
 var apiUrl = "http://www.resultados-futbol.com/scripts/api/api.php";
-var apiKey = '?key=316c3695459c00f218b7a8d39382e5cf';
-var apiKeyBocha = '?key=763440d17fc56443f173349dc91b9d57';
+//var apiKey = '?key=316c3695459c00f218b7a8d39382e5cf';
+var apiKey = '?key=763440d17fc56443f173349dc91b9d57';
 var format = '&format=json';
 var league = '&league=136'; // 192 = World Cup 2014
 var table = '&req=tables';

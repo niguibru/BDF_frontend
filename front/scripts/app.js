@@ -55,8 +55,8 @@ angular
     }
     
     //    socket.disconnect():
-//    $rootScope.socket = io.connect('http://10.0.1.5:3000');
-    $rootScope.socket = io.connect('http://www.bochadefutbol.com.ar/');
+    $rootScope.socket = io.connect('http://10.0.1.5:3000');
+//    $rootScope.socket = io.connect('http://www.bochadefutbol.com.ar/');
     $rootScope.socket.on('newTwits', function (data) {
       $rootScope.twts.unshift(data);
       $rootScope.$digest();
@@ -65,30 +65,27 @@ angular
       $rootScope.twts.push(data);
       $rootScope.$digest();
     });
-    $rootScope.socket.on('newMatchEvents', function (data) {
-      console.log('data.match.numId');
-      
+    $rootScope.socket.on('actualizeMatch', function (match) {
       for (var i = 0; i < $rootScope.allMatches.length; i++) {
-        if ($rootScope.allMatches[i].numId == data.match.numId) {
-          console.log($rootScope.allMatches[i].numId);
-          $rootScope.allMatches[i] = data.match;
+        if ($rootScope.allMatches[i].numId == match.numId) {
+          $rootScope.allMatches[i] = match;
         }
       }
-
-//      $rootScope.allMatches.forEach(function(match){
-////        console.log(match.numId);
-//        if (match.numId == data.match.numId) {
-//          match = data.match;
-//          console.log(match.numId);
-//        }
-//      });
-      console.log($rootScope.allMatches);
-      
-      $rootScope.alertsIndex = $rootScope.alertsIndex + 1;
-      var alertId = "alert" + $rootScope.alertsIndex;
+    });
+    $rootScope.socket.on('newMatchEvents', function (data) {
+      var dateTimeForId = moment().format('YYYY_MM_DD_HH_mm_ss_S');
+      var alertId = 'Id_' + dateTimeForId;
       $rootScope.alerts.push({alertId: alertId,type: 'success', msg: data.event});
       $rootScope.$digest();
-      window.setTimeout(function() { $('#' + alertId).alert('close'); }, 4000);
+      window.setTimeout(function() { 
+        $('#' + alertId).alert('close'); 
+        for(var i = $rootScope.alerts.length - 1; i >= 0; i--) {
+          console.log($rootScope.alerts);
+          if($rootScope.alerts[i].alertId === alertId) {
+            $rootScope.alerts.splice(i, 1);
+          }
+        }
+      }, 4000);
     });
     
   });

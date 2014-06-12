@@ -34,7 +34,8 @@ matches_scheema = new schema(
                     action_type: String,
                     player: String,
                     player_id: String,
-                    team: String,
+                    action_icon: String,
+                    team: String
                   }],
                   'goals': [{
                     minute: String,
@@ -42,7 +43,8 @@ matches_scheema = new schema(
                     action_type: String,
                     player: String,
                     player_id: String,
-                    team: String,
+                    action_icon: String,
+                    team: String
                   }],
                   'changes': [{
                     minute: String,
@@ -50,7 +52,8 @@ matches_scheema = new schema(
                     action_type: String,
                     player: String,
                     player_id: String,
-                    team: String,
+                    action_icon: String,
+                    team: String
                   }]
                }
   });
@@ -69,16 +72,30 @@ exports.findByDate = function(date, cb) {
   })
 }
 
-exports.saveEventsInMatch = function(numId, events, cb) {
-  matches.findOne({numId: numId}, function(match){
-    match.events = events;
-    match.save(function (err) {
-      if (err) console.log(err);
-      cb();
-    });
+exports.findByNumId = function(numId, cb) {
+  matches.findOne({numId: numId}).exec(function(err, match){
+    cb(match);
   })
 }
 
+exports.updateMatch = function(matchToUpdate, events) {
+  matches.findOne({numId: matchToUpdate.numId}).exec(function(err, matchDb){
+    matchDb = matchToUpdate;
+    matchDb.save(function (err) {
+      if (err) console.log(err);
+    });
+  })
+}
+//
+//exports.saveEventsInMatch = function(numId, events) {
+//  matches.findOne({numId: numId}).exec(function(err, match){
+//    match.events = events;
+//    match.save(function (err) {
+//      if (err) console.log(err);
+//    });
+//  })
+//}
+//
 exports.clear = function(cb) {
   matches.remove({},function(err){
     console.log('All matches deleted');

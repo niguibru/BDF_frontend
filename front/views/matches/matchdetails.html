@@ -58,54 +58,25 @@
   
 <!--stadium-y estadisticas falta>-->
   
-  <style>
-/*
-    .matchData td {
-      border-bottom: 1px solid #dddddd;
-      border-color: rgba(255,255,255,0.1) !important;
-    }
-    .matchData .min {
-      width: 100px;
-    } 
-    .matchData .goal {
-      margin-left: 5px;
-      margin-right: 5px;
-    }
-    .matchData .yellowCard {
-      background: yellow;
-      color: yellow;
-      margin-left: 5px;
-      margin-right: 5px;
-    }
-    .matchData .redCard {
-      background: red;
-      color: red;
-      margin-left: 5px;
-      margin-right: 5px;
-    }
-*/
-  </style>
-<!--
   <div class="row matchData">
     <table class="table">
-      <tr>
-        <td class="local">Pepe Pompin <span class="yellowCard">--</span></td>
-        <td class="min">10m</td>
-        <td class="visitor"></td>
-      </tr>
-      <tr>
-        <td class="local"></td>
-        <td class="min">30m</td>
-        <td class="visitor"><img class="goal" src="styles/images/logos/BdF_Logo.png" style="height: 18px;"> Pepe Pompin</td>
-      </tr>
-      <tr>
-        <td class="local">Pepe Pompin <span class="redCard">--</span></td>
-        <td class="min">60m</td>
-        <td class="visitor"></td>
+      <tr ng-repeat="event in events | orderBy:'min' ">
+        <td class="local"> 
+          {{event.local}}
+          <img ng-show="{{event.local_showGoal}}" class="goal" src="styles/images/logos/BdF_Logo.png" style="height: 18px;">
+          <span ng-show="{{event.local_showYCard}}" class="yellowCard">--</span>
+          <span ng-show="{{event.local_showRCard}}" class="redCard">--</span>
+        </td>
+        <td class="min"> {{event.min}} </td>
+        <td class="visitor"> 
+          <img ng-show="{{event.visitor_showGoal}}" class="goal" src="styles/images/logos/BdF_Logo.png" style="height: 18px;">
+          <span ng-show="{{event.visitor_showYCard}}" class="yellowCard">--</span>
+          <span ng-show="{{event.visitor_showRCard}}" class="redCard">--</span>
+          {{event.visitor}} 
+        </td>
       </tr>
     </table>
   </div>
--->
   
 <!--
   <div class="row matchData">
