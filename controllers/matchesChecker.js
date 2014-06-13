@@ -21,7 +21,7 @@ exports.start = function(io) {
   console.log(dateToLog);
   setTimeForTodaysMatches();
 }
-
+ 
 // Get all matches and set time schedule
 function setTimeForTodaysMatches () {
   matches.matchesToday(function(data){
