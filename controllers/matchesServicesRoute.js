@@ -40,19 +40,19 @@ module.exports = exports = {
   matchesToday: function(cb) {
     var date = utils.nowInArgentina("YYYY/MM/DD");
     matchesModel.findByDate(date , function(data){
-//      data = [ {  numId: '141492',
-//                  type: 'G',
-//                  date: '2014/06/13',
-//                  time: '02:04:00',
-//                  txtDateTime: '12 de junio, 17:00 hs',
-//                  status: '-1',
-//                  live_minute: '',
-//                  _id: '53827bf82d4290000077368b',
-//                  __v: '0',
-//                  visitor: { name: 'Croacia', abr: 'CRO', nameId: 'croacia', goals: 'x' },
-//                  local: { name: 'Brasil', abr: 'BRA', nameId: 'brasil', goals: 'x' },
-//                  group: { letter: 'A', number: '1' } 
-//              } ];
+      data = [ {  numId: '141496',
+                  type: 'G',
+                  date: '2014/06/13',
+                  time: '13:31:00',
+                  txtDateTime: '12 de junio, 17:00 hs',
+                  status: '-1',
+                  live_minute: '',
+                  _id: '53827bf82d4290000077368b',
+                  __v: '0',
+                  visitor: { name: 'Croacia', abr: 'CRO', nameId: 'croacia', goals: 'x' },
+                  local: { name: 'Brasil', abr: 'BRA', nameId: 'brasil', goals: 'x' },
+                  group: { letter: 'A', number: '1' } 
+              } ];
       
       cb(data);
     })

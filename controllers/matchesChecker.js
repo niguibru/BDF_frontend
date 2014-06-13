@@ -58,7 +58,7 @@ function followMatch (matchNumId) {
   var job = new CronJob('0 * * * * *', function(){
     // Go to results server and check
     matches.getMatchEvents(matchNumId, function(matchState){
-      console.log('  ' + matchState.live_minute + ' -> ' + matchState.result);
+      console.log('  ' + matchState.live_minute + ' -> ' + matchState.result + ' -> status ' + matchState.status);
       // Chack is match finished
       if (matchPlaying(matchState.status)) {
         // Find Match in DB
