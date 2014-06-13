@@ -6,6 +6,18 @@ angular.module('bochaDeFutbolApp')
     if ($rootScope.allMatches.length == 0) getAllMatches();
     if ($rootScope.teamsData.length == 0) getAllTeams();
     
+    // Socket
+    $rootScope.socketConnect();
+    $rootScope.socket.on('actualizeMatch', function (data) {
+      for (var i = 0; i < $rootScope.allMatches.length; i++) {
+        if ($rootScope.allMatches[i].numId == data.match.numId) {
+          $rootScope.allMatches[i] = data.match;
+          break;
+        }
+      }
+      $scope.$apply();
+    });
+    
     function getAllMatches() {
       matches.get(function(data){
         $rootScope.allMatches = data;

@@ -40,12 +40,15 @@ angular
       });
   })
   .run(function ($rootScope, matches) {
-    $rootScope.twts = [];
-    $rootScope.teamsData = [];
-    $rootScope.allMatches = [];
-    $rootScope.alerts = [];
-    $rootScope.alertsIndex = 0;
-    $('alertsMsg').removeClass('hidden');
+    
+    function initVars(){
+      $rootScope.twts = [];
+      $rootScope.teamsData = [];
+      $rootScope.allMatches = [];
+      $rootScope.alerts = [];
+      $rootScope.alertsIndex = 0;
+    }
+    initVars();
     
     if ($rootScope.allMatches.length == 0) getAllMatches();
     function getAllMatches() {
@@ -54,9 +57,12 @@ angular
       })
     }
     
-    //    socket.disconnect():
-//    $rootScope.socket = io.connect('http://10.0.1.5:3000');
-    $rootScope.socket = io.connect('http://www.bochadefutbol.com.ar/');
+    // Socket
+    $rootScope.socketConnect = function(){
+      $rootScope.socket = io.connect('http://10.0.1.5:3000');
+//    $rootScope.socket = io.connect('http://www.bochadefutbol.com.ar/');
+    }
+    $rootScope.socketConnect();
     $rootScope.socket.on('newTwits', function (data) {
       $rootScope.twts.unshift(data);
       $rootScope.$digest();
@@ -64,13 +70,6 @@ angular
     $rootScope.socket.on('prevTwits', function (data) {
       $rootScope.twts.push(data);
       $rootScope.$digest();
-    });
-    $rootScope.socket.on('actualizeMatch', function (match) {
-      for (var i = 0; i < $rootScope.allMatches.length; i++) {
-        if ($rootScope.allMatches[i].numId == match.numId) {
-          $rootScope.allMatches[i] = match;
-        }
-      }
     });
     $rootScope.socket.on('newMatchEvents', function (data) {
       var dateTimeForId = moment().format('YYYY_MM_DD_HH_mm_ss_S');

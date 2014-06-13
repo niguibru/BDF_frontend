@@ -62,7 +62,9 @@
     <table class="table">
       <tr ng-repeat="event in events | orderBy:'min' ">
         <td class="local"> 
-          {{event.local}}
+          {{event.local}} 
+          <span ng-show="{{event.local_showOwnGoal}}"> (Ec) </span>
+          <span ng-show="{{event.local_showPenalty}}"> (Pe) </span>
           <img ng-show="{{event.local_showGoal}}" class="goal" src="styles/images/logos/BdF_Logo.png" style="height: 18px;">
           <span ng-show="{{event.local_showYCard}}" class="yellowCard">--</span>
           <span ng-show="{{event.local_showRCard}}" class="redCard">--</span>
@@ -73,6 +75,8 @@
           <span ng-show="{{event.visitor_showYCard}}" class="yellowCard">--</span>
           <span ng-show="{{event.visitor_showRCard}}" class="redCard">--</span>
           {{event.visitor}} 
+          <span ng-show="{{event.visitor_showOwnGoal}}"> (Ec) </span>
+          <span ng-show="{{event.visitor_showPenalty}}"> (Pe) </span>
         </td>
       </tr>
     </table>
