@@ -74,14 +74,18 @@ function followMatch (matchNumId) {
           }                                               
         });
       } else {
-        // Find Match in DB
-        matches.findByNumId(matchNumId,function(matchDb){
-          // Update macth and new events
-          matches.findByNumId(matchDb.numId,function(matchDb){
-            updateMatchAndAddEvents(matchDb, matchState);
-            job.stop();
-          });                                              
-        });
+        if (matchToPlay(matchState.status)) {
+          console.log('  Match To Play');
+        } else {
+          // Find Match in DB
+          matches.findByNumId(matchNumId,function(matchDb){
+            // Update macth and new events
+            matches.findByNumId(matchDb.numId,function(matchDb){
+              updateMatchAndAddEvents(matchDb, matchState);
+              job.stop();
+            });                                              
+          });
+        }
       }
     })
   }, function () {
@@ -125,6 +129,12 @@ function matchPlaying(status){
   if (status == '0') console.log('  Match Playing');
   if (status == '1') console.log('  Match Finished');
   return auxMatchPlaying;
+}
+
+// Chack is match finished
+function matchToPlay(status){
+  var auxMatchToPlay = (status == '-1')
+  return auxMatchToPlay;
 }
 
 // Chack if have new goals
