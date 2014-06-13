@@ -74,7 +74,7 @@ function followMatch (matchNumId) {
             // Update macth, new events and send match to front
             updateMatchAndAddEvents(matchDb, matchState);
 //          }                                            
-        }); 
+        });    
       } else {
         if (matchToPlay(matchState.status)) {
           console.log('  Match To Play');
