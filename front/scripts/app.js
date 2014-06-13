@@ -59,8 +59,8 @@ angular
     
     // Socket
     $rootScope.socketConnect = function(){
-      $rootScope.socket = io.connect('http://10.0.1.5:3000');
-//    $rootScope.socket = io.connect('http://www.bochadefutbol.com.ar/');
+//      $rootScope.socket = io.connect('http://10.0.1.5:3000');
+    $rootScope.socket = io.connect('http://www.bochadefutbol.com.ar/');
     }
     $rootScope.socketConnect();
     $rootScope.socket.on('newTwits', function (data) {
