@@ -94,36 +94,31 @@ angular.module('bochaDeFutbolApp')
       matchData.events.goals.forEach(function(goal) {
         var local = '';
         var visitor = '';
+        var isOwnGoal = false;
+        var isPenaltyGoal = false;
         var local_showGoal = false;
         var visitor_showGoal = false;
         var local_showOwnGoal = false;
         var local_showPenalty = false;
         var visitor_showOwnGoal = false;
         var visitor_showPenalty = false;
-        if (goal.action_type == '6') {
-          if (goal.team == 'local') {
-            goal.team = 'visitor'
-            visitor_showOwnGoal = true;
-          } else {
-            goal.team = 'local';
-            local_showOwnGoal = true;
-          }
-        } else {
-          if (goal.action_type == '2') {  
-            if (goal.team == 'local') {
-              local_showPenalty = true;
-            } else {
-              visitor_showPenalty = true;
-            }
-          }
-        }
-        if (goal.team == 'local') {
+        
+        // If its own goal
+        if (goal.action_type == '6') isOwnGoal = true;
+        // If its penalty goal
+        if (goal.action_type == '2') isPenaltyGoal = true;
+        
+        if ((goal.team == 'local' && !isOwnGoal) || (isOwnGoal && goal.team == 'visitor')) {
           local = goal.player;
           local_showGoal = true
+          if (isPenaltyGoal) local_showPenalty = true;
+          if (isOwnGoal) local_showOwnGoal = true;
         }
-        if (goal.team == 'visitor') {
+        if ((goal.team == 'visitor' && !isOwnGoal) || (isOwnGoal && goal.team == 'local')) {
           visitor = goal.player;
           visitor_showGoal = true
+          if (isPenaltyGoal) visitor_showPenalty = true;
+          if (isOwnGoal) visitor_showOwnGoal = true;
         }
         $scope.events.push({
           local_showGoal: local_showGoal,
