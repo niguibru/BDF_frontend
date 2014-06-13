@@ -53,7 +53,7 @@ module.exports = exports = {
 //                  local: { name: 'Brasil', abr: 'BRA', nameId: 'brasil', goals: 'x' },
 //                  group: { letter: 'A', number: '1' } 
 //              } ];
-//      
+//        
       cb(data);
     })
   },
