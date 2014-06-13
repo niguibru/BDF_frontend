@@ -66,14 +66,14 @@ function followMatch (matchNumId) {
         // Find Match in DB
         matches.findByNumId(matchNumId,function(matchDb){
           // Chack if have New Events
-          if (haveNewGoals(matchDb.events.goals, matchState.events) || 
-              haveNewChanges(matchDb.events.changes, matchState.events) || 
-              haveNewCards(matchDb.events.cards, matchState.events)){
+//          if (haveNewGoals(matchDb.events.goals, matchState.events) || 
+//              haveNewChanges(matchDb.events.changes, matchState.events) || 
+//              haveNewCards(matchDb.events.cards, matchState.events)){
             // If New goals, send goals to front popup
             if (haveNewGoals(matchDb.events.goals, matchState.events)) emitGoal(matchDb, matchState);
             // Update macth, new events and send match to front
             updateMatchAndAddEvents(matchDb, matchState);
-          }                                               
+//          }                                             
         });
       } else {
         if (matchToPlay(matchState.status)) {
