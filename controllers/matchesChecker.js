@@ -17,6 +17,8 @@ exports.start = function(io) {
     "America/Argentina/Buenos_Aires" /* Time zone of this job. */
   );
 
+  var dateToLog = new Date(); 
+  console.log(dateToLog);
   setTimeForTodaysMatches();
 }
 
