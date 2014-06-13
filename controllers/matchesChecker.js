@@ -59,7 +59,7 @@ function followMatch (matchNumId) {
     // Go to results server and check
     matches.getMatchEvents(matchNumId, function(matchState){
       console.log('  ' + matchState.live_minute + ' -> ' + matchState.result + ' -> status ' + matchState.status);
-      // Chack is match finished
+      // Chack is match finished 
       if (matchPlaying(matchState.status)) {
         // Find Match in DB
         matches.findByNumId(matchNumId,function(matchDb){
