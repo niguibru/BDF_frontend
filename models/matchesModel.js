@@ -29,7 +29,7 @@ matches_scheema = new schema(
     'live_minute': String,
     'events': {
                   'cards': [{
-                    minute: String,
+                    minute: Number,
                     action: String,
                     action_type: String,
                     player: String,
@@ -38,7 +38,7 @@ matches_scheema = new schema(
                     team: String
                   }],
                   'goals': [{
-                    minute: String,
+                    minute: Number,
                     action: String,
                     action_type: String,
                     player: String,
@@ -47,7 +47,7 @@ matches_scheema = new schema(
                     team: String
                   }],
                   'changes': [{
-                    minute: String,
+                    minute: Number,
                     action: String,
                     action_type: String,
                     player: String,
