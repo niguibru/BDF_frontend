@@ -58,6 +58,8 @@ angular
     }
     
     // Socket
+    $('.alert.hidden').removeClass('hidden');
+//    $rootScope.alerts.push({alertId: 'id',type: 'success', msg: 'testing'});
     $rootScope.socketConnect = function(){
 //      $rootScope.socket = io.connect('http://10.0.1.5:3000');
     $rootScope.socket = io.connect('http://www.bochadefutbol.com.ar/');

@@ -64,7 +64,9 @@
       <alert type="success" close="closeAlert($index)">uno</alert>
       <alert type="success">dos</alert>
 -->
-      <alert ng-repeat="alert in alerts" id="{{alert.alertId}}" type="{{alert.type}}">{{alert.msg}}</alert>
+      <alert class='alert hidden' ng-repeat="alert in alerts" id="{{alert.alertId}}" type="{{alert.type}}">
+        {{alert.msg}}
+      </alert>
     </div>
     <!-- /Alerts -->
     

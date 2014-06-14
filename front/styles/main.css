@@ -29,9 +29,11 @@ body {
   z-index: 1;
 }
 .alertDiv .alert-success {
-  color: black;
-  background-color: #dff0d8;
-  border-color: #d6e9c6;
+  background-color: greenyellow;
+  margin-top: 2px;
+  border-color: green;
+  font-size: 17px;
+  color: darkgreen;
   padding: 5px;
   margin-bottom: 8px;
   opacity: 0.7;
