@@ -48,6 +48,7 @@ function setTimeForTodaysMatches () {
               time = new Date();
               time.setMinutes(time.getMinutes() + 1);     
               console.log('  ' + match.numId + ' -> playing -> will start at: ' + time);
+              setTimeSchedule(time, match);
             }
           });
         }
