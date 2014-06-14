@@ -68,7 +68,12 @@
   color: darkslategray;
   text-transform: uppercase;
   margin-left: 19px;
-  /*font-weight: bold;*/
+}
+.groupTeams.championship li .teamName {
+  text-align: center;
+  font-size: 16px;
+  color: darkslategray;
+  padding-left: 5px;
 }
 .teamDataList {
   cursor: pointer;

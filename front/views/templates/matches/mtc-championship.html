@@ -1,27 +1,29 @@
 <div class="groupLetter grp{{groupL}}">
   <table> 
-    <td> Grupo {{groupL}}  </td>
+    <td> Grp. {{groupL}} - </td>
+    <td> Pts </td>
     <td> Ju </td>
     <td> Ga </td>
     <td> En </td>
     <td> Pe </td>
     <td> Gf </td>
     <td> Gc </td>
-    <td> Pts </td>
+    <td> Dg </td>
   </table>
 </div>
-<ul class="groupTeams">
-  <li ng-repeat="team in teamsData | filter:{group: groupL}" class="animation">
+<ul class="groupTeams championship">
+  <li ng-repeat="team in teamsData | filter:{group: groupL} | orderBy:['group.pts','group.dg']:true" class="animation">
     <div class="teamRoundFlag inTms {{team.nameId}}"> </div>
     <table> 
       <td class="teamName"> {{team.abr}} </td>
-      <td class="num played"> 0 </td>
-      <td class="num wins"> 0 </td>
-      <td class="num draws"> 0 </td>
-      <td class="num looses"> 0 </td>
-      <td class="num gf"> 0 </td>
-      <td class="num gc"> 0 </td>
-      <td class="num points"> 0 </td>
+      <td class="num points"> {{team.group.pts}} </td>
+      <td class="num played"> {{team.group.ju}} </td>
+      <td class="num wins"> {{team.group.ga}} </td>
+      <td class="num draws"> {{team.group.en}} </td>
+      <td class="num looses"> {{team.group.pe}} </td>
+      <td class="num gf"> {{team.group.gf}} </td>
+      <td class="num gc"> {{team.group.gc}} </td>
+      <td class="num dg"> {{team.group.dg}} </td>
   </table>
   </li>
 </ul>

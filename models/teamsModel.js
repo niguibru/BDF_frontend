@@ -10,7 +10,15 @@ teams_scheema = new schema(
     'abr': String, 
     'group': {
                 'letter': String, 
-                'groupNumber': String
+                'groupNumber': String,
+                'ju': Number,
+                'ga': Number,
+                'en': Number,
+                'pe': Number,
+                'gf': Number,
+                'gc': Number,
+                'dg': Number,
+                'pts': Number
              },
     'players': {
                   'GK': [{
@@ -31,6 +39,7 @@ teams = mongoose.model('teams', teams_scheema);
 
 exports.findAll = function(cb) {
   teams.find({}).sort('name').exec(function(err, results){
+//  teams.find({}).sort('group.pts').exec(function(err, results){
     cb(results);
   })
 };
