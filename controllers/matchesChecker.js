@@ -163,7 +163,7 @@ function matchToPlay(status){
 function haveNewGoals(goals, events){
   var auxHaveNewGoals = false;
   if (events.goals != undefined){
-    if (goals.length != undefined) {
+    if (goals != undefined) {
       if (events.goals.length != goals.length) {
         console.log('     New Events -> Goals');
         auxHaveNewGoals = true;
@@ -180,7 +180,7 @@ function haveNewGoals(goals, events){
 function haveNewChanges(changes, events){
   var auxHaveNewChanges = false;
   if (events.changes != undefined){
-    if (changes.length != undefined){
+    if (changes != undefined){
       if (events.changes.length != changes.length) {
         console.log('     New Events -> Changes');
         auxHaveNewChanges = true;
@@ -197,7 +197,7 @@ function haveNewChanges(changes, events){
 function haveNewCards(cards, events){
   var auxHaveNewCards = false;
   if (events.cards != undefined){
-    if (cards.length != undefined){
+    if (cards != undefined){
       if (events.cards.length != cards.length) {
         console.log('     New Events -> Cards');
         auxHaveNewCards = true;
