@@ -46,7 +46,7 @@ function setTimeForTodaysMatches () {
             if (matchPlaying(matchState.status)){
               // cambia la hora a la actual + 30sec asi empieza a seguirlo
               time = new Date();
-              time.setSeconds(time.getSeconds() + 30);     
+              time.setMinutes(time.getMinutes() + 1);     
               console.log('  ' + match.numId + ' -> playing -> will start at: ' + time);
             }
           });
@@ -61,7 +61,7 @@ function setTimeForTodaysMatches () {
 
 // Set time schedule & set follow
 function setTimeSchedule (time, match) {
-  console.log('\n' + '-> Scheduling match -> ' + match.numId + ' -> ' + match.local.name + ' - ' + match.visitor.name + ' -> LocalTime: ' + match.time);
+  console.log('\n' + '-> Scheduling match -> ' + match.numId + ' -> ' + match.local.name + ' - ' + match.visitor.name + ' -> ServerTime: ' + time + ' -> LocalTime: ' + match.time);
   var job = new CronJob(time, function(){
       // Follow match
       console.log('\n' + '-> Following match -> ' + match.numId + ' -> ' + match.local.name + ' - ' + match.visitor.name + ' -> LocalTime:' + match.time);
