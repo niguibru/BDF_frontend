@@ -1,25 +1,32 @@
-<ul class="groupTeams animation ng-scope">
+<ul class="groupTeams animation" ng-repeat="match in allMatches | filter:{date: todayFilter}">
   <li class="matchData">
-    <p class="dateTime ng-binding"> 17:00 hs - Faltan: 1h 15m </p>
+    <p class="dateTime"> {{match.txtDateTime}} </p>
   </li>
   <li class="teamsVs">
     <table>
-      <tbody><tr>
+      <tr>
         <td class="team1">
-          <div class="teamRoundFlag inMtc brasil"> </div>
-          <p class="teamName ng-binding"> BRA </p>
+          <div class="teamRoundFlag inMtc {{match.local.nameId}}"> </div>
+          <p class="teamName" tooltip-placement="top" tooltip="{{match.local.name}}"> 
+            {{match.local.abr}} 
+          </p>
         </td>
         <td class="team1Res">
-          <p class="teamName team1Res ng-binding"> x </p>
+          <p class="teamName team1Res"> {{match.local.goals}} </p>
         </td>
         <td class="team2Res">
-          <p class="teamName team2Res ng-binding"> x </p>
+          <p class="teamName team2Res"> {{match.visitor.goals}} </p>
         </td>
         <td class="team2">
-          <p class="teamName team2 ng-binding"> CRO </p>
-          <div class="teamRoundFlag inMtc right croacia"> </div>
+          <p class="teamName team2" tooltip-placement="top" tooltip="{{match.visitor.name}}"> 
+            {{match.visitor.abr}} 
+          </p>
+          <div class="teamRoundFlag inMtc right {{match.visitor.nameId}}"> </div>
         </td>
       </tr>
-    </tbody></table>
+    </table>
+  </li>
+  <li class="matchState">
+    <button class="dateTime" ng-click="go('matchdetails/' + match.numId)"> Mas </button>
   </li>
 </ul>
