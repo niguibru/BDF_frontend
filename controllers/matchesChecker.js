@@ -159,7 +159,12 @@ function matchToPlay(status){
 function haveNewGoals(goals, events){
   var auxHaveNewGoals = false;
   if (events.goals != undefined){
-    if (events.goals.length != goals.length) {
+    if (goals.length != undefined) {
+      if (events.goals.length != goals.length) {
+        console.log('     New Events -> Goals');
+        auxHaveNewGoals = true;
+      } 
+    } else {
       console.log('     New Events -> Goals');
       auxHaveNewGoals = true;
     }
@@ -171,7 +176,12 @@ function haveNewGoals(goals, events){
 function haveNewChanges(changes, events){
   var auxHaveNewChanges = false;
   if (events.changes != undefined){
-    if (events.changes.length != changes.length) {
+    if (changes.length != undefined){
+      if (events.changes.length != changes.length) {
+        console.log('     New Events -> Changes');
+        auxHaveNewChanges = true;
+      }
+    } else {
       console.log('     New Events -> Changes');
       auxHaveNewChanges = true;
     }
@@ -183,7 +193,12 @@ function haveNewChanges(changes, events){
 function haveNewCards(cards, events){
   var auxHaveNewCards = false;
   if (events.cards != undefined){
-    if (events.cards.length != cards.length) {
+    if (cards.length != undefined){
+      if (events.cards.length != cards.length) {
+        console.log('     New Events -> Cards');
+        auxHaveNewCards = true;
+      }
+    } else {
       console.log('     New Events -> Cards');
       auxHaveNewCards = true;
     }
