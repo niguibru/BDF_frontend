@@ -133,13 +133,13 @@ function updateMatchAndAddEvents(matchToUpdate, newMatchState){
 
 // Send goals to front popup
 function emitGoal(match, matchState){
-  console.log('     checking team goal ' + parseInt(match.local.goals) + ' < ' + parseInt(matchState.local_goals));
+  console.log('     checking local team goal ' + parseInt(match.local.goals) + ' < ' + parseInt(matchState.local_goals));
   if (parseInt(match.local.goals) < parseInt(matchState.local_goals) ) {
     match.local.goals = matchState.local_goals;
     socketIo.sockets.emit("newMatchEvents", {event: 'Gooool de ' + match.local.name});
     console.log('     Goooooool de ' + match.local.nameId);
   }
-  console.log('     checking team goal ' + parseInt(match.visitor.goals) + ' < ' + parseInt(matchState.visitor_goals));
+  console.log('     checking visitor team goal ' + parseInt(match.visitor.goals) + ' < ' + parseInt(matchState.visitor_goals));
   if (parseInt(match.visitor.goals) < parseInt(matchState.visitor_goals)) {
     match.visitor.goals = matchState.visitor_goals;
     socketIo.sockets.emit("newMatchEvents", {event: 'Gooool de ' + match.visitor.name});

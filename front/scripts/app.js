@@ -84,7 +84,7 @@ angular
             $rootScope.alerts.splice(i, 1);
           }
         }
-      }, 4000);
+      }, 10000);
     });
     
   });
