@@ -39,6 +39,7 @@ module.exports = exports = {
   },
   matchesToday: function(cb) {
     var date = utils.nowInArgentina("YYYY/MM/DD");
+//    date = '2014/06/13';
     matchesModel.findByDate(date , function(data){
 //      data = [ {  numId: '141496',
 //                  type: 'G',

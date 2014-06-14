@@ -1,6 +1,7 @@
 var CronJob = require('cron').CronJob;
 var matches = require('./matchesServicesRoute');
 var socketIo = null;
+var serverDifHours = 3;
 
 exports.start = function(io) {
   
@@ -18,7 +19,8 @@ exports.start = function(io) {
   );
 
   var dateToLog = new Date(); 
-  console.log(dateToLog);
+  console.log('Server time now: '+ dateToLog);
+  
   setTimeForTodaysMatches();
 }
  
@@ -29,21 +31,37 @@ function setTimeForTodaysMatches () {
     // Iterate matches today and schedule
     data.forEach(function(match){
       var time = new Date(match.date + ' ' + match.time) ;
-      time.setSeconds(time.getSeconds() + 5);        
-      console.log('  ' + match.numId + ' -> ' + match.local.name + ' - ' + match.visitor.name + ' -> ' + time);
+      time.setSeconds(time.getSeconds() + 5);       
+      time.setHours(time.getHours() + serverDifHours);  
+      console.log('  ' + match.numId + ' -> ' + match.local.name + ' - ' + match.visitor.name + ' -> ServerTime: ' + time);
 
-      // Schedule Match
-      setTimeSchedule(time, match);
-    });
-  });
+      matches.getMatchEvents(match.numId, function(matchState){
+        if (!matchToPlay(matchState.status)) {
+          console.log('  ' + match.numId + ' -> playing or played');
+          
+          // Find Match in DB
+          matches.findByNumId(match.numId,function(matchDb){
+            // Update macth and new events
+            updateMatchAndAddEvents(matchDb, matchState);
+            if (matchPlaying(matchState.status)){
+              // cambiar la hora a la actual + 2 min asi empieza a seguirlo
+            }
+          });
+        }
+        
+        // Schedule Match
+        setTimeSchedule(time, match);
+      })
+    })
+  })
 };
 
 // Set time schedule & set follow
 function setTimeSchedule (time, match) {
-  console.log('\n' + '-> Scheduling match -> ' + match.numId + ' -> ' + match.local.name + ' - ' + match.visitor.name + ' -> ' + match.time);
+  console.log('\n' + '-> Scheduling match -> ' + match.numId + ' -> ' + match.local.name + ' - ' + match.visitor.name + ' -> LocalTime: ' + match.time);
   var job = new CronJob(time, function(){
       // Follow match
-      console.log('\n' + '-> Following match -> ' + match.numId + ' -> ' + match.local.name + ' - ' + match.visitor.name + ' -> ' + match.time);
+      console.log('\n' + '-> Following match -> ' + match.numId + ' -> ' + match.local.name + ' - ' + match.visitor.name + ' -> LocalTime:' + match.time);
       followMatch(match.numId);
 
     }, function () {
@@ -82,10 +100,8 @@ function followMatch (matchNumId) {
           // Find Match in DB
           matches.findByNumId(matchNumId,function(matchDb){
             // Update macth and new events
-            matches.findByNumId(matchDb.numId,function(matchDb){
-              updateMatchAndAddEvents(matchDb, matchState);
-              job.stop();
-            });                                              
+            updateMatchAndAddEvents(matchDb, matchState);
+            job.stop();                                              
           });
         }
       }
