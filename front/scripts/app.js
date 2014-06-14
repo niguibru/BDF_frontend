@@ -39,7 +39,7 @@ angular
         redirectTo: '/'
       });
   })
-  .run(function ($rootScope, matches) {
+  .run(function ($rootScope, $location, matches) {
     
     function initVars(){
       $rootScope.twts = [];
@@ -59,7 +59,11 @@ angular
     
     // Socket
     $('.alert.hidden').removeClass('hidden');
-//    $rootScope.alerts.push({alertId: 'id',type: 'success', msg: 'testing'});
+    $('.alertDiv').click(function(){
+      var mtcNumId = $(this).children('.alert').attr('mtcNumId');
+      $rootScope.$apply( $location.path('matchdetails/' + mtcNumId));
+    });
+//    $rootScope.alerts.push({alertId: 'id', mtcNumId: '141511',type: 'success', msg: 'testing'});
     $rootScope.socketConnect = function(){
 //      $rootScope.socket = io.connect('http://10.0.1.5:3000');
     $rootScope.socket = io.connect('http://www.bochadefutbol.com.ar/');
@@ -76,7 +80,7 @@ angular
     $rootScope.socket.on('newMatchEvents', function (data) {
       var dateTimeForId = moment().format('YYYY_MM_DD_HH_mm_ss_S');
       var alertId = 'Id_' + dateTimeForId;
-      $rootScope.alerts.push({alertId: alertId,type: 'success', msg: data.event});
+      $rootScope.alerts.push({alertId: alertId, mtcNumId: data.mtcNumId, type: 'success', msg: data.event});
       $rootScope.$digest();
       window.setTimeout(function() { 
         $('#' + alertId).alert('close'); 
