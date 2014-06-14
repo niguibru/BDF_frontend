@@ -89,8 +89,8 @@ body {
 .sectionTitle {
   text-align: center;
   color: white;
-/*  font-family: 'Indie Flower', cursive;*/
-  font-family: worldCupFont;
+  font-family: 'Indie Flower', cursive;
+/*  font-family: worldCupFont;*/
   font-size: 27px;
 }
 
