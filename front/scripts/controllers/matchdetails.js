@@ -86,8 +86,13 @@ angular.module('bochaDeFutbolApp')
       if ($scope.match.live_minute == '') {
         $scope.live_minuteShow = 'hidden';
       } else {
-        $scope.live_minute = $scope.match.live_minute;
-        $scope.live_minute_percent = $scope.live_minute * 100 / 90;
+        if ($scope.match.live_minute == 'Des') {
+          $scope.live_minute = 'Descanso - 45';
+          $scope.live_minute_percent = 45 * 100 / 90;
+        } else {
+          $scope.live_minute = $scope.match.live_minute;
+          $scope.live_minute_percent = $scope.live_minute * 100 / 90;
+        }
       }
     }
     
