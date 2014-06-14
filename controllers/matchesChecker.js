@@ -44,7 +44,9 @@ function setTimeForTodaysMatches () {
             // Update macth and new events
             updateMatchAndAddEvents(matchDb, matchState);
             if (matchPlaying(matchState.status)){
-              // cambiar la hora a la actual + 2 min asi empieza a seguirlo
+              // cambia la hora a la actual + 30sec asi empieza a seguirlo
+              time = new Date();
+              time.setSeconds(time.getSeconds() + 30);     
             }
           });
         }
