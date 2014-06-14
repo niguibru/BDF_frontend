@@ -115,7 +115,6 @@ function followMatch (matchNumId) {
   );
 }
 
-
 // Update macth and new events
 function updateMatchAndAddEvents(matchToUpdate, newMatchState){
   matchToUpdate.events = newMatchState.events;
