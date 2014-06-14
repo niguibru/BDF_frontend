@@ -47,6 +47,7 @@ function setTimeForTodaysMatches () {
               // cambia la hora a la actual + 30sec asi empieza a seguirlo
               time = new Date();
               time.setSeconds(time.getSeconds() + 30);     
+              console.log('  ' + match.numId + ' -> playing -> will start at: ' + time);
             }
           });
         }
@@ -145,9 +146,9 @@ function emitGoal(match, matchState){
 // Chack is match finished
 function matchPlaying(status){
   var auxMatchPlaying = (status == '0')
-  if (status == '-1') console.log('  Match To Play');
-  if (status == '0') console.log('  Match Playing');
-  if (status == '1') console.log('  Match Finished');
+//  if (status == '-1') console.log('  Match To Play');
+//  if (status == '0') console.log('  Match Playing');
+//  if (status == '1') console.log('  Match Finished');
   return auxMatchPlaying;
 }
 
