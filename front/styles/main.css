@@ -1,3 +1,10 @@
+
+@font-face {
+	font-family: worldCupFont;
+	src: url('fonts/Brasil World Cup 2014 font.otf');
+}
+ 
+
 .nav, .pagination, .carousel, .panel-title a { cursor: pointer; }
 
 body {
@@ -79,7 +86,8 @@ body {
 .sectionTitle {
   text-align: center;
   color: white;
-  font-family: 'Indie Flower', cursive;
+/*  font-family: 'Indie Flower', cursive;*/
+  font-family: worldCupFont;
   font-size: 27px;
 }
 

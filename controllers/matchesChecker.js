@@ -36,8 +36,9 @@ function setTimeForTodaysMatches () {
       console.log('  ' + match.numId + ' -> ' + match.local.name + ' - ' + match.visitor.name + ' -> ServerTime: ' + time);
 
       matches.getMatchEvents(match.numId, function(matchState){
+        // Check if not match to play
         if (!matchToPlay(matchState.status)) {
-          console.log('  ' + match.numId + ' -> playing or played');
+          console.log('  ' + match.numId + ' -> playing or played -> Status ' + matchState.status);
           
           // Find Match in DB
           matches.findByNumId(match.numId,function(matchDb){
@@ -51,7 +52,7 @@ function setTimeForTodaysMatches () {
               setTimeSchedule(time, match);
             }
           });
-        }
+        } 
         
         // Schedule Match
         setTimeSchedule(time, match);
