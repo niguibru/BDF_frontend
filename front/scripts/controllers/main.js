@@ -7,7 +7,7 @@ angular.module('bochaDeFutbolApp')
 //    instagram.getExample('fifa2014', function(instaData){
 //      $scope.insta = instaData;
 //    });
-//    
+    
     
     // Socket
     $rootScope.socketConnect();

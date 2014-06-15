@@ -55,7 +55,7 @@
   <div class="{{live_minuteShow}}">
     <progressbar animate="false" value="live_minute_percent" type="success"><b>{{live_minute}}'</b></progressbar>
   </div>
-  
+    
 <!--stadium-y estadisticas falta>-->
   
   <div class="row matchData">
@@ -101,6 +101,17 @@
     </div>
   </div>
 -->
+  
+  <div class="instaPrev {{viewInstaPrev}}">
+    <h3 class="sectionTitle"> El partido en instagram </h3>
+    <hr style="opacity: 0.8; width: 80%;margin-top: 22px;">
+    <div class="row">
+      <div class="col-md-4" ng-repeat="photo in insta">
+<!--        <p> {{photo.username}} </p>-->
+        <img src="{{photo.image}}">
+      </div>
+    </div>
+  </div>
   
   <a href="http://www.resultados-futbol.com" style="font-size: 11px;
        position: absolute;">Powered by resultados-Futbol.com</a>

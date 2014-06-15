@@ -33,7 +33,7 @@ var twitterServicesRoute = require('./controllers/twitterServicesRoute');
 app.get('/getTweets', twitterServicesRoute.getTweetsWeb);
 // Instagram Service
 var instagramServicesRoute = require('./controllers/instagramServiceRoute');
-app.get('/getExample', instagramServicesRoute.getExample);
+app.get('/getInstaPrevs', instagramServicesRoute.getInstaPrevs);
 // Team Service
 var teamServicesRoute = require('./controllers/teamsServicesRoute');
 app.get('/teamsComplete', teamServicesRoute.teamsComplete);

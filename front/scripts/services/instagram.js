@@ -3,10 +3,11 @@
 angular.module('bochaDeFutbolApp')
   .factory('instagram', function ($http) {
     return {
-      getExample: function(search, callback) {
-        $http.get('/getExample', {
+      getInstaPrevs: function(lat, long, callback) {
+        $http.get('/getInstaPrevs', {
           params: { 
-            search: search, 
+            lat: lat, 
+            long: long
           }
         }).success(function(data){
           callback(data);

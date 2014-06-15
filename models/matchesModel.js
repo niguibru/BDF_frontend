@@ -25,6 +25,11 @@ matches_scheema = new schema(
       'nameId': String,
       'goals': String,
     },
+    'stadium':{
+      'name': String,
+      'lat': String,
+      'long': String,
+    },
     'status': String, 
     'live_minute': String,
     'events': {

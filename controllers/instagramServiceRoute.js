@@ -18,17 +18,33 @@ ig.use({ client_id: '3e5c5debcd8743a6b474cda1999374b8 ',
 module.exports = exports = {
 
   // Web Services
-  getExample: function(req, res) {
-    var search = req.query.search;
-    ig.tag_media_recent('fifa2014', function(err, medias, pagination, limit) {
-      var instaMedias = medias[0];
-      console.log(instaMedias);
-      var instaResp = { 
-        link: instaMedias.link,
-        image: instaMedias.images.low_resolution.url,
-      };
+  getInstaPrevs: function(req, res) {
+    var lat = parseFloat(req.query.lat);
+    var long = parseFloat(req.query.long);
+    ig.media_search(lat, long, function(err, medias, limit) {
+      var instaResp = []; 
+      for (var i = 0; (i <= medias.length -1); i++) {
+        instaResp.push({ 
+          username: medias[i].user.username,
+          link: medias[i].link,
+          image: medias[i].images.low_resolution.url,
+        });
+      }
       res.json(instaResp);
     });
+    
+    
+    
+//    ig.tag_media_recent('fifa2014', function(err, medias, pagination, limit) {
+//      var instaMedias = medias[0];
+//      console.log(instaMedias);
+//      var instaResp = { 
+//        username: instaMedias.user.username,
+//        link: instaMedias.link,
+//        image: instaMedias.images.low_resolution.url,
+//      };
+//      res.json(instaResp);
+//    });
   }
 }
 

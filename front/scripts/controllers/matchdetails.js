@@ -1,10 +1,12 @@
 'use strict';
 
 angular.module('bochaDeFutbolApp')
-  .controller('MatchdetailsCtrl', function ($scope, $rootScope, $routeParams, matches) {
+  .controller('MatchdetailsCtrl', function ($scope, $rootScope, $routeParams, matches, instagram) {
     
     initVars();
     function initVars (){
+      $scope.insta = [];
+      $scope.viewInstaPrev = 'hidden';
       $scope.match = {};
       $scope.status = '';
       $scope.statusClass = '';
@@ -53,6 +55,24 @@ angular.module('bochaDeFutbolApp')
     function getSelectMatchDetails(matchData) {
       // Set Match
       $scope.match = matchData;
+      
+      // Murstra instagram desde 2 horas antes del partido
+      $scope.viewInstaPrev = 'hidden';
+      var datetimeNow = new Date();
+      datetimeNow.setHours(datetimeNow.getHours()+2);
+      var datetimeMatch = new Date($scope.match.date + ' ' + $scope.match.time);
+      if (datetimeNow.valueOf() >= datetimeMatch.valueOf()) {
+        if ($scope.match.status != '1') {
+          if (matchData.stadium != undefined && matchData.stadium != undefined){
+            var lat = matchData.stadium.lat;
+            var long = matchData.stadium.long;
+            instagram.getInstaPrevs(lat, long, function(instaData){
+              $scope.insta = instaData;
+            });
+            $scope.viewInstaPrev = 'show';
+          }
+        }
+      }
 
       // Set Matches data
       setMatchState();
