@@ -25,7 +25,7 @@ angular.module('bochaDeFutbolApp')
       $location.path( path );
     };
     
-    $scope.yesterdayFilter = '2014/06/14';
-    $scope.todayFilter = '2014/06/15';
-    $scope.tomorrowFilter = '2014/06/16';
+    $scope.yesterdayFilter = moment().subtract('days', 1).format('YYYY/MM/DD');
+    $scope.todayFilter = moment().format('YYYY/MM/DD'); 
+    $scope.tomorrowFilter = moment().add('days', 1).format('YYYY/MM/DD');
   });
