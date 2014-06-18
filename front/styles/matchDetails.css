@@ -1,11 +1,12 @@
 
+/*Match Data>>*/
 .matchGroup {
   background: rgba(0,0,0,0.2);
   color: white;
   text-align: center;
   font-size: 15px;
   padding: 6px;
-  margin-bottom: 0px !important;
+  margin-bottom: 16px !important;
 }
 .matchGroup p {
   margin-bottom: 0px;
@@ -19,6 +20,9 @@
 .matchGroup p .played {
   color: chocolate;
 }
+/*<<Match Data*/
+
+/*Teams Results>>*/
 .matchTeams {
   margin-top: 0px !important;
   color: white;
@@ -62,13 +66,41 @@
   font-size: 27px;
 }
 
+.matchTeams.mobile{
+  display: none;
+  font-size: 22px;
+}
+.matchTeams.mobile .group {
+  margin-top: -21px;
+  margin-left: 0px;
+  margin-right: 0px;
+}
+.matchTeams.mobile .detailsTeamName{
+  padding: 0px;
+}
+.matchTeams.mobile .teamRoundFlag.inMatch {
+  width: 40px;  
+  height: 40px;
+}
+.matchTeams.mobile table .flag {
+  width: 47px;
+}
+.matchTeams.mobile .local .teamRoundFlag.inMatch {
+  margin-right: 0px;
+}
+.matchTeams.mobile .detailsResult {
+  width: 44px;
+}
+/*<<Teams Results*/
 
+/*Instagram>>*/
 .instaPrev img {
   width: 100%;
   opacity: 0.7;
   border-radius: 15px;
   padding: 9px;
 }
+/*<<Instagram*/
 
 /*Match actions>>*/
 .matchData td {
@@ -103,6 +135,15 @@
 @media all and (max-width : 1200px) {
   .detailsResult {
     margin-left: 10px;
+  }
+}
+
+@media all and (max-width : 991px) {
+  .matchTeams.mobile{
+    display: inline;
+  }
+  .matchTeams.big{
+    display: none;
   }
 }
 

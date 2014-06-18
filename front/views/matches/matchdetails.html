@@ -19,7 +19,8 @@
       <p> Grupo {{match.group.letter}} - <span class="{{statusClass}}"> {{match.txtDateTime}}  - {{status}} </span> </p>
     </div> 
   </div>
-  <div class="row matchTeams">
+  
+  <div class="row matchTeams big">
     <div class="col-md-5 col-xs-5 detailsTeamName local">
       <table>
         <tr>
@@ -51,7 +52,39 @@
       </table>
     </div>
   </div>
-
+  <div class="row matchTeams mobile">
+    <div class="group col-xs-12 detailsTeamName local">
+      <table>
+        <tr>
+          <td class="flag"> 
+            <div class="teamRoundFlag inMatch {{match.local.nameId}}"> </div>
+          </td>
+          <td> 
+            <p>{{match.local.name}}</p>
+          </td>
+          <td class="group detailsResult"> 
+            <p>{{match.local.goals}}</p>
+          </td>
+        </tr>
+      </table>
+    </div> 
+    <div class=" col-xs-12 detailsTeamName">
+      <table>
+        <tr>
+          <td class="flag"> 
+            <div class="teamRoundFlag inMatch {{match.visitor.nameId}}"> </div>
+          </td>
+          <td> 
+            <p>{{match.visitor.name}}</p>
+          </td>
+          <td class="group detailsResult"> 
+            <p>{{match.visitor.goals}}</p>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  
   <div class="{{live_minuteShow}}">
     <progressbar animate="false" value="live_minute_percent" type="success"><b>{{live_minute}}'</b></progressbar>
   </div>
