@@ -22,7 +22,6 @@ var matchesChecker = require('./controllers/matchesChecker');
 matchesChecker.start(io);
 // << MATCHES CHECKER
 
-
 app.use(express.static(__dirname + '/front'));
 // ROUTES >>
 // Front
