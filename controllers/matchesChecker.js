@@ -227,30 +227,28 @@ function haveNewCards(cards, events){
 function updateTeamGroupPosition(nameId, groupNumber){
   nameId =  utils.toNameId(nameId);
   resultsApi.getTeamGrpPosition(groupNumber, function(tableData){
-    teamPositionData = null;
     tableData.table.forEach(function(grpTeam) {
       if (nameId == utils.toNameId(grpTeam.team)){
-        teamPositionData = grpTeam;
-        console.log('   calc position of team ---->' + utils.toNameId(grpTeam.team)); 
+        teams.nTeamsByNameId(nameId, function(team){
+          team.group = {
+            letter: team.group.letter,
+            groupNumber: team.group.groupNumber,
+            ju: grpTeam.round,
+            ga: grpTeam.wins,
+            en: grpTeam.draws,
+            pe: grpTeam.losses,
+            gf: grpTeam.gf,
+            gc: grpTeam.ga,
+            dg: grpTeam.avg,
+            pts: grpTeam.points
+          }
+
+          teams.updateTeam(team);
+          console.log('   calc position of team ---->' + utils.toNameId(grpTeam.team)); 
+          console.log(team.group);
+        })
       }
     });
-    teams.nTeamsByNameId(nameId, function(team){
-      team.group = {
-        letter: team.group.letter,
-        groupNumber: team.group.groupNumber,
-        ju: teamPositionData.round,
-        ga: teamPositionData.wins,
-        en: teamPositionData.draws,
-        pe: teamPositionData.losses,
-        gf: teamPositionData.gf,
-        gc: teamPositionData.ga,
-        dg: teamPositionData.avg,
-        pts: teamPositionData.points
-      }
-      
-      teams.updateTeam(team);
-//      console.log(team.group);
-    })
   });
 }
 
