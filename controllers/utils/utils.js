@@ -23,34 +23,37 @@ exports.getRounds = function() {
 }
 
 // To lowercase and not rare 
-var normalize = (function() {
+exports.toNameId = (function(str) {
   var from = "ÃÀÁÄÂÈÉËÊÌÍÏÎÒÓÖÔÙÚÜÛãàáäâèéëêìíïîòóöôùúüûÑñÇç",
       to   = "AAAAAEEEEIIIIOOOOUUUUaaaaaeeeeiiiioooouuuunncc",
       mapping = {};
  
   for(var i = 0, j = from.length; i < j; i++ )
       mapping[ from.charAt( i ) ] = to.charAt( i );
- 
-  return function( str ) {
-      var ret = [];
-      for( var i = 0, j = str.length; i < j; i++ ) {
-          var c = str.charAt( i );
-          if( mapping.hasOwnProperty( str.charAt( i ) ) )
-              ret.push( mapping[ c ] );
-          else
-              ret.push( c );
-      }
-      return ret.join( '' );
+
+  str = str.replace(/\s/g,'').toLowerCase()
+  var ret = [];
+  for( var i = 0, j = str.length; i < j; i++ ) {
+    var c = str.charAt( i );
+    if( mapping.hasOwnProperty( str.charAt( i ) ) )
+      ret.push( mapping[ c ] );
+    else
+      ret.push( c );
   }
- 
-})();
+  ret = ret.join( '' );
+  //Exceptions
+  if (ret == 'bosniaherzegovina'){
+    ret = 'bosnia';
+  }
+  return ret;
+})
 
 // Get current time at Argentina
 var moment = require('moment-timezone');
 exports.nowInArgentina = (function (format) {
 //  var format = 'YYYY/MM/DD HH:mm:ss ZZ';
   return moment().tz("America/Argentina/Buenos_Aires").format(format);
-});
+})
 
 // TEAMS
 exports.teams_getApiUrl = function() {
@@ -60,7 +63,7 @@ exports.teams_getApiUrl = function() {
 
 exports.teams_builJsonTeam = function(actualTeam, teamIndex) {
   var nameId = actualTeam.team.replace(/\s/g,'').toLowerCase();
-  nameId = normalize(nameId);
+  nameId = toNameId(nameId);
   var name = actualTeam.team;
   var group = groupLetters[actualTeam.group];
   var groupNumber = actualTeam.group;
@@ -83,11 +86,6 @@ exports.matches_getApiUrl = function(round) {
   return completeUrl;
 }
 
-exports.matches_getState = function(matchId) {
-  var completeUrl = apiUrl + apiKey + format + match + '&id=' + matchId;
-  return completeUrl;
-}
-
 exports.matches_builJsonMatch = function(actualMatch) {
   moment.lang('es');
   
@@ -104,11 +102,11 @@ exports.matches_builJsonMatch = function(actualMatch) {
   var txtDateTime = datetime.format('DD [de] MMMM, HH:mm [hs]');
   var local_name = actualMatch.local;
   var local_nameId = actualMatch.local.replace(/\s/g,'').toLowerCase();
-  local_nameId = normalize(local_nameId);
+  local_nameId = toNameId(local_nameId);
   var local_goals = actualMatch.local_goals;
   var visitor_name = actualMatch.visitor;
   var visitor_nameId = actualMatch.visitor.replace(/\s/g,'').toLowerCase();
-  visitor_nameId = normalize(visitor_nameId);
+  visitor_nameId = toNameId(visitor_nameId);
   var visitor_goals = actualMatch.visitor_goals;
   var status = actualMatch.status; // (-1 to play), (0 playing), (1 played)
   var result = actualMatch.result;

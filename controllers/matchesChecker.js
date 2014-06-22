@@ -1,5 +1,9 @@
 var CronJob = require('cron').CronJob;
+var utils = require('./utils/utils');
 var matches = require('./matchesServicesRoute');
+var resultsApi = require('./resultsApiService');
+var teams = require('./teamsServicesRoute');
+
 var socketIo = null;
 var serverDifHours = 3;
 
@@ -18,10 +22,9 @@ exports.start = function(io) {
     "America/Argentina/Buenos_Aires" /* Time zone of this job. */
   );
 
-  var dateToLog = new Date(); 
-  console.log('Server time now: '+ dateToLog);
-  
+  // when server start chck todays maches
   setTimeForTodaysMatches();
+//  updateTeamGroupPosition('argelia', '8');
 }
  
 // Get all matches and set time schedule
@@ -30,12 +33,14 @@ function setTimeForTodaysMatches () {
     console.log("/////// Today's Matchs ///////");
     // Iterate matches today and schedule
     data.forEach(function(match){
+      // Set server time to start match
       var time = new Date(match.date + ' ' + match.time) ;
       time.setSeconds(time.getSeconds() + 5);       
       time.setHours(time.getHours() + serverDifHours);  
       console.log('  ' + match.numId + ' -> ' + match.local.name + ' - ' + match.visitor.name + ' -> ServerTime: ' + time);
 
-      matches.getMatchEvents(match.numId, function(matchState){
+      // Get match state in API
+      resultsApi.getMatchEvents(match.numId, function(matchState){
         // Check if not match to play
         if (!matchToPlay(matchState.status)) {
           console.log('  ' + match.numId + ' -> playing or played -> Status ' + matchState.status);
@@ -50,6 +55,12 @@ function setTimeForTodaysMatches () {
               time.setMinutes(time.getMinutes() + 1);     
               console.log('  ' + match.numId + ' -> playing -> will start at: ' + time);
               setTimeSchedule(time, match);
+            } else {
+              // if "group" match update team positions
+              if (matchDb.type == 'G'){
+                updateTeamGroupPosition(matchDb.local.nameId, matchDb.group.number);
+                updateTeamGroupPosition(matchDb.visitor.nameId, matchDb.group.number);
+              }
             }
           });
         } 
@@ -82,21 +93,16 @@ function setTimeSchedule (time, match) {
 function followMatch (matchNumId) {
   var job = new CronJob('0 * * * * *', function(){
     // Go to results server and check
-    matches.getMatchEvents(matchNumId, function(matchState){
+    resultsApi.getMatchEvents(matchNumId, function(matchState){
       console.log('  ' + matchState.live_minute + ' -> ' + matchState.result + ' -> status ' + matchState.status);
       // Chack is match finished 
       if (matchPlaying(matchState.status)) {
         // Find Match in DB
         matches.findByNumId(matchNumId,function(matchDb){
-          // Chack if have New Events
-//          if (haveNewGoals(matchDb.events.goals, matchState.events) || 
-//              haveNewChanges(matchDb.events.changes, matchState.events) || 
-//              haveNewCards(matchDb.events.cards, matchState.events)){
-            // If New goals, send goals to front popup
-            if (haveNewGoals(matchDb.events.goals, matchState.events)) emitGoal(matchDb, matchState);
-            // Update macth, new events and send match to front
-            updateMatchAndAddEvents(matchDb, matchState);
-//          }                                            
+          // If New goals, send goals to front popup
+          if (haveNewGoals(matchDb.events.goals, matchState.events)) emitGoal(matchDb, matchState);
+          // Update macth, new events and send match to front
+          updateMatchAndAddEvents(matchDb, matchState);                                     
         });
       } else {
         if (matchToPlay(matchState.status)) {
@@ -106,6 +112,12 @@ function followMatch (matchNumId) {
           matches.findByNumId(matchNumId,function(matchDb){
             // Update macth and new events
             updateMatchAndAddEvents(matchDb, matchState);
+            // if "group" match update team positions
+            if (matchDb.type == 'G'){
+              updateTeamGroupPosition(matchDb.local.nameId, matchDb.group.number);
+              updateTeamGroupPosition(matchDb.visitor.nameId, matchDb.group.number);
+            }
+            
             job.stop();                                              
           });
         }
@@ -152,9 +164,6 @@ function emitGoal(match, matchState){
 // Chack is match finished
 function matchPlaying(status){
   var auxMatchPlaying = (status == '0')
-//  if (status == '-1') console.log('  Match To Play');
-//  if (status == '0') console.log('  Match Playing');
-//  if (status == '1') console.log('  Match Finished');
   return auxMatchPlaying;
 }
 
@@ -215,7 +224,35 @@ function haveNewCards(cards, events){
   return auxHaveNewCards;
 };
 
-
+function updateTeamGroupPosition(nameId, groupNumber){
+  nameId =  utils.toNameId(nameId);
+  resultsApi.getTeamGrpPosition(groupNumber, function(tableData){
+    teamPositionData = null;
+    tableData.table.forEach(function(grpTeam) {
+      if (nameId == utils.toNameId(grpTeam.team)){
+        teamPositionData = grpTeam;
+        console.log('   calc position of team ---->' + utils.toNameId(grpTeam.team)); 
+      }
+    });
+    teams.nTeamsByNameId(nameId, function(team){
+      team.group = {
+        letter: team.group.letter,
+        groupNumber: team.group.groupNumber,
+        ju: teamPositionData.round,
+        ga: teamPositionData.wins,
+        en: teamPositionData.draws,
+        pe: teamPositionData.losses,
+        gf: teamPositionData.gf,
+        gc: teamPositionData.ga,
+        dg: teamPositionData.avg,
+        pts: teamPositionData.points
+      }
+      
+      teams.updateTeam(team);
+//      console.log(team.group);
+    })
+  });
+}
 
 
 

@@ -57,6 +57,15 @@ exports.clear = function(cb) {
   })
 };
 
+exports.updateTeam = function(teamToUpdate) {
+  teams.findOne({nameId: teamToUpdate.nameId}).exec(function(err, teamDb){
+    teamDb = teamToUpdate;
+    teamDb.save(function (err) {
+      if (err) console.log(err);
+    });
+  })
+};
+
 exports.insert = function(newData) {
   teamsAbrModel.findOne({nameId: newData.nameId}, function(data){
     if (data.length > 0) {

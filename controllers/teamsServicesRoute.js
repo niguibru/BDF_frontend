@@ -5,7 +5,8 @@ var teamsAbrModel = require('../models/teams_abrsModel');
 
 module.exports = exports = {
 
-  // teams
+  // Web Services
+  //  teams
   teamsComplete: function(req, res) {
     request({
       url: utils.teams_getApiUrl(),
@@ -34,8 +35,18 @@ module.exports = exports = {
     })
   },
   
+  // Node Services
+  updateTeam: function(team) {
+    teamsModel.updateTeam(team)
+  },
+  nTeamsByNameId: function(nameId, cb) {
+    teamsModel.findByNameId(nameId, function(data){
+      cb(data);
+    })
+  },
   
-  // teams_abbrs
+  
+  //  teams_abbrs
   teams_abrs: function(req, res) {
     teamsAbrModel.findAll(function(data){
       res.json(data);
