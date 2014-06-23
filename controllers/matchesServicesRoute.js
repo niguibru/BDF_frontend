@@ -13,7 +13,7 @@ module.exports = exports = {
           url: utils.matches_getApiUrl(round),
           json: true
         }, function (error, response, data) {
-          if (!error && response.statusCode === 200) {
+          if (!error) {
             matchesArray = data.match;
             for(var matchIndex in matchesArray) {
               matchToAdd = utils.matches_builJsonMatch(matchesArray[matchIndex]);

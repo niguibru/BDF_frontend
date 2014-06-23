@@ -12,7 +12,10 @@ matches_scheema = new schema(
     'group': {
       'letter': String,
       'number': String,
-    }, 
+    },    
+    'key': {
+      'keyNum': String,
+    },
     'local': {
       'name': String, 
       'abr': String, 

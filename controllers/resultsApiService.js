@@ -30,7 +30,7 @@ module.exports = exports = {
       url: getState_URL(matchId),
       json: true
     }, function (error, response, data) {
-      if (!error && response.statusCode === 200) {
+      if (!error) {
         cb(data);
       }
     })
@@ -41,7 +41,7 @@ module.exports = exports = {
       url: getTeamGrpPosition_URL(grpId),
       json: true
     }, function (error, response, data) {
-      if (!error && response.statusCode === 200) {
+      if (!error) {
         cb(data);
       }
     })
