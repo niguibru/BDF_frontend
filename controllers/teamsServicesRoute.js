@@ -44,7 +44,11 @@ module.exports = exports = {
       cb(data);
     })
   },
-  
+  nfindByGroupNum: function(groupNum, cb) {
+    teamsModel.findByGroupNum(groupNum, function(data){
+      cb(data);
+    })
+  },
   
   //  teams_abbrs
   teams_abrs: function(req, res) {

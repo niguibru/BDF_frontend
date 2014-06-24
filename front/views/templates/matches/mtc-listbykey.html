@@ -1,5 +1,5 @@
-<p class="groupLetter"> {{groupL}} </p>
-<ul class="groupTeams animation" ng-repeat="match in allMatches | filter:{key: groupL}">
+<p class="groupLetter"> {{keyTitle}} </p>
+<ul class="groupTeams {{key}}" ng-repeat="match in allMatches | filter:{key: key} | orderBy:'key.keyPos'">
   <li class="matchData">
     <p class="dateTime"> {{match.txtDateTime}} </p>
   </li>

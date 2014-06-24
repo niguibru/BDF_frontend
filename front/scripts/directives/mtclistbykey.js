@@ -9,7 +9,8 @@ angular.module('bochaDeFutbolApp')
         pre: function preLink(scope, iElement, iAttrs, controller) { 
         },
         post: function postLink(scope, iElement, iAttrs, controller) { 
-          scope.groupL = iAttrs.key;
+          scope.key = iAttrs.key;
+          scope.keyTitle = iAttrs.title;
         }
       }
     };

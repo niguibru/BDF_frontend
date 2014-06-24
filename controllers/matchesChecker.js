@@ -1,3 +1,4 @@
+var async = require('async');
 var CronJob = require('cron').CronJob;
 var utils = require('./utils/utils');
 var matches = require('./matchesServicesRoute');
@@ -24,6 +25,7 @@ exports.start = function(io) {
 
   // when server start chck todays maches
   setTimeForTodaysMatches();
+//  calculateKeyClasification(1);
 //  updateTeamGroupPosition('argelia', '8');
 }
  
@@ -58,8 +60,11 @@ function setTimeForTodaysMatches () {
             } else {
               // if "group" match update team positions
               if (matchDb.type == 'G'){
-                updateTeamGroupPosition(matchDb.local.nameId, matchDb.group.number);
-                updateTeamGroupPosition(matchDb.visitor.nameId, matchDb.group.number);
+                async.series([
+                  updateTeamGroupPosition(matchDb.local.nameId, matchDb.group.number),
+                  updateTeamGroupPosition(matchDb.visitor.nameId, matchDb.group.number),
+                  calculateKeyClasification(matchDb.group.number)
+                ]);
               }
             }
           });
@@ -114,8 +119,11 @@ function followMatch (matchNumId) {
             updateMatchAndAddEvents(matchDb, matchState);
             // if "group" match update team positions
             if (matchDb.type == 'G'){
-              updateTeamGroupPosition(matchDb.local.nameId, matchDb.group.number);
-              updateTeamGroupPosition(matchDb.visitor.nameId, matchDb.group.number);
+              async.series([
+                updateTeamGroupPosition(matchDb.local.nameId, matchDb.group.number),
+                updateTeamGroupPosition(matchDb.visitor.nameId, matchDb.group.number),
+                calculateKeyClasification(matchDb.group.number)
+              ]);
             }
             
             job.stop();                                              
@@ -134,6 +142,7 @@ function followMatch (matchNumId) {
 
 // Update macth and new events
 function updateMatchAndAddEvents(matchToUpdate, newMatchState){
+  console.log(' updating match')
   matchToUpdate.events = newMatchState.events;
   matchToUpdate.local.goals = newMatchState.local_goals;
   matchToUpdate.visitor.goals = newMatchState.visitor_goals; 
@@ -252,5 +261,71 @@ function updateTeamGroupPosition(nameId, groupNumber){
   });
 }
 
+
+function calculateKeyClasification(grpNum){
+  teams.nfindByGroupNum(grpNum, function(grpTeams){
+    if (allRoundsFinished(grpTeams)){
+      console.log('All matches played in group ' + grpNum)
+      saveToKeyMatch(grpTeams[0], 'p1g'+grpNum);
+      saveToKeyMatch(grpTeams[1], 'p2g'+grpNum);
+    } else {
+      console.log('There are matches to playe in group ' + grpNum)
+      for (iTeam = 0; iTeam < 2; iTeam++){
+        if (!someTeamCouldExceed(iTeam, grpTeams)){
+          var pos = iTeam + 1;
+          saveToKeyMatch(grpTeams[iTeam], 'p'+pos+'g'+grpNum);
+        } else {
+          console.log('A '+grpTeams[iTeam].name+' lo pueden pasar');
+          iTeam = grpTeams.length;
+        }
+      }
+    }
+  })
+}
+
+function allRoundsFinished(grpTeams){
+  var resp = true;
+  for (i = 0; i <= grpTeams.length - 1; i++){
+    if (grpTeams[i].group.ju < 3){
+      resp = false;
+    }
+  }
+  return resp;
+};
+
+function someTeamCouldExceed(iTeam, grpTeams){
+  var resp = false;
+  for (i = iTeam; i <= grpTeams.length - 1; i++){
+    toPlay = (3 - grpTeams[i].group.ju) * 3;
+    if (grpTeams[iTeam].group.pts <  (grpTeams[i].group.pts + toPlay)){
+      resp = true;
+      i = grpTeams.length;
+    }
+  }
+  return resp;
+}
+
+function saveToKeyMatch(grpTeam, posGroup){
+  matches.findByPosGroup(posGroup, function(keyMatch){
+    console.log('Take '+grpTeam.name+' for the key ' + posGroup);
+    if (keyMatch != null){
+      if (keyMatch.local.nameId == posGroup) {
+        console.log(keyMatch.local.abr);
+        keyMatch.local.nameId = grpTeam.nameId;
+        keyMatch.local.name = grpTeam.name;
+        keyMatch.local.abr = grpTeam.abr;
+        matches.updateMatch(keyMatch);
+      } else if (keyMatch.visitor.nameId == posGroup) {
+        console.log(keyMatch.visitor.abr);
+        keyMatch.visitor.nameId = grpTeam.nameId;
+        keyMatch.visitor.name = grpTeam.name;
+        keyMatch.visitor.abr = grpTeam.abr;
+        matches.updateMatch(keyMatch);
+      }
+    } else {
+      console.log('Match not found');
+    }
+  })
+}
 
 

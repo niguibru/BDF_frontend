@@ -136,7 +136,26 @@
 }
 /*<<Matches calendar*/
 
-
+.groupTeams.k4{
+  margin-top: 69px;
+}
+.groupTeams.k2{
+  margin-top: 158px;
+}
+.groupTeams.k1{
+  margin-top: 249px;
+}
+@media all and (max-width : 767px) {
+  .groupTeams.k4{
+    margin-top: 0px;
+  }
+  .groupTeams.k2{
+    margin-top: 0px;
+  }
+  .groupTeams.k1{
+    margin-top: 0px;
+  }
+}
 
 
 

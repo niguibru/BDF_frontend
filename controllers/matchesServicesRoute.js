@@ -46,6 +46,11 @@ module.exports = exports = {
   updateMatch: function(matchToUpdate, cb) {  
     matchesModel.updateMatch(matchToUpdate);
   },
+  findByPosGroup: function(posGroup, cb) {  
+    matchesModel.findByPosGroup(posGroup, function(match){
+      cb(match);
+    });
+  },
   
 }
 

@@ -15,6 +15,7 @@ matches_scheema = new schema(
     },    
     'key': {
       'keyNum': String,
+      'keyPos': String
     },
     'local': {
       'name': String, 
@@ -86,6 +87,15 @@ exports.findByNumId = function(numId, cb) {
   })
 }
 
+exports.findByPosGroup = function(posGroup, cb) {
+  matches
+  .findOne({$or : [{'local.nameId': posGroup}, 
+                   {'visitor.nameId': posGroup}]})
+  .exec(function(err, match){
+    cb(match);
+  })
+}
+
 exports.updateMatch = function(matchToUpdate, events) {
   matches.findOne({numId: matchToUpdate.numId}).exec(function(err, matchDb){
     matchDb = matchToUpdate;
@@ -94,16 +104,7 @@ exports.updateMatch = function(matchToUpdate, events) {
     });
   })
 }
-//
-//exports.saveEventsInMatch = function(numId, events) {
-//  matches.findOne({numId: numId}).exec(function(err, match){
-//    match.events = events;
-//    match.save(function (err) {
-//      if (err) console.log(err);
-//    });
-//  })
-//}
-//
+
 exports.clear = function(cb) {
   matches.remove({},function(err){
     console.log('All matches deleted');

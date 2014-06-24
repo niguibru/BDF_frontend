@@ -50,6 +50,15 @@ exports.findByNameId = function(nameId, cb) {
   })
 };
 
+exports.findByGroupNum = function(groupNum, cb) {
+  teams.find({'group.groupNumber': groupNum})
+  .sort([['group.pts', 'descending']])
+  .sort([['group.dg', 'descending']])
+  .exec(function(err, results){
+    cb(results);
+  })
+}
+
 exports.clear = function(cb) {
   teams.remove({},function(err){
     console.log('All teams deleted');
