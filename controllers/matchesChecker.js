@@ -25,8 +25,6 @@ exports.start = function(io) {
 
   // when server start chck todays maches
   setTimeForTodaysMatches();
-//  calculateKeyClasification(1);
-//  updateTeamGroupPosition('argelia', '8');
 }
  
 // Get all matches and set time schedule
