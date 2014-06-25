@@ -36,8 +36,10 @@ module.exports = exports = {
   },
   
   // Node Services
-  updateTeam: function(team) {
-    teamsModel.updateTeam(team)
+  updateTeam: function(team, cb) {
+    teamsModel.updateTeam(team, function(){
+      cb();
+    })
   },
   nTeamsByNameId: function(nameId, cb) {
     teamsModel.findByNameId(nameId, function(data){

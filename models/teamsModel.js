@@ -66,11 +66,12 @@ exports.clear = function(cb) {
   })
 };
 
-exports.updateTeam = function(teamToUpdate) {
+exports.updateTeam = function(teamToUpdate, cb) {
   teams.findOne({nameId: teamToUpdate.nameId}).exec(function(err, teamDb){
     teamDb = teamToUpdate;
     teamDb.save(function (err) {
       if (err) console.log(err);
+      cb();
     });
   })
 };

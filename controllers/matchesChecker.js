@@ -60,11 +60,20 @@ function setTimeForTodaysMatches () {
             } else {
               // if "group" match update team positions
               if (matchDb.type == 'G'){
-                async.series([
-                  updateTeamGroupPosition(matchDb.local.nameId, matchDb.group.number),
-                  updateTeamGroupPosition(matchDb.visitor.nameId, matchDb.group.number),
-                  calculateKeyClasification(matchDb.group.number)
-                ]);
+                async.parallel([
+                  function(callback) {
+                    updateTeamGroupPosition(matchDb.local.nameId, matchDb.group.number, function(){
+                      callback();
+                    });
+                  },
+                  function(callback) {
+                    updateTeamGroupPosition(matchDb.visitor.nameId, matchDb.group.number, function(){
+                      callback();
+                    });
+                  }
+                ], function(err) {
+                    calculateKeyClasification(matchDb.group.number)
+                });
               }
             }
           });
@@ -119,11 +128,20 @@ function followMatch (matchNumId) {
             updateMatchAndAddEvents(matchDb, matchState);
             // if "group" match update team positions
             if (matchDb.type == 'G'){
-              async.series([
-                updateTeamGroupPosition(matchDb.local.nameId, matchDb.group.number),
-                updateTeamGroupPosition(matchDb.visitor.nameId, matchDb.group.number),
-                calculateKeyClasification(matchDb.group.number)
-              ]);
+              async.parallel([
+                function(callback) {
+                  updateTeamGroupPosition(matchDb.local.nameId, matchDb.group.number, function(){
+                    callback();
+                  });
+                },
+                function(callback) {
+                  updateTeamGroupPosition(matchDb.visitor.nameId, matchDb.group.number, function(){
+                    callback();
+                  });
+                }
+              ], function(err) {
+                  calculateKeyClasification(matchDb.group.number)
+              });
             }
             
             job.stop();                                              
@@ -233,7 +251,7 @@ function haveNewCards(cards, events){
   return auxHaveNewCards;
 };
 
-function updateTeamGroupPosition(nameId, groupNumber){
+function updateTeamGroupPosition(nameId, groupNumber, cb){
   nameId =  utils.toNameId(nameId);
   resultsApi.getTeamGrpPosition(groupNumber, function(tableData){
     tableData.table.forEach(function(grpTeam) {
@@ -252,9 +270,11 @@ function updateTeamGroupPosition(nameId, groupNumber){
             pts: grpTeam.points
           }
 
-          teams.updateTeam(team);
-          console.log('   calc position of team ---->' + utils.toNameId(grpTeam.team)); 
-          console.log(team.group);
+          teams.updateTeam(team, function(){
+            console.log('   calc position of team ---->' + utils.toNameId(grpTeam.team)); 
+            console.log(team.group);
+            cb();
+          });
         })
       }
     });
