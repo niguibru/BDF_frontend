@@ -98,6 +98,19 @@
     <!-- bower:js -->
     <script src="bower_components/jquery/dist/jquery.js"></script>
     <script src="vendors/socket.io/socket.io.js"></script>
+    <script src="vendors/ion-sound/ion.sound.min.js"></script>
+    <script>
+      $.ionSound({
+        sounds: [
+          "gol",
+          "startMatch",
+          "endMatch",
+        ],
+        path: "sounds/",
+        multiPlay: false,
+        volume: "0.04"
+      });
+    </script>
     <script src="vendors/timeCircles/timeCircles.js"></script>
     <script src="vendors/nibCalendar/nibCalendar.js"></script>
     <script src="bower_components/angular/angular.js"></script>

@@ -81,6 +81,7 @@ angular
       var dateTimeForId = moment().format('YYYY_MM_DD_HH_mm_ss_S');
       var alertId = 'Id_' + dateTimeForId;
       $rootScope.alerts.push({alertId: alertId, mtcNumId: data.mtcNumId, type: 'success', msg: data.event});
+      $.ionSound.play("gol");
       $rootScope.$digest();
       window.setTimeout(function() { 
         $('#' + alertId).alert('close'); 
